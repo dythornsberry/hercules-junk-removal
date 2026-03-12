@@ -94,7 +94,7 @@ const Cta = () => {
             {/* Trust Badges under CTAs */}
             <div className="flex flex-wrap justify-center gap-6 mt-6 text-sm font-bold text-black/80">
               <div className="flex items-center gap-2"><Shield className="w-5 h-5 text-black" /> 100% Satisfaction Guarantee</div>
-              <div className="flex items-center gap-2"><Star className="w-5 h-5 text-black fill-current" /> 500+ Happy Customers</div>
+              <div className="flex items-center gap-2"><Star className="w-5 h-5 text-black fill-current" /> 5-Star Rated on Google</div>
             </div>
 
           </div>

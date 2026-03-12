@@ -23,7 +23,7 @@ const Hero = () => {
               Same-Day Service Available
             </span>
             <span className="inline-flex items-center gap-1 bg-white/20 text-black border border-black/10 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
-              <Star className="w-3 h-3 fill-current" /> 4.9/5 from 500+ Reviews
+              <Star className="w-3 h-3 fill-current" /> 5-Star Rated on Google
             </span>
           </div>
 

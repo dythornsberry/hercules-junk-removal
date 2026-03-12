@@ -1,10 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Check, Sparkles } from 'lucide-react';
+import { Check, Sparkles, Phone, ArrowRight } from 'lucide-react';
 import ServiceHero from '@/components/sections/ServiceHero';
 import Reviews from '@/components/sections/Reviews';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const GarageCleanoutsPage = () => {
   return (
@@ -95,11 +96,16 @@ const GarageCleanoutsPage = () => {
            <p className="text-xl text-gray-300 mb-8">
              A cluttered garage is often the biggest source of stress in a home. Let us handle the hard work in just a few hours, so you can breathe easier.
            </p>
-           <Link to="/quote">
-            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 text-lg px-8 py-6 rounded-xl font-bold">
-              Schedule Your Cleanout
+           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 text-lg px-8 py-6 rounded-xl font-bold" onClick={() => openCalendlyPopup()}>
+              Book Now <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-           </Link>
+            <a href="tel:4254063445">
+              <Button variant="outline" className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black text-lg px-8 py-6 rounded-xl font-bold">
+                <Phone className="mr-2 h-5 w-5" /> (425) 406-3445
+              </Button>
+            </a>
+           </div>
         </div>
       </section>
 

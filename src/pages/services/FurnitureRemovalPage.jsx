@@ -1,10 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { CheckCircle, Truck, Heart, Clock } from 'lucide-react';
+import { CheckCircle, Truck, Heart, Clock, Phone, ArrowRight } from 'lucide-react';
 import ServiceHero from '@/components/sections/ServiceHero';
 import Reviews from '@/components/sections/Reviews';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const FurnitureRemovalPage = () => {
   return (
@@ -95,13 +96,18 @@ const FurnitureRemovalPage = () => {
 
       <section className="py-20 bg-yellow-50">
         <div className="container mx-auto px-4 text-center">
-           <h2 className="text-3xl font-black mb-6">Ready to get rid of that old junk?</h2>
-           <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">Call us now for a free estimate. We can often give you a firm price right over the phone for single items.</p>
-           <Link to="/quote">
-            <Button size="lg" className="bg-black text-white hover:bg-gray-800 text-lg px-8 py-6 rounded-xl shadow-lg">
-              Get Your Free Quote
+           <h2 className="text-3xl font-black mb-6">Ready to get rid of that old furniture?</h2>
+           <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">Call us now for a free estimate or book your pickup online in 60 seconds.</p>
+           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button size="lg" className="bg-black text-white hover:bg-gray-800 text-lg px-8 py-6 rounded-xl shadow-lg" onClick={() => openCalendlyPopup()}>
+              Book Now <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-           </Link>
+            <a href="tel:4254063445">
+              <Button size="lg" variant="outline" className="border-2 border-black text-black hover:bg-black hover:text-white text-lg px-8 py-6 rounded-xl">
+                <Phone className="mr-2 h-5 w-5" /> (425) 406-3445
+              </Button>
+            </a>
+           </div>
         </div>
       </section>
 

@@ -10,7 +10,7 @@ const GoogleReviewBadge = ({ className = "" }) => {
         ))}
       </div>
       <div className="flex flex-col leading-none">
-        <span className="text-sm font-bold text-gray-900">4.9/5 Rating</span>
+        <span className="text-sm font-bold text-gray-900">5.0/5 Rating</span>
         <span className="text-[10px] text-gray-500 font-medium">7 Google Reviews</span>
       </div>
     </div>

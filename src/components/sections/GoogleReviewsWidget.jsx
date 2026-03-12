@@ -18,7 +18,7 @@ const GoogleReviewsWidget = () => {
     <section className="py-16 md:py-20 bg-gray-50 border-y border-gray-200">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">Trusted by 500+ Happy Customers</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">See What Our Customers Say</h2>
           <p className="text-lg text-gray-600 font-medium max-w-2xl mx-auto">
             Don't just take our word for it. See what your neighbors are saying about our fast and reliable service.
           </p>
