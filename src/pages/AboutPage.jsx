@@ -2,7 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Button } from '@/components/ui/button';
 import { Toaster } from '@/components/ui/toaster';
-import { Phone } from 'lucide-react';
+import { Phone, ArrowRight } from 'lucide-react';
+import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const AboutPage = () => {
   const businessPhoneNumber = '4254063445';
@@ -11,8 +12,9 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>Meet Dylan, Owner of Hercules Junk Removal</title>
-        <meta name="description" content="Meet Dylan, owner of Hercules Junk Removal. A local, Kenmore-based business providing friendly, reliable junk hauling in the Seattle area." />
+        <title>About Hercules Junk Removal | Kenmore, WA | Meet the Owner</title>
+        <meta name="description" content="Meet Dylan, owner of Hercules Junk Removal in Kenmore, WA. Local, licensed & insured junk hauling for Bothell, Kirkland & Greater Seattle. 5-star rated." />
+        <link rel="canonical" href="https://herculesjunkremoval.com/about" />
       </Helmet>
       <div className="flex-grow bg-yellow-400 text-black">
         <main>
@@ -33,15 +35,25 @@ const AboutPage = () => {
                   <p className="text-lg text-black/80 mb-8 font-bold">
                     Thanks for looking us up. I’d love to earn your business.
                   </p>
-                  <a href={`tel:${businessPhoneNumber}`}>
+                  <div className="flex flex-col sm:flex-row gap-4">
                     <Button
                       size="lg"
-                      className="bg-black text-yellow-400 hover:bg-gray-800 text-xl font-bold py-5 px-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                      className="bg-black text-white hover:bg-gray-800 text-lg font-bold py-6 px-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
+                      onClick={() => openCalendlyPopup()}
                     >
-                      <Phone className="mr-3 h-6 w-6" />
-                      Call or Text Me: {businessPhoneNumberFormatted}
+                      Book Now <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
-                  </a>
+                    <a href={`tel:${businessPhoneNumber}`}>
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="border-2 border-black text-black hover:bg-black hover:text-white text-lg font-bold py-6 px-8 rounded-xl w-full"
+                      >
+                        <Phone className="mr-2 h-5 w-5" />
+                        {businessPhoneNumberFormatted}
+                      </Button>
+                    </a>
+                  </div>
                 </div>
                 <div className="flex justify-center items-center">
                   <img  
@@ -49,7 +61,7 @@ const AboutPage = () => {
                     alt="Dylan, owner of Hercules Junk Removal, taking a selfie in a garage at a job site, wearing a Hercules hat."
                     src="https://horizons-cdn.hostinger.com/043d3248-867c-48dc-bfa5-01141b7ae321/e21a9b995140fd6b8cd0fc1ea3a96669.jpg" 
                     loading="lazy"
-                    style={{ transform: 'rotate(90deg)', transformOrigin: 'center' }}
+                    style={{ transform: 'rotate(180deg)' }}
                   />
                 </div>
               </div>
