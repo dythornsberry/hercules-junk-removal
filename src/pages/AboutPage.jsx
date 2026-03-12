@@ -61,7 +61,7 @@ const AboutPage = () => {
                     alt="Dylan, owner of Hercules Junk Removal, taking a selfie in a garage at a job site, wearing a Hercules hat."
                     src="https://horizons-cdn.hostinger.com/043d3248-867c-48dc-bfa5-01141b7ae321/e21a9b995140fd6b8cd0fc1ea3a96669.jpg" 
                     loading="lazy"
-                    style={{ transform: 'rotate(180deg)' }}
+                    style={{ transform: 'rotate(90deg)' }}
                   />
                 </div>
               </div>
