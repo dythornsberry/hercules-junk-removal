@@ -5,7 +5,7 @@ import { Dumbbell } from 'lucide-react';
 const Footer = () => {
   const businessPhoneNumber = '4254063445';
   const businessPhoneNumberFormatted = '(425) 406-3445';
-  
+
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
     const section = document.getElementById(sectionId);
@@ -19,8 +19,8 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white border-t border-gray-800">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="md:col-span-1 mb-6 md:mb-0">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+          <div className="col-span-2 md:col-span-1 mb-6 md:mb-0">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <Dumbbell className="h-7 w-7 text-yellow-400" />
               <span className="text-xl font-bold text-white">
@@ -29,28 +29,41 @@ const Footer = () => {
             </Link>
             <p className="text-sm text-gray-400">Your local, reliable junk removal service for Kenmore, Bothell, Lynnwood, Kirkland and surrounding areas.</p>
           </div>
-          
-          <div className="md:col-span-1">
+
+          <div>
              <h3 className="font-semibold text-white mb-4">Navigation</h3>
              <ul className="space-y-3">
-               <li><a href="/#home-hero" onClick={e => scrollToSection(e, 'home-hero')} className="text-sm text-gray-300 hover:text-white">Home</a></li>
+               <li><Link to="/" className="text-sm text-gray-300 hover:text-white">Home</Link></li>
+               <li><Link to="/about" className="text-sm text-gray-300 hover:text-white">About</Link></li>
                <li><a href="/#pricing" onClick={e => scrollToSection(e, 'pricing')} className="text-sm text-gray-300 hover:text-white">Pricing</a></li>
-               <li><a href="/#results" onClick={e => scrollToSection(e, 'results')} className="text-sm text-gray-300 hover:text-white">Work</a></li>
                <li><Link to="/faq" className="text-sm text-gray-300 hover:text-white">FAQ</Link></li>
              </ul>
           </div>
-          
-          <div className="md:col-span-1">
+
+          <div>
              <h3 className="font-semibold text-white mb-4">Services</h3>
              <ul className="space-y-3">
                <li><Link to="/services" className="text-sm text-gray-300 hover:text-white">All Services</Link></li>
                <li><Link to="/garage-cleanouts" className="text-sm text-gray-300 hover:text-white">Garage Cleanouts</Link></li>
                <li><Link to="/furniture-removal" className="text-sm text-gray-300 hover:text-white">Furniture Removal</Link></li>
                <li><Link to="/household-junk-removal" className="text-sm text-gray-300 hover:text-white">Junk Removal</Link></li>
+               <li><Link to="/construction-debris-removal" className="text-sm text-gray-300 hover:text-white">Construction Debris</Link></li>
              </ul>
           </div>
 
-          <div className="md:col-span-1">
+          <div>
+             <h3 className="font-semibold text-white mb-4">Service Areas</h3>
+             <ul className="space-y-3">
+               <li><Link to="/junk-removal-kenmore" className="text-sm text-gray-300 hover:text-white">Kenmore</Link></li>
+               <li><Link to="/junk-removal-bothell" className="text-sm text-gray-300 hover:text-white">Bothell</Link></li>
+               <li><Link to="/junk-removal-kirkland" className="text-sm text-gray-300 hover:text-white">Kirkland</Link></li>
+               <li><Link to="/junk-removal-lynnwood" className="text-sm text-gray-300 hover:text-white">Lynnwood</Link></li>
+               <li><Link to="/junk-removal-woodinville" className="text-sm text-gray-300 hover:text-white">Woodinville</Link></li>
+               <li><Link to="/service-areas" className="text-sm text-yellow-400 font-bold hover:text-yellow-300">All Areas →</Link></li>
+             </ul>
+          </div>
+
+          <div>
              <h3 className="font-semibold text-white mb-4">Contact</h3>
              <ul className="space-y-3">
                <li>

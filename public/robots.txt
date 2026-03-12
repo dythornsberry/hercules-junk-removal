@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow admin/internal pages
+Disallow: /admin
+Disallow: /debug
+Disallow: /test-email
+Disallow: /login
+
+Sitemap: https://herculesjunkremoval.com/sitemap.xml
