@@ -12,6 +12,7 @@ const GarageCleanoutsPage = () => {
       <Helmet>
         <title>Garage Cleanouts Kenmore & Kirkland | Garage Junk Removal</title>
         <meta name="description" content="Reclaim your parking space! Professional garage cleanout services in Kenmore, WA. We sort, load, haul, and sweep up afterwards. Local & Insured." />
+        <link rel="canonical" href="https://herculesjunkremoval.com/garage-cleanouts" />
       </Helmet>
 
       <ServiceHero 

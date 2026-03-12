@@ -25,6 +25,7 @@ const GarageCleanoutsPage = lazy(() => import('@/pages/services/GarageCleanoutsP
 const FurnitureRemovalPage = lazy(() => import('@/pages/services/FurnitureRemovalPage.jsx'));
 const ConstructionDebrisRemovalPage = lazy(() => import('@/pages/services/ConstructionDebrisRemovalPage.jsx'));
 const HouseholdJunkRemovalPage = lazy(() => import('@/pages/services/HouseholdJunkRemovalPage.jsx'));
+const YardWasteRemovalPage = lazy(() => import('@/pages/services/YardWasteRemovalPage.jsx'));
 const JunkRemovalKenmorePage = lazy(() => import('@/pages/locations/JunkRemovalKenmorePage.jsx'));
 const JunkRemovalBothellPage = lazy(() => import('@/pages/locations/JunkRemovalBothellPage.jsx'));
 const JunkRemovalKirklandPage = lazy(() => import('@/pages/locations/JunkRemovalKirklandPage.jsx'));
@@ -32,6 +33,7 @@ const JunkRemovalWoodinvillePage = lazy(() => import('@/pages/locations/JunkRemo
 const JunkRemovalLakeForestParkPage = lazy(() => import('@/pages/locations/JunkRemovalLakeForestParkPage.jsx'));
 const JunkRemovalMountlakeTerracePage = lazy(() => import('@/pages/locations/JunkRemovalMountlakeTerracePage.jsx'));
 const JunkRemovalLynnwoodPage = lazy(() => import('@/pages/locations/JunkRemovalLynnwoodPage.jsx'));
+const JunkRemovalShorelinePage = lazy(() => import('@/pages/locations/JunkRemovalShorelinePage.jsx'));
 
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = sessionStorage.getItem('hercules-auth') === 'true';
@@ -62,7 +64,7 @@ function App() {
               {/* Service Pages */}
               <Route path="/household-junk-removal" element={<HouseholdJunkRemovalPage />} />
               <Route path="/garage-cleanouts" element={<GarageCleanoutsPage />} />
-              <Route path="/yard-waste-removal" element={<Navigate to="/services" replace />} />
+              <Route path="/yard-waste-removal" element={<YardWasteRemovalPage />} />
               <Route path="/construction-debris-removal" element={<ConstructionDebrisRemovalPage />} />
               <Route path="/furniture-removal" element={<FurnitureRemovalPage />} />
 
@@ -75,7 +77,7 @@ function App() {
               <Route path="/junk-removal-mountlake-terrace" element={<JunkRemovalMountlakeTerracePage />} />
               <Route path="/junk-removal-lynnwood" element={<JunkRemovalLynnwoodPage />} />
               
-              <Route path="/junk-removal-shoreline" element={<Navigate to="/service-areas" replace />} />
+              <Route path="/junk-removal-shoreline" element={<JunkRemovalShorelinePage />} />
 
               {/* Protected Routes */}
               <Route 

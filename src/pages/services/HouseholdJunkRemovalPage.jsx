@@ -12,6 +12,7 @@ const HouseholdJunkRemovalPage = () => {
       <Helmet>
         <title>Junk Removal Service Kenmore WA | Residential Trash Hauling</title>
         <meta name="description" content="Local residential junk removal in Kenmore, WA. We clear out attics, basements, sheds, and whole homes. Licensed, insured, and 5-star rated." />
+        <link rel="canonical" href="https://herculesjunkremoval.com/household-junk-removal" />
       </Helmet>
 
       <ServiceHero 

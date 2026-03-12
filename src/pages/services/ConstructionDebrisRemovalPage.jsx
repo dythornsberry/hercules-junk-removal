@@ -12,6 +12,7 @@ const ConstructionDebrisRemovalPage = () => {
       <Helmet>
         <title>Construction Debris Removal Kenmore & Bothell | Job Site Cleanup</title>
         <meta name="description" content="Fast construction debris removal for contractors and homeowners in Kenmore, WA. We haul drywall, wood, tile, flooring, and renovation waste." />
+        <link rel="canonical" href="https://herculesjunkremoval.com/construction-debris-removal" />
       </Helmet>
 
       <ServiceHero 
