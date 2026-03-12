@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const ServiceHero = ({ title, subtitle, imageAlt, imageSrc }) => {
   const businessPhoneNumber = '4254063445';
@@ -34,15 +34,14 @@ const ServiceHero = ({ title, subtitle, imageAlt, imageSrc }) => {
                   Call {businessPhoneNumberFormatted}
                 </Button>
               </a>
-              <Link to="/quote">
-                 <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto border-4 border-black text-black hover:bg-black hover:text-yellow-400 text-xl font-bold py-6 px-8 rounded-xl bg-transparent transition-all"
-                >
-                  Get Online Quote
-                </Button>
-              </Link>
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto border-4 border-black text-black hover:bg-black hover:text-yellow-400 text-xl font-bold py-6 px-8 rounded-xl bg-transparent transition-all"
+                onClick={() => openCalendlyPopup()}
+              >
+                Book Online
+              </Button>
             </div>
           </motion.div>
           

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dumbbell } from 'lucide-react';
+import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const Footer = () => {
   const businessPhoneNumber = '4254063445';
@@ -72,9 +73,9 @@ const Footer = () => {
                  </a>
                </li>
                 <li>
-                 <Link to="/quote" className="text-sm text-yellow-400 font-bold hover:text-yellow-300">
-                   Get a Free Quote Online
-                 </Link>
+                 <button onClick={() => openCalendlyPopup()} className="text-sm text-yellow-400 font-bold hover:text-yellow-300">
+                   Book Online
+                 </button>
                </li>
                <li className="text-sm text-gray-400 pt-2">
                  Hours: Mon-Sun: 8am - 8pm

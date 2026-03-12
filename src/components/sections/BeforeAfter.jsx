@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import SatisfactionGuaranteeBadge from '@/components/ui/SatisfactionGuaranteeBadge';
+import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const BeforeAfter = () => {
   const results = [
@@ -72,14 +72,13 @@ const BeforeAfter = () => {
         </div>
 
         <div className="text-center mt-16">
-          <Link to="/quote">
-            <Button
-              variant="cta"
-              size="lg"
-            >
-              Ready to Clear It Out?
-            </Button>
-          </Link>
+          <Button
+            variant="cta"
+            size="lg"
+            onClick={() => openCalendlyPopup()}
+          >
+            Ready to Clear It Out?
+          </Button>
         </div>
       </div>
     </section>

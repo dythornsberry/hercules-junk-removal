@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Sofa, Home, TreePine, HardHat, Tv, Truck, Bed, HelpCircle, Check, Phone, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 // Updated services array with internal links where available
 const services = [
@@ -109,11 +110,9 @@ const ServicesPage = () => {
                   <p className="text-gray-400 flex-grow mb-6 leading-relaxed">{service.description}</p>
                    
                    {service.link === '/quote' ? (
-                      <Link to="/quote">
-                        <Button className="w-full bg-yellow-400 text-black font-bold hover:bg-white hover:text-black transition-colors">
-                            Get Custom Quote
-                        </Button>
-                      </Link>
+                      <Button className="w-full bg-yellow-400 text-black font-bold hover:bg-white hover:text-black transition-colors" onClick={() => openCalendlyPopup()}>
+                          Book Now
+                      </Button>
                    ) : (
                       <Link to={service.link}>
                          <Button variant="outline" className="w-full border-gray-700 text-white hover:bg-gray-800 hover:text-yellow-400 flex items-center justify-center gap-2">

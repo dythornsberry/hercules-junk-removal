@@ -1,9 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import Pricing from '@/components/sections/Pricing';
-import SlimQuoteForm from '@/components/sections/SlimQuoteForm';
-import { Toaster } from '@/components/ui/toaster';
+import HercJunkPricingSection from '@/components/sections/HercJunkPricingSection';
+import Cta from '@/components/sections/Cta';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Phone, CheckCircle2, MapPin, ArrowRight } from 'lucide-react';
@@ -170,27 +169,11 @@ const LocationPageLayout = ({
             </section>
           )}
 
-          <Pricing />
+          <HercJunkPricingSection />
 
-          {/* CTA */}
-          <section className="py-16 sm:py-20 bg-[#FFC107] text-center px-4">
-             <h2 className="text-3xl sm:text-4xl font-black text-black mb-4">Ready for a Clutter-Free Space in {city}?</h2>
-             <p className="text-lg text-black/80 mb-8">Call or text us for the fastest response!</p>
-             <a href={`tel:${businessPhoneNumber}`}>
-                <Button
-                  size="lg"
-                  className="bg-black text-[#FFC107] hover:bg-gray-800 text-xl font-bold py-6 px-10 rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-300"
-                >
-                  <Phone className="mr-3 h-7 w-7" />
-                  Call or Text: {businessPhoneNumberFormatted}
-                </Button>
-              </a>
-          </section>
-
-          <SlimQuoteForm location={city} />
+          <Cta />
 
         </main>
-        <Toaster />
       </div>
     </>
   );
