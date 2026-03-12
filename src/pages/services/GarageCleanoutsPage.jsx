@@ -13,7 +13,7 @@ const GarageCleanoutsPage = () => {
       <Helmet>
         <title>Garage Cleanouts Kenmore & Kirkland | Garage Junk Removal</title>
         <meta name="description" content="Reclaim your parking space! Professional garage cleanout services in Kenmore, WA. We sort, load, haul, and sweep up afterwards. Local & Insured." />
-        <link rel="canonical" href="https://herculesjunkremoval.com/garage-cleanouts" />
+        <link rel="canonical" href="https://hercjunk.com/garage-cleanouts" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
@@ -21,7 +21,7 @@ const GarageCleanoutsPage = () => {
           "description": "Professional garage cleanout services in Kenmore, WA. We sort, load, haul, and sweep up afterwards.",
           "provider": { "@type": "LocalBusiness", "name": "Hercules Junk Removal", "telephone": "+14254063445" },
           "areaServed": { "@type": "State", "name": "Washington" },
-          "url": "https://herculesjunkremoval.com/garage-cleanouts"
+          "url": "https://hercjunk.com/garage-cleanouts"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

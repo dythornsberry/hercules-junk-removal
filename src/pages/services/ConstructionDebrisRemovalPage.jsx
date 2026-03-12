@@ -13,7 +13,7 @@ const ConstructionDebrisRemovalPage = () => {
       <Helmet>
         <title>Construction Debris Removal Kenmore & Bothell | Job Site Cleanup</title>
         <meta name="description" content="Fast construction debris removal for contractors and homeowners in Kenmore, WA. We haul drywall, wood, tile, flooring, and renovation waste." />
-        <link rel="canonical" href="https://herculesjunkremoval.com/construction-debris-removal" />
+        <link rel="canonical" href="https://hercjunk.com/construction-debris-removal" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
@@ -21,7 +21,7 @@ const ConstructionDebrisRemovalPage = () => {
           "description": "Fast construction debris removal for contractors and homeowners in Kenmore, WA. We haul drywall, wood, tile, flooring, and renovation waste.",
           "provider": { "@type": "LocalBusiness", "name": "Hercules Junk Removal", "telephone": "+14254063445" },
           "areaServed": { "@type": "State", "name": "Washington" },
-          "url": "https://herculesjunkremoval.com/construction-debris-removal"
+          "url": "https://hercjunk.com/construction-debris-removal"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

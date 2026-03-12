@@ -13,7 +13,7 @@ const YardWasteRemovalPage = () => {
       <Helmet>
         <title>Yard Waste Removal Kenmore & Bothell | Green Waste Hauling</title>
         <meta name="description" content="Fast yard waste removal in Kenmore, Bothell, and Kirkland. We haul branches, brush, stumps, leaves, and storm debris. Same-day service available." />
-        <link rel="canonical" href="https://herculesjunkremoval.com/yard-waste-removal" />
+        <link rel="canonical" href="https://hercjunk.com/yard-waste-removal" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
@@ -21,7 +21,7 @@ const YardWasteRemovalPage = () => {
           "description": "Fast yard waste removal in Kenmore, Bothell, and Kirkland. We haul branches, brush, stumps, leaves, and storm debris.",
           "provider": { "@type": "LocalBusiness", "name": "Hercules Junk Removal", "telephone": "+14254063445" },
           "areaServed": { "@type": "State", "name": "Washington" },
-          "url": "https://herculesjunkremoval.com/yard-waste-removal"
+          "url": "https://hercjunk.com/yard-waste-removal"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

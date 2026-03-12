@@ -13,7 +13,7 @@ const HouseholdJunkRemovalPage = () => {
       <Helmet>
         <title>Junk Removal Service Kenmore WA | Residential Trash Hauling</title>
         <meta name="description" content="Local residential junk removal in Kenmore, WA. We clear out attics, basements, sheds, and whole homes. Licensed, insured, and 5-star rated." />
-        <link rel="canonical" href="https://herculesjunkremoval.com/household-junk-removal" />
+        <link rel="canonical" href="https://hercjunk.com/household-junk-removal" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
@@ -21,7 +21,7 @@ const HouseholdJunkRemovalPage = () => {
           "description": "Local residential junk removal in Kenmore, WA. We clear out attics, basements, sheds, and whole homes.",
           "provider": { "@type": "LocalBusiness", "name": "Hercules Junk Removal", "telephone": "+14254063445" },
           "areaServed": { "@type": "State", "name": "Washington" },
-          "url": "https://herculesjunkremoval.com/household-junk-removal"
+          "url": "https://hercjunk.com/household-junk-removal"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

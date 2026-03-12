@@ -22,7 +22,7 @@ const LocationPageLayout = ({
 }) => {
   const businessPhoneNumber = '4254063445';
   const businessPhoneNumberFormatted = '(425) 406-3445';
-  const canonicalUrl = `https://herculesjunkremoval.com/${slug}`;
+  const canonicalUrl = `https://hercjunk.com/${slug}`;
 
   const serviceSchema = {
     "@context": "https://schema.org",

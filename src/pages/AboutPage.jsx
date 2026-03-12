@@ -14,7 +14,7 @@ const AboutPage = () => {
       <Helmet>
         <title>About Hercules Junk Removal | Kenmore, WA | Meet the Owner</title>
         <meta name="description" content="Meet Dylan, owner of Hercules Junk Removal in Kenmore, WA. Local, licensed & insured junk hauling for Bothell, Kirkland & Greater Seattle. 5-star rated." />
-        <link rel="canonical" href="https://herculesjunkremoval.com/about" />
+        <link rel="canonical" href="https://hercjunk.com/about" />
       </Helmet>
       <div className="flex-grow bg-yellow-400 text-black">
         <main>

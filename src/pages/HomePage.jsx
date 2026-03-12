@@ -13,10 +13,10 @@ import Cta from '@/components/sections/Cta.jsx';
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://herculesjunkremoval.com",
+  "@id": "https://hercjunk.com",
   "name": "Hercules Junk Removal",
   "description": "Fast, affordable junk removal in Kenmore, Bothell, Kirkland & Greater Seattle. Single items from $99. Same-day service available.",
-  "url": "https://herculesjunkremoval.com",
+  "url": "https://hercjunk.com",
   "telephone": "+14254063445",
   "priceRange": "$99-$729",
   "openingHoursSpecification": {
@@ -59,7 +59,7 @@ const HomePage = () => {
       <Helmet>
         <title>Junk Removal in Kenmore & Greater Seattle from $99 | Hercules Junk Removal</title>
         <meta name="description" content="Fast, affordable junk removal in Kenmore, Bothell, Kirkland & Greater Seattle. Single items from $99. Book online in 60 seconds. Same-day service available. Licensed & insured." />
-        <link rel="canonical" href="https://herculesjunkremoval.com/" />
+        <link rel="canonical" href="https://hercjunk.com/" />
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
       

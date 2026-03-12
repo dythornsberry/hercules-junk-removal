@@ -13,7 +13,7 @@ const FurnitureRemovalPage = () => {
       <Helmet>
         <title>Furniture Removal Kenmore & Bothell | Mattress & Couch Disposal</title>
         <meta name="description" content="Fast, affordable furniture removal in Kenmore, Bothell, and Kirkland. We haul away old couches, mattresses, tables, and more. We donate what we can!" />
-        <link rel="canonical" href="https://herculesjunkremoval.com/furniture-removal" />
+        <link rel="canonical" href="https://hercjunk.com/furniture-removal" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
@@ -21,7 +21,7 @@ const FurnitureRemovalPage = () => {
           "description": "Fast, affordable furniture removal in Kenmore, Bothell, and Kirkland. We haul away old couches, mattresses, tables, and more.",
           "provider": { "@type": "LocalBusiness", "name": "Hercules Junk Removal", "telephone": "+14254063445" },
           "areaServed": { "@type": "State", "name": "Washington" },
-          "url": "https://herculesjunkremoval.com/furniture-removal"
+          "url": "https://hercjunk.com/furniture-removal"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

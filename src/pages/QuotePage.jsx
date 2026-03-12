@@ -17,7 +17,7 @@ const QuotePage = () => {
       <Helmet>
         <title>Book Junk Removal | Hercules Junk Removal | Kenmore & Greater Seattle</title>
         <meta name="description" content="Book your junk removal pickup online in 60 seconds. Same-day and next-day service available in Kenmore, Bothell, Kirkland & Greater Seattle." />
-        <link rel="canonical" href="https://herculesjunkremoval.com/quote" />
+        <link rel="canonical" href="https://hercjunk.com/quote" />
       </Helmet>
       <div className="flex-grow bg-black min-h-[60vh] flex items-center justify-center">
         <div className="container mx-auto px-4 py-20 text-center">
