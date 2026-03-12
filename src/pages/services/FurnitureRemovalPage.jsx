@@ -13,6 +13,24 @@ const FurnitureRemovalPage = () => {
         <title>Furniture Removal Kenmore & Bothell | Mattress & Couch Disposal</title>
         <meta name="description" content="Fast, affordable furniture removal in Kenmore, Bothell, and Kirkland. We haul away old couches, mattresses, tables, and more. We donate what we can!" />
         <link rel="canonical" href="https://herculesjunkremoval.com/furniture-removal" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Furniture Removal Service",
+          "description": "Fast, affordable furniture removal in Kenmore, Bothell, and Kirkland. We haul away old couches, mattresses, tables, and more.",
+          "provider": { "@type": "LocalBusiness", "name": "Hercules Junk Removal", "telephone": "+14254063445" },
+          "areaServed": { "@type": "State", "name": "Washington" },
+          "url": "https://herculesjunkremoval.com/furniture-removal"
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How much does it cost to remove a couch?", "acceptedAnswer": { "@type": "Answer", "text": "A single item like a couch or mattress starts at our $99 minimum. Price depends on size — we confirm the price before we start." }},
+            { "@type": "Question", "name": "Do you pick up furniture from upstairs?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We handle all the heavy lifting — upstairs, basement, tight corners. We're careful not to damage your walls or floors." }},
+            { "@type": "Question", "name": "Do you donate old furniture?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! If your furniture is in usable condition, we try to donate it to local charities in the Kenmore and Seattle area before taking it to disposal." }}
+          ]
+        })}</script>
       </Helmet>
 
       <ServiceHero 

@@ -13,6 +13,24 @@ const GarageCleanoutsPage = () => {
         <title>Garage Cleanouts Kenmore & Kirkland | Garage Junk Removal</title>
         <meta name="description" content="Reclaim your parking space! Professional garage cleanout services in Kenmore, WA. We sort, load, haul, and sweep up afterwards. Local & Insured." />
         <link rel="canonical" href="https://herculesjunkremoval.com/garage-cleanouts" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Garage Cleanout Service",
+          "description": "Professional garage cleanout services in Kenmore, WA. We sort, load, haul, and sweep up afterwards.",
+          "provider": { "@type": "LocalBusiness", "name": "Hercules Junk Removal", "telephone": "+14254063445" },
+          "areaServed": { "@type": "State", "name": "Washington" },
+          "url": "https://herculesjunkremoval.com/garage-cleanouts"
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How long does a garage cleanout take?", "acceptedAnswer": { "@type": "Answer", "text": "Most single-car garage cleanouts take 1-2 hours. A packed two-car garage may take 2-3 hours. We handle all the sorting, loading, and hauling." }},
+            { "@type": "Question", "name": "Do I need to sort my garage junk first?", "acceptedAnswer": { "@type": "Answer", "text": "Nope! Just point to what goes and we handle the rest. We separate recyclable metals, donatable items, and trash as we load." }},
+            { "@type": "Question", "name": "Do you sweep up after the cleanout?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we don't leave a mess. After we load everything, we sweep the area clean so your garage is ready to use right away." }}
+          ]
+        })}</script>
       </Helmet>
 
       <ServiceHero 

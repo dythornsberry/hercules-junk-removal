@@ -13,6 +13,24 @@ const YardWasteRemovalPage = () => {
         <title>Yard Waste Removal Kenmore & Bothell | Green Waste Hauling</title>
         <meta name="description" content="Fast yard waste removal in Kenmore, Bothell, and Kirkland. We haul branches, brush, stumps, leaves, and storm debris. Same-day service available." />
         <link rel="canonical" href="https://herculesjunkremoval.com/yard-waste-removal" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Yard Waste Removal",
+          "description": "Fast yard waste removal in Kenmore, Bothell, and Kirkland. We haul branches, brush, stumps, leaves, and storm debris.",
+          "provider": { "@type": "LocalBusiness", "name": "Hercules Junk Removal", "telephone": "+14254063445" },
+          "areaServed": { "@type": "State", "name": "Washington" },
+          "url": "https://herculesjunkremoval.com/yard-waste-removal"
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Do I need to bag my yard waste first?", "acceptedAnswer": { "@type": "Answer", "text": "No — we handle loose branches, brush piles, leaves, and debris as-is. No need to bag, bundle, or drag anything to the curb." }},
+            { "@type": "Question", "name": "Do you remove tree stumps?", "acceptedAnswer": { "@type": "Answer", "text": "We can haul away stumps and root balls that have already been cut or dug out. We don't do stump grinding, but we'll take the debris once it's ready." }},
+            { "@type": "Question", "name": "Do you offer storm cleanup?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we respond quickly to storm damage in the Kenmore, Bothell, and Kirkland area. We can clear fallen branches, debris, and damaged materials from your property." }}
+          ]
+        })}</script>
       </Helmet>
 
       <ServiceHero

@@ -24,7 +24,7 @@ const services = [
     icon: TreePine, 
     title: 'Yard Waste', 
     description: 'We haul branches, clippings, and old patio furniture.',
-    link: '/services' // No dedicated page yet, keeping as generic
+    link: '/yard-waste-removal'
   },
   { 
     icon: HardHat, 

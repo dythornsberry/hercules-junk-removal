@@ -13,6 +13,24 @@ const ConstructionDebrisRemovalPage = () => {
         <title>Construction Debris Removal Kenmore & Bothell | Job Site Cleanup</title>
         <meta name="description" content="Fast construction debris removal for contractors and homeowners in Kenmore, WA. We haul drywall, wood, tile, flooring, and renovation waste." />
         <link rel="canonical" href="https://herculesjunkremoval.com/construction-debris-removal" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Construction Debris Removal",
+          "description": "Fast construction debris removal for contractors and homeowners in Kenmore, WA. We haul drywall, wood, tile, flooring, and renovation waste.",
+          "provider": { "@type": "LocalBusiness", "name": "Hercules Junk Removal", "telephone": "+14254063445" },
+          "areaServed": { "@type": "State", "name": "Washington" },
+          "url": "https://herculesjunkremoval.com/construction-debris-removal"
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Do you pick up from active job sites?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we work with contractors and homeowners on active renovation and construction sites. We offer flexible scheduling to keep your project on track." }},
+            { "@type": "Question", "name": "What construction materials do you take?", "acceptedAnswer": { "@type": "Answer", "text": "We haul drywall, lumber, scrap wood, flooring, carpet, tiles, concrete, brick, old cabinets, windows, doors, roofing materials, and more." }},
+            { "@type": "Question", "name": "Can you do same-day debris pickup?", "acceptedAnswer": { "@type": "Answer", "text": "In most cases, yes. We often have same-day availability for construction debris removal in the Kenmore and Bothell area." }}
+          ]
+        })}</script>
       </Helmet>
 
       <ServiceHero 
