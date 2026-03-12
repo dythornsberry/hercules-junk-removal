@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" fill="#facc15"/> {/* Yellow background */}
+  <g fill="#000000">
+    {/* Body of the trash can */}
+    <rect x="30" y="30" width="40" height="50" rx="5" ry="5"/>
+    {/* Lid of the trash can */}
+    <path d="M25 25 Q30 20, 75 25 L75 30 H25 Z"/>
+    {/* Handle/lines on the lid */}
+    <line x1="35" y1="28" x2="65" y2="28" stroke="#000000" strokeWidth="2" strokeLinecap="round"/>
+    {/* Wheels/base (optional, but adds character) */}
+    <circle cx="35" cy="85" r="5"/>
+    <circle cx="65" cy="85" r="5"/>
+  </g>
+</svg>
