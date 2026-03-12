@@ -8,53 +8,53 @@ import { Link } from 'react-router-dom';
 
 // Updated services array with internal links where available
 const services = [
-  { 
-    icon: Sofa, 
-    title: 'Furniture Removal', 
+  {
+    icon: Sofa,
+    title: 'Furniture Removal',
     description: 'Hassle-free removal of unwanted furniture with eco-friendly disposal.',
     link: '/furniture-removal'
   },
-  { 
-    icon: Home, 
-    title: 'Garage Cleanouts', 
+  {
+    icon: Home,
+    title: 'Garage Cleanouts',
     description: 'Reclaim your space from clutter, old tools, and forgotten items.',
     link: '/garage-cleanouts'
   },
-  { 
-    icon: TreePine, 
-    title: 'Yard Waste', 
-    description: 'We haul branches, clippings, and old patio furniture.',
-    link: '/yard-waste-removal'
-  },
-  { 
-    icon: HardHat, 
-    title: 'Construction Debris', 
+  {
+    icon: HardHat,
+    title: 'Construction Debris',
     description: 'Quickly clear wood, drywall, and other job site materials.',
     link: '/construction-debris-removal'
   },
-  { 
-    icon: Tv, 
-    title: 'Appliance & Electronics', 
+  {
+    icon: Tv,
+    title: 'Appliance & Electronics',
     description: 'Safe and responsible disposal of refrigerators, TVs, and more.',
     link: '/services'
   },
-  { 
-    icon: Truck, 
-    title: 'Full Property Cleanouts', 
+  {
+    icon: Truck,
+    title: 'Full Property Cleanouts',
     description: 'Perfect for estate cleanouts, rental turnovers, and downsizing.',
     link: '/services'
   },
-  { 
-    icon: Bed, 
-    title: 'Mattress Disposal', 
+  {
+    icon: Bed,
+    title: 'Mattress Disposal',
     description: 'Proper and eco-friendly disposal of old mattresses.',
-    link: '/furniture-removal' // Logical fallback
+    link: '/furniture-removal'
   },
-  { 
-    icon: HelpCircle, 
-    title: 'Custom Junk Removal', 
+  {
+    icon: HelpCircle,
+    title: 'Custom Junk Removal',
     description: 'Hot tubs, sheds, or anything else. If it has to go, we can help.',
     link: '/quote'
+  },
+  {
+    icon: TreePine,
+    title: 'Yard Waste',
+    description: 'We also haul branches, clippings, and landscaping debris.',
+    link: '/yard-waste-removal'
   },
 ];
 
@@ -71,8 +71,9 @@ const ServicesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Junk Removal Services in Seattle | Hercules Junk Removal</title>
-        <meta name="description" content="We offer a wide range of junk removal services in Seattle, including furniture, appliance, and yard waste removal, garage cleanouts, and more." />
+        <title>Junk Removal Services in Kenmore & Greater Seattle | Hercules Junk Removal</title>
+        <meta name="description" content="Furniture removal, garage cleanouts, appliance disposal, construction debris hauling & more in Kenmore, Bothell, Kirkland & Greater Seattle. Same-day service from $99." />
+        <link rel="canonical" href="https://herculesjunkremoval.com/services" />
       </Helmet>
       <div className="flex-grow bg-yellow-400 text-black">
         <main className="container mx-auto px-4 py-16">
@@ -99,7 +100,7 @@ const ServicesPage = () => {
                 >
                   <div className="flex items-start justify-between mb-4">
                      <service.icon className="h-10 w-10 text-yellow-400" />
-                     {service.link !== '/quote' && service.link !== '/services' && (
+                     {service.link !== '/quote' && service.link !== '/services' && service.link !== '/yard-waste-removal' && (
                         <span className="text-xs font-bold bg-yellow-400 text-black px-2 py-1 rounded">SPECIALTY</span>
                      )}
                   </div>

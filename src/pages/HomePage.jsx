@@ -35,6 +35,12 @@ const localBusinessSchema = {
     { "@type": "City", "name": "Mountlake Terrace", "sameAs": "https://en.wikipedia.org/wiki/Mountlake_Terrace,_Washington" },
     { "@type": "City", "name": "Shoreline", "sameAs": "https://en.wikipedia.org/wiki/Shoreline,_Washington" }
   ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "7",
+    "bestRating": "5"
+  },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Junk Removal Services",

@@ -48,7 +48,6 @@ const Footer = () => {
                <li><Link to="/furniture-removal" className="text-sm text-gray-300 hover:text-white">Furniture Removal</Link></li>
                <li><Link to="/household-junk-removal" className="text-sm text-gray-300 hover:text-white">Junk Removal</Link></li>
                <li><Link to="/construction-debris-removal" className="text-sm text-gray-300 hover:text-white">Construction Debris</Link></li>
-               <li><Link to="/yard-waste-removal" className="text-sm text-gray-300 hover:text-white">Yard Waste</Link></li>
              </ul>
           </div>
 

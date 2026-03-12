@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MessageSquare, Calendar, Zap, Shield, Star } from 'lucide-react';
+import { Phone, Calendar, Zap, Shield, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
@@ -10,10 +10,6 @@ const Cta = () => {
 
   const handleCallClick = () => {
     window.dispatchEvent(new CustomEvent('call_clicked'));
-  };
-
-  const handleTextClick = () => {
-    window.dispatchEvent(new CustomEvent('sms_clicked'));
   };
 
   const handleCalendlyClick = (e) => {
@@ -78,14 +74,14 @@ const Cta = () => {
                 </Button>
               </a>
               
-              <a href={`sms:${businessPhoneNumber}`} onClick={handleTextClick} className="w-full sm:w-auto">
+              <a href={`tel:${businessPhoneNumber}`} className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   className="bg-black/10 text-black hover:bg-black/20 text-xl font-bold py-6 px-10 rounded-xl shadow-none transform hover:scale-105 transition-all duration-300 w-full min-w-[260px]"
                 >
                   <span>
-                    <MessageSquare className="mr-3 h-6 w-6" />
-                    Text Us
+                    <Phone className="mr-3 h-6 w-6" />
+                    {businessPhoneNumberFormatted}
                   </span>
                 </Button>
               </a>
