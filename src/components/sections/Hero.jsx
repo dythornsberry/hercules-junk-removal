@@ -14,12 +14,17 @@ const Hero = () => {
     <section className="relative min-h-[75vh] flex items-center bg-[#FFC107] overflow-hidden">
       {/* Background Image for splitting on large screens */}
       <div className="absolute inset-0 z-0 hidden lg:block w-1/2 left-1/2 h-full">
-        {/* Using a placeholder image of a moving/junk truck to simulate the actual truck */}
-        <img 
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-          alt="Junk removal truck parked in a clean residential neighborhood" 
-          className="w-full h-full object-cover object-center"
-        />
+        <picture>
+          <source srcSet="/images/hercules-truck.webp" type="image/webp" />
+          <img
+            src="/images/hercules-truck.jpg"
+            alt="Hercules Junk Removal branded yellow truck with dumbbell logo parked in residential driveway"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+            width="1024"
+            height="1024"
+          />
+        </picture>
         {/* Soft gradient to fade the yellow into the image smoothly without a hard line */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#FFC107] via-[#FFC107]/80 to-transparent"></div>
         <div className="absolute inset-0 bg-black/20"></div> {/* Subtle darkening for contrast */}
