@@ -11,7 +11,7 @@ const BeforeAfter = () => {
       caption: 'Full double-car garage cleared in 2 hours',
       image: {
         alt: 'Side-by-side before and after of a garage cleanout in Kirkland, WA.',
-        src: 'https://images.unsplash.com/photo-1585421514738-01798e348b17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' // Placeholder for empty garage
+        src: 'https://horizons-cdn.hostinger.com/043d3248-867c-48dc-bfa5-01141b7ae321/d30a8382aa673de9d6936e5f2d18efff.webp'
       }
     },
     {
@@ -19,7 +19,7 @@ const BeforeAfter = () => {
       caption: 'Removed 2 tons of overgrown brush & waste',
       image: {
         alt: 'Side-by-side before and after of yard debris removal in Bothell, WA.',
-        src: 'https://images.unsplash.com/photo-1558904541-efa843a96f09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' // Placeholder for clean yard
+        src: 'https://horizons-cdn.hostinger.com/043d3248-867c-48dc-bfa5-01141b7ae321/4a4e4dd506c2ddcadb324f4c5f5d3b57.jpg'
       }
     }
   ];

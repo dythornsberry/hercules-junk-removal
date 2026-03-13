@@ -12,8 +12,8 @@ const DylanSection = () => {
             {/* Bold offset background */}
             <div className="absolute inset-0 bg-[#FFC107] rounded-3xl transform -rotate-3 translate-x-4 translate-y-4 opacity-100 group-hover:rotate-0 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500"></div>
             <img 
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-              alt="Owner of Hercules Junk Removal" 
+              src="https://horizons-cdn.hostinger.com/043d3248-867c-48dc-bfa5-01141b7ae321/d6619328f055d718b42d19fef5138ee5.jpg"
+              alt="Dylan in neon yellow beanie and black jacket inside junk removal truck"
               className="relative rounded-3xl object-cover w-full h-[400px] md:h-[500px] shadow-2xl border-4 border-black transition-all duration-500"
             />
           </div>
