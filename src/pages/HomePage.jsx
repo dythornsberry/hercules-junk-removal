@@ -4,9 +4,11 @@ import Header from '@/components/sections/Header.jsx';
 import Hero from '@/components/sections/Hero.jsx';
 import TrustBadgeStrip from '@/components/sections/TrustBadgeStrip.jsx';
 import HowItWorks from '@/components/sections/HowItWorks.jsx';
+import BeforeAfter from '@/components/sections/BeforeAfter.jsx';
 import HercJunkPricingSection from '@/components/sections/HercJunkPricingSection.jsx';
 import GoogleReviewsWidget from '@/components/sections/GoogleReviewsWidget.jsx';
 import ServiceAreaMap from '@/components/sections/ServiceAreaMap.jsx';
+import DylanSection from '@/components/sections/DylanSection.jsx';
 import FAQ from '@/components/sections/FAQ.jsx';
 import Cta from '@/components/sections/Cta.jsx';
 
@@ -72,19 +74,23 @@ const HomePage = () => {
       {/* 3. Value Proposition / How it Works */}
       <HowItWorks />
       
-      {/* 4. Transparent Pricing */}
+      {/* 4. Visual Proof of Work */}
+      <BeforeAfter />
+      
+      {/* 5. Transparent Pricing */}
       <HercJunkPricingSection />
 
-      {/* 5. Deeper Social Proof (Moved down after value & pricing are established) */}
+      {/* 6. Deeper Social Proof */}
       <GoogleReviewsWidget />
 
-      {/* 6. Service Area Qualification */}
+      {/* 7. Service Area Qualification & Local Connection */}
       <ServiceAreaMap />
+      <DylanSection />
       
-      {/* 7. Objection Handling */}
+      {/* 8. Objection Handling */}
       <FAQ />
       
-      {/* 8. Final Conversion */}
+      {/* 9. Final Conversion */}
       <Cta />
     </>
   );
