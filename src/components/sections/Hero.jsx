@@ -26,8 +26,8 @@ const Hero = () => {
           />
         </picture>
         {/* Soft gradient to fade the yellow into the image smoothly without a hard line */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFC107] via-[#FFC107]/80 to-transparent"></div>
-        <div className="absolute inset-0 bg-black/20"></div> {/* Subtle darkening for contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FFC107] via-[#FFC107]/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-black/10"></div> {/* Subtle darkening for contrast */}
       </div>
 
       <div className="container mx-auto px-4 relative z-10 pt-24 pb-20 lg:py-32">
