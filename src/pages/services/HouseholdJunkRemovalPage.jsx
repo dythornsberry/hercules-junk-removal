@@ -27,7 +27,7 @@ const HouseholdJunkRemovalPage = () => {
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "How much does junk removal cost?", "acceptedAnswer": { "@type": "Answer", "text": "Our pricing starts at $99 for a single item and is based on the volume your junk takes up in our truck. A full truck load is $729. We always confirm the price before we start loading." }},
+            { "@type": "Question", "name": "How much does junk removal cost?", "acceptedAnswer": { "@type": "Answer", "text": "Our pricing starts at $99 for a single item and is based on the volume your junk takes up in our truck. A full truck load is $649. We always confirm the price before we start loading." }},
             { "@type": "Question", "name": "Do you do whole house cleanouts?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We handle attic cleanouts, basement cleanouts, estate cleanouts, shed removal, and full property clearings. We can usually complete a whole house in one day." }},
             { "@type": "Question", "name": "What happens to my junk after pickup?", "acceptedAnswer": { "@type": "Answer", "text": "We donate usable items to local charities, recycle metals and wood, and dispose of the rest responsibly at licensed facilities." }}
           ]

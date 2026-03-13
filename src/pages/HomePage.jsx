@@ -18,7 +18,7 @@ const localBusinessSchema = {
   "description": "Fast, affordable junk removal in Kenmore, Bothell, Kirkland & Greater Seattle. Single items from $99. Same-day service available.",
   "url": "https://hercjunk.com",
   "telephone": "+14254063445",
-  "priceRange": "$99-$729",
+  "priceRange": "$99-$649",
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],

@@ -6,7 +6,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "How does pricing work?",
-      answer: "We price by how much space your stuff takes up in our truck. Prices range from $99 for a single item to $729 for a full truck. We confirm your exact price before we start."
+      answer: "We price by how much space your stuff takes up in our truck. Prices range from $99 for a single item to $649 for a full truck. We confirm your exact price before we start."
     },
     {
       question: "Do you charge extra for anything?",

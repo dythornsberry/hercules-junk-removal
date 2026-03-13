@@ -6,11 +6,11 @@ import TruckSpecsCard from '@/components/ui/TruckSpecsCard.jsx';
 const HercJunkPricingSection = () => {
   const tiers = [
     { size: "Minimum", price: "$99", fillPercentage: 10, desc: "Single item like a mattress or sofa." },
-    { size: "1/8 Truck", price: "$179", fillPercentage: 12.5, desc: "A few items or 5-8 bags of trash." },
-    { size: "1/4 Truck", price: "$279", fillPercentage: 25, desc: "Few small items or 10-15 bags of trash." },
-    { size: "1/2 Truck", price: "$479", fillPercentage: 50, desc: "Small room cleanout or multiple furniture pieces." },
-    { size: "3/4 Truck", price: "$639", fillPercentage: 75, desc: "Garage cleanout or yard debris." },
-    { size: "Full Truck", price: "$729", fillPercentage: 100, desc: "Best value for big projects or whole room cleanouts." },
+    { size: "1/8 Truck", price: "$149", fillPercentage: 12.5, desc: "A few items or 5-8 bags of trash." },
+    { size: "1/4 Truck", price: "$249", fillPercentage: 25, desc: "Few small items or 10-15 bags of trash." },
+    { size: "1/2 Truck", price: "$399", fillPercentage: 50, desc: "Small room cleanout or multiple furniture pieces." },
+    { size: "3/4 Truck", price: "$549", fillPercentage: 75, desc: "Garage cleanout or yard debris." },
+    { size: "Full Truck", price: "$649", fillPercentage: 100, desc: "Best value for big projects or whole room cleanouts." },
   ];
 
   return (

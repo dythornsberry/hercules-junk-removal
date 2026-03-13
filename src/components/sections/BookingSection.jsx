@@ -9,19 +9,17 @@ const BookingSection = () => {
 
   const quickPicks = [
     { title: "Minimum Load", price: "$99", desc: "A single item (mattress, TV, fridge) or a few bags of trash.", tag: "" },
-    { title: "1/2 Truck", price: "$479", desc: "A couple rooms of furniture + misc boxes and items.", tag: "MOST POPULAR" },
-    { title: "Full Truck", price: "$729", desc: "Packed garage, full house cleanout, or large moving piles.", tag: "BEST VALUE" },
+    { title: "1/2 Truck", price: "$399", desc: "A couple rooms of furniture + misc boxes and items.", tag: "MOST POPULAR" },
+    { title: "Full Truck", price: "$649", desc: "Packed garage, full house cleanout, or large moving piles.", tag: "BEST VALUE" },
   ];
 
   const allSizes = [
     { title: "Minimum Load", price: "$99", desc: "Single item or few bags", tag: "" },
-    { title: "1/8 Truck", price: "$179", desc: "Couch OR chair + small stack of boxes", tag: "" },
-    { title: "1/4 Truck", price: "$279", desc: "Bed frame + mattress + dresser", tag: "" },
-    { title: "3/8 Truck", price: "$379", desc: "Bedroom set + couch + some boxes", tag: "" },
-    { title: "1/2 Truck", price: "$479", desc: "Couple rooms of furniture + misc items", tag: "MOST POPULAR" },
-    { title: "5/8 Truck", price: "$559", desc: "Living room + bedroom set + boxes/clutter", tag: "" },
-    { title: "3/4 Truck", price: "$639", desc: "Several rooms of furniture + bags (bigger cleanout)", tag: "" },
-    { title: "Full Truck", price: "$729", desc: "Packed garage or large cleanout", tag: "BEST VALUE" },
+    { title: "1/8 Truck", price: "$149", desc: "Couch OR chair + small stack of boxes", tag: "" },
+    { title: "1/4 Truck", price: "$249", desc: "Bed frame + mattress + dresser", tag: "" },
+    { title: "1/2 Truck", price: "$399", desc: "Couple rooms of furniture + misc items", tag: "MOST POPULAR" },
+    { title: "3/4 Truck", price: "$549", desc: "Several rooms of furniture + bags (bigger cleanout)", tag: "" },
+    { title: "Full Truck", price: "$649", desc: "Packed garage or large cleanout", tag: "BEST VALUE" },
   ];
 
   return (
