@@ -1,15 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <rect width="100" height="100" rx="16" fill="#FFC107"/>
+  <!-- Matches Lucide Dumbbell icon style -->
   <g transform="translate(50,50) rotate(-30) translate(-50,-50)">
     <!-- Center bar -->
-    <rect x="25" y="46" width="50" height="8" rx="4" fill="#000"/>
-    <!-- Left inner plate -->
-    <rect x="18" y="36" width="12" height="28" rx="3" fill="#000"/>
-    <!-- Left outer plate -->
-    <rect x="10" y="40" width="10" height="20" rx="3" fill="#000"/>
-    <!-- Right inner plate -->
-    <rect x="70" y="36" width="12" height="28" rx="3" fill="#000"/>
-    <!-- Right outer plate -->
-    <rect x="80" y="40" width="10" height="20" rx="3" fill="#000"/>
+    <rect x="30" y="46" width="40" height="8" rx="4" fill="#000"/>
+    <!-- Left inner weight -->
+    <rect x="20" y="34" width="10" height="32" rx="4" fill="#000"/>
+    <!-- Left outer weight -->
+    <rect x="10" y="38" width="10" height="24" rx="4" fill="#000"/>
+    <!-- Left end cap -->
+    <rect x="4" y="44" width="6" height="12" rx="3" fill="#000"/>
+    <!-- Right inner weight -->
+    <rect x="70" y="34" width="10" height="32" rx="4" fill="#000"/>
+    <!-- Right outer weight -->
+    <rect x="80" y="38" width="10" height="24" rx="4" fill="#000"/>
+    <!-- Right end cap -->
+    <rect x="90" y="44" width="6" height="12" rx="3" fill="#000"/>
   </g>
 </svg>
