@@ -10,6 +10,7 @@ import GoogleReviewsWidget from '@/components/sections/GoogleReviewsWidget.jsx';
 import ServiceAreaMap from '@/components/sections/ServiceAreaMap.jsx';
 import DylanSection from '@/components/sections/DylanSection.jsx';
 import FAQ from '@/components/sections/FAQ.jsx';
+import CallbackSection from '@/components/sections/CallbackSection.jsx';
 import Cta from '@/components/sections/Cta.jsx';
 
 const localBusinessSchema = {
@@ -89,6 +90,15 @@ const HomePage = () => {
       
       {/* 8. Objection Handling */}
       <FAQ />
+
+      {/* 8.5 Secondary Lead Capture */}
+      <CallbackSection
+        compact
+        sectionId="callback-form-homepage"
+        sourceLabel="Homepage"
+        heading="Want us to reach out first?"
+        description="If you are not ready to book a slot yet, send your number and we will text or call you back."
+      />
       
       {/* 9. Final Conversion */}
       <Cta />

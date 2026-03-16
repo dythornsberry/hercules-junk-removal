@@ -1,21 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dumbbell } from 'lucide-react';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
+import {
+  CALENDLY_BOOKING_URL,
+  handleCalendlyClick,
+} from '@/lib/calendlyUtils.js';
 
 const Footer = () => {
   const businessPhoneNumber = '4254063445';
   const businessPhoneNumberFormatted = '(425) 406-3445';
-
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <footer className="bg-black text-white border-t border-gray-800">
@@ -36,7 +29,7 @@ const Footer = () => {
              <ul className="space-y-3">
                <li><Link to="/" className="text-sm text-gray-300 hover:text-white">Home</Link></li>
                <li><Link to="/about" className="text-sm text-gray-300 hover:text-white">About</Link></li>
-               <li><a href="/#pricing" onClick={e => scrollToSection(e, 'pricing')} className="text-sm text-gray-300 hover:text-white">Pricing</a></li>
+               <li><Link to="/pricing" className="text-sm text-gray-300 hover:text-white">Pricing</Link></li>
                <li><Link to="/faq" className="text-sm text-gray-300 hover:text-white">FAQ</Link></li>
              </ul>
           </div>
@@ -73,9 +66,9 @@ const Footer = () => {
                  </a>
                </li>
                 <li>
-                 <button onClick={() => openCalendlyPopup()} className="text-sm text-yellow-400 font-bold hover:text-yellow-300">
+                 <a href={CALENDLY_BOOKING_URL} onClick={handleCalendlyClick} className="text-sm text-yellow-400 font-bold hover:text-yellow-300">
                    Book Online
-                 </button>
+                 </a>
                </li>
                <li className="text-sm text-gray-400 pt-2">
                  Hours: Mon-Sun: 8am - 8pm

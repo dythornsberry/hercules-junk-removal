@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Phone, Calendar, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
+import CallbackSection from '@/components/sections/CallbackSection.jsx';
+import {
+  CALENDLY_BOOKING_URL,
+  handleCalendlyClick,
+} from '@/lib/calendlyUtils.js';
 
 const QuotePage = () => {
   const businessPhoneNumber = '4254063445';
   const businessPhoneNumberFormatted = '(425) 406-3445';
-
-  useEffect(() => {
-    openCalendlyPopup();
-  }, []);
 
   return (
     <>
@@ -29,27 +29,46 @@ const QuotePage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
+              asChild
               size="lg"
               className="bg-yellow-400 text-black hover:bg-yellow-300 text-xl font-bold py-6 px-10 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
-              onClick={() => openCalendlyPopup()}
             >
-              <Calendar className="mr-3 h-6 w-6" />
-              Book Online
-              <ArrowRight className="ml-3 h-5 w-5" />
+              <a href={CALENDLY_BOOKING_URL} onClick={handleCalendlyClick}>
+                <Calendar className="mr-3 h-6 w-6" />
+                Book Online
+                <ArrowRight className="ml-3 h-5 w-5" />
+              </a>
             </Button>
-            <a href={`tel:${businessPhoneNumber}`}>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-black text-xl font-bold py-6 px-10 rounded-xl w-full"
-              >
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="!border-2 !border-white !text-white !bg-black/30 hover:!bg-white hover:!text-black text-xl font-bold py-6 px-10 rounded-xl w-full"
+            >
+              <a href={`tel:${businessPhoneNumber}`}>
                 <Phone className="mr-3 h-6 w-6" />
                 {businessPhoneNumberFormatted}
-              </Button>
-            </a>
+              </a>
+            </Button>
           </div>
+          <a
+            href="#callback-form-quote"
+            className="inline-flex mt-5 text-sm font-semibold text-yellow-400 hover:text-yellow-300 underline underline-offset-4"
+          >
+            Need help first? Jump to the callback form.
+          </a>
+          <p className="text-sm text-gray-500 mt-6">
+            Same-day and next-day pickups available. No credit card needed to book.
+          </p>
         </div>
       </div>
+      <CallbackSection
+        compact
+        sectionId="callback-form-quote"
+        sourceLabel="Quote Page"
+        heading="Need help before you book?"
+        description="Send your number and we will reach out to answer questions or help you choose the right pickup."
+      />
     </>
   );
 };

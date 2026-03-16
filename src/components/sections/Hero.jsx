@@ -62,6 +62,16 @@ const Hero = () => {
           >
             Fast, eco-friendly junk removal. Free estimates. Single items start at <span className="text-black font-black border-b-4 border-black inline-block leading-none pb-1">$99</span>.
           </motion.p>
+
+          <motion.a
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+            href="#callback-form-homepage"
+            className="inline-flex mb-5 items-center rounded-full border border-black/15 bg-white/35 px-4 py-2 text-sm font-bold text-black shadow-sm transition-colors duration-300 hover:bg-white/55"
+          >
+            Not ready to book? Request a callback instead.
+          </motion.a>
           
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

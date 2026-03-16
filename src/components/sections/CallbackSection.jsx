@@ -1,172 +1,266 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button.jsx';
 import { Input } from '@/components/ui/input.jsx';
 import { Checkbox } from '@/components/ui/checkbox.jsx';
-import { Loader2, CheckCircle2 } from 'lucide-react';
-import { supabase } from '@/lib/customSupabaseClient.js';
-import { useToast } from '@/components/ui/use-toast.js';
+import { Loader2, CheckCircle2, Phone } from 'lucide-react';
 
-const CallbackSection = () => {
-  const { toast } = useToast();
+const DEFAULT_PHONE = '4254063445';
+const DEFAULT_PHONE_FORMATTED = '(425) 406-3445';
+
+const validateEmail = (email) => {
+  if (!email) return true;
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+};
+
+const CallbackSection = ({
+  sourceLabel = 'Website',
+  heading = 'Prefer a callback instead?',
+  description = 'Leave your number and we will text or call you back to help with pricing or booking.',
+  compact = false,
+  sectionId,
+}) => {
+  const fieldIdBase = sourceLabel.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
   const [smsOptIn, setSmsOptIn] = useState(true);
   const [phoneError, setPhoneError] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+
     if (name === 'phone') {
       const digits = value.replace(/\D/g, '');
-      if (digits.length > 0 && digits.length !== 10) setPhoneError('Phone must be 10 digits.');
-      else setPhoneError('');
+      setPhoneError(digits.length > 0 && digits.length !== 10 ? 'Phone must be 10 digits.' : '');
+    }
+
+    if (name === 'email') {
+      setEmailError(validateEmail(value) ? '' : 'Please enter a valid email address.');
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.phone.replace(/\D/g, '').length !== 10) {
+
+    const normalizedPhone = formData.phone.replace(/\D/g, '');
+    let hasError = false;
+
+    if (normalizedPhone.length !== 10) {
       setPhoneError('Phone must be 10 digits.');
-      return;
+      hasError = true;
     }
-    if (phoneError) return;
+
+    if (!validateEmail(formData.email)) {
+      setEmailError('Please enter a valid email address.');
+      hasError = true;
+    }
+
+    if (hasError) return;
 
     setIsLoading(true);
     setSubmissionStatus(null);
 
-    try {
-      const { error } = await supabase.from('quotes').insert([
-        { 
-          name: formData.name, 
-          phone: formData.phone,
-          email: formData.email,
-          description: 'Callback Request', 
-          sms_opt_in: smsOptIn, 
-          location: 'Website',
-          created_at: new Date().toISOString() 
-        }
-      ]);
-      
-      if (error) throw new Error('Failed to send data.');
-      
-      // Also try to hit the zapier webhook via edge function if it was used previously
-      await supabase.functions.invoke('forward-to-zapier', {
-        body: { ...formData, description: 'Callback Request', sms_opt_in: smsOptIn, created_at: new Date().toISOString() },
-      }).catch(e => console.error("Zapier forward failed", e));
+    const submissionTime = new Date().toISOString();
+    const quoteData = {
+      name: formData.name.trim(),
+      phone: normalizedPhone,
+      email: formData.email.trim(),
+      location: sourceLabel,
+      description: `Callback request from ${sourceLabel}`,
+      sms_opt_in: smsOptIn,
+      created_at: submissionTime,
+    };
 
-      // Send email notification independently
-      supabase.functions.invoke('send-form-notification-email', {
-        body: {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          location: 'Callback Request',
-          description: 'User requested a callback ASAP',
-          submissionTime: new Date().toISOString()
-        }
-      }).catch(err => console.error("Failed to send email notification:", err));
+    try {
+      const res = await fetch('/api/callback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(quoteData),
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to send callback request.');
+      }
 
       setSubmissionStatus('success');
-      setFormData({ name: '', phone: '', email: ''});
-      toast({
-        title: "Callback Requested",
-        description: "We'll be in touch shortly!",
-      });
+      setFormData({ name: '', phone: '', email: '' });
+      setSmsOptIn(true);
+      window.dispatchEvent(new CustomEvent('form_submitted'));
     } catch (error) {
-      console.error(error);
+      console.error('Error submitting callback form:', error);
       setSubmissionStatus('error');
-      toast({
-        title: "Request Failed",
-        description: "Please try again or call us directly.",
-        variant: "destructive"
-      });
     } finally {
       setIsLoading(false);
     }
   };
 
+  const wrapperClasses = compact ? 'py-10 bg-[#111111]' : 'py-14 md:py-16 bg-slate-900';
+
   return (
-    <section className="bg-slate-900 py-16 md:py-20 relative overflow-hidden">
+    <section id={sectionId} className={`${wrapperClasses} scroll-mt-28`}>
       <div className="container mx-auto px-4">
-        <div className="max-w-xl mx-auto">
-          <motion.div 
+        <div className="max-w-2xl mx-auto">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-10"
+            className="text-center mb-5"
           >
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Prefer a callback?</h2>
-            <p className="text-gray-400 text-lg">Leave your info and we'll get back to you within the hour.</p>
+            <p className="inline-flex items-center gap-2 rounded-full border border-[#FFC107]/30 bg-[#FFC107]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#FFC107]">
+              Quick Contact
+            </p>
+            <h2 className="mt-4 text-2xl md:text-3xl font-black text-white">{heading}</h2>
+            <p className="mt-3 text-sm md:text-base text-gray-400 max-w-xl mx-auto">{description}</p>
           </motion.div>
 
-          <div className="bg-[#1A1A1A] p-6 sm:p-8 rounded-2xl border border-gray-800 shadow-2xl">
-            {submissionStatus === 'success' ? (
-              <div className="text-center py-10">
-                <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-white mb-2">Got it!</h3>
-                <p className="text-gray-400 mb-6">We'll text or call you shortly.</p>
-                <Button 
-                  onClick={() => setSubmissionStatus(null)}
-                  className="bg-white/10 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95"
-                >
-                  Send another request
-                </Button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <Input
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  placeholder="Your Name"
-                  required
-                  className="bg-black/50 border-gray-700 text-white placeholder:text-gray-500 h-14 rounded-xl px-5 focus-visible:ring-[#FFC107] transition-all duration-300"
-                />
-                <Input
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="Your Email (Optional)"
-                  className="bg-black/50 border-gray-700 text-white placeholder:text-gray-500 h-14 rounded-xl px-5 focus-visible:ring-[#FFC107] transition-all duration-300"
-                />
+          <div className="bg-[#1A1A1A] rounded-2xl border border-gray-800 shadow-2xl overflow-hidden">
+            <div className="border-b border-gray-800 px-5 py-5 sm:px-6">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <Input
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder="Phone Number"
-                    required
-                    className={`bg-black/50 border-gray-700 text-white placeholder:text-gray-500 h-14 rounded-xl px-5 focus-visible:ring-[#FFC107] transition-all duration-300 ${phoneError ? 'border-red-500' : ''}`}
-                  />
-                  {phoneError && <p className="text-red-500 text-xs mt-1 px-1">{phoneError}</p>}
+                  <h3 className="text-lg sm:text-xl font-bold text-white">Want to talk first?</h3>
+                  <p className="mt-1 text-sm text-gray-400">
+                    Drop your info and we'll reach out to answer any questions before you book.
+                  </p>
                 </div>
-                <div className="flex items-start gap-3 p-3 bg-black/30 rounded-lg border border-white/5">
-                  <Checkbox 
-                    id="callbackSmsOptIn" 
-                    checked={smsOptIn} 
-                    onCheckedChange={setSmsOptIn}
-                    className="mt-0.5 data-[state=checked]:bg-[#FFC107] data-[state=checked]:text-black border-gray-600"
-                  />
-                  <label htmlFor="callbackSmsOptIn" className="text-xs text-gray-400 leading-tight cursor-pointer">
-                    I agree to be contacted about my quote (Call or text)
-                  </label>
+                <p className="text-xs text-gray-500">
+                  Prefer to call instead? <a href={`tel:${DEFAULT_PHONE}`} className="text-[#FFC107] hover:underline">Call {DEFAULT_PHONE_FORMATTED}</a>
+                </p>
+              </div>
+            </div>
+
+            <div className="px-5 py-5 sm:px-6 sm:py-6">
+              {submissionStatus === 'success' ? (
+                <div className="text-center py-2">
+                  <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-2">Request received</h3>
+                  <p className="text-gray-400 mb-6">We will text or call you shortly during business hours.</p>
+                  <Button
+                    type="button"
+                    onClick={() => setSubmissionStatus(null)}
+                    className="bg-white/10 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95"
+                  >
+                    Send another request
+                  </Button>
                 </div>
-                {submissionStatus === 'error' && (
-                  <p className="text-red-500 text-sm text-center">There was an error submitting your request. Please try again or call us.</p>
-                )}
-                <Button 
-                  type="submit" 
-                  disabled={isLoading} 
-                  className="w-full bg-[#FFC107] text-black hover:bg-[#e6ae06] h-14 rounded-xl font-bold text-lg mt-2 shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-xl"
-                >
-                  {isLoading ? <Loader2 className="w-6 h-6 animate-spin" /> : 'Get a Free Quote'}
-                </Button>
-              </form>
-            )}
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="space-y-1.5">
+                      <label htmlFor={`callback-name-${fieldIdBase}`} className="text-sm font-semibold text-white">
+                        Name
+                      </label>
+                      <Input
+                        id={`callback-name-${fieldIdBase}`}
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Your name"
+                        required
+                        autoComplete="name"
+                        className="bg-black/50 border-gray-700 text-white placeholder:text-gray-500 h-12 rounded-xl px-4 focus-visible:ring-[#FFC107]"
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label htmlFor={`callback-email-${fieldIdBase}`} className="text-sm font-semibold text-white">
+                        Email <span className="text-gray-500 font-normal">(Optional)</span>
+                      </label>
+                      <Input
+                        id={`callback-email-${fieldIdBase}`}
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="you@example.com"
+                        autoComplete="email"
+                        className={`bg-black/50 border-gray-700 text-white placeholder:text-gray-500 h-12 rounded-xl px-4 focus-visible:ring-[#FFC107] ${
+                          emailError ? 'border-red-500' : ''
+                        }`}
+                      />
+                      {emailError && <p className="text-red-500 text-xs">{emailError}</p>}
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label htmlFor={`callback-phone-${fieldIdBase}`} className="text-sm font-semibold text-white">
+                      Phone number
+                    </label>
+                    <Input
+                      id={`callback-phone-${fieldIdBase}`}
+                      name="phone"
+                      type="tel"
+                      inputMode="tel"
+                      autoComplete="tel"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="(425) 555-0123"
+                      required
+                      className={`bg-black/50 border-gray-700 text-white placeholder:text-gray-500 h-12 rounded-xl px-4 focus-visible:ring-[#FFC107] ${
+                        phoneError ? 'border-red-500' : ''
+                      }`}
+                    />
+                    {phoneError && <p className="text-red-500 text-xs">{phoneError}</p>}
+                  </div>
+
+                  <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-black/30 p-3">
+                    <Checkbox
+                      id={`callback-sms-${fieldIdBase}`}
+                      checked={smsOptIn}
+                      onCheckedChange={(checked) => setSmsOptIn(Boolean(checked))}
+                      className="mt-0.5 border-gray-600 data-[state=checked]:bg-[#FFC107] data-[state=checked]:text-black"
+                    />
+                    <label htmlFor={`callback-sms-${fieldIdBase}`} className="text-xs leading-relaxed text-gray-400 cursor-pointer">
+                      I agree to be contacted about my quote by call or text. See our{' '}
+                      <Link to="/privacy-policy" className="text-[#FFC107] hover:underline">
+                        privacy policy
+                      </Link>
+                      .
+                    </label>
+                  </div>
+
+                  {submissionStatus === 'error' && (
+                    <p className="text-sm text-red-400">
+                      We could not submit your request right now. Please try again or call us directly.
+                    </p>
+                  )}
+
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                    <Button
+                      type="submit"
+                      disabled={isLoading}
+                      className="w-full sm:flex-1 bg-[#FFC107] text-black hover:bg-[#e6ae06] h-12 rounded-xl font-bold shadow-lg transition-all duration-300 hover:scale-[1.01] active:scale-95"
+                    >
+                      {isLoading ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        'Request a Callback'
+                      )}
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="w-full sm:w-auto border-gray-700 text-white hover:bg-white/10"
+                    >
+                      <a href={`tel:${DEFAULT_PHONE}`}>
+                        <Phone className="mr-2 h-4 w-4" />
+                        Call {DEFAULT_PHONE_FORMATTED}
+                      </a>
+                    </Button>
+                  </div>
+
+                  <p className="text-xs text-gray-500">
+                    We typically respond within a few hours during business hours.
+                  </p>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -27,10 +27,16 @@ const PricingTable = ({ tiers }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
                 viewport={{ once: true }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  openCalendlyPopup();
+                onClick={() => openCalendlyPopup()}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openCalendlyPopup();
+                  }
                 }}
+                role="button"
+                tabIndex={0}
+                aria-label={`Book a ${tier.size.toLowerCase()} pickup starting at ${tier.price}`}
                 className={`cursor-pointer transition-colors duration-200 hover:bg-[#FFF9F0] border-b border-gray-100 last:border-0 ${
                   index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
                 }`}
