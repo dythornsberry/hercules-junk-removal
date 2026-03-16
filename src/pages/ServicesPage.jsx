@@ -72,8 +72,8 @@ const ServicesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Junk Removal Services in Kenmore & Greater Seattle | Hercules Junk Removal</title>
-        <meta name="description" content="Furniture removal, garage cleanouts, appliance disposal, construction debris hauling & more in Kenmore, Bothell, Kirkland & Greater Seattle. Same-day service from $99." />
+        <title>Junk Removal Services | Hercules Junk Removal</title>
+        <meta name="description" content="Furniture removal, garage cleanouts, appliance disposal, and construction debris hauling in Greater Seattle. Same-day service from $99." />
         <link rel="canonical" href="https://hercjunk.com/services" />
       </Helmet>
       <div className="flex-grow bg-yellow-400 text-black">

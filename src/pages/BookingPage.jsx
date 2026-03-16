@@ -10,6 +10,7 @@ const BookingPage = () => {
       <Helmet>
         <title>Book Junk Removal | Hercules Junk Removal</title>
         <meta name="description" content="Book your junk removal service online. Choose your load size and schedule a pickup time that works for you." />
+        <link rel="canonical" href="https://hercjunk.com/booking" />
       </Helmet>
       
       <div className="min-h-screen bg-black pt-12 pb-24">

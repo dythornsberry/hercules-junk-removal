@@ -6,6 +6,7 @@ import Reviews from '@/components/sections/Reviews';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
+import ServingAreasSection from '@/components/sections/ServingAreasSection';
 
 const YardWasteRemovalPage = () => {
   return (
@@ -14,6 +15,23 @@ const YardWasteRemovalPage = () => {
         <title>Yard Waste Removal Kenmore & Bothell | Green Waste Hauling</title>
         <meta name="description" content="Fast yard waste removal in Kenmore, Bothell, and Kirkland. We haul branches, brush, stumps, leaves, and storm debris. Same-day service available." />
         <link rel="canonical" href="https://hercjunk.com/yard-waste-removal" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Yard Waste Removal Kenmore & Bothell | Green Waste Hauling" />
+        <meta property="og:description" content="Fast yard waste removal in Kenmore, Bothell, and Kirkland. We haul branches, brush, stumps, leaves, and storm debris. Same-day service available." />
+        <meta property="og:url" content="https://hercjunk.com/yard-waste-removal" />
+        <meta property="og:image" content="https://hercjunk.com/images/hercules-truck.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Yard Waste Removal Kenmore & Bothell | Green Waste Hauling" />
+        <meta name="twitter:description" content="Fast yard waste removal in Kenmore, Bothell, and Kirkland. We haul branches, brush, stumps, leaves, and storm debris. Same-day service available." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hercjunk.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://hercjunk.com/services" },
+            { "@type": "ListItem", "position": 3, "name": "Yard Waste Removal", "item": "https://hercjunk.com/yard-waste-removal" }
+          ]
+        })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
@@ -110,6 +128,8 @@ const YardWasteRemovalPage = () => {
            </div>
         </div>
       </section>
+
+      <ServingAreasSection />
 
       <Reviews />
     </>

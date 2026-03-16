@@ -39,6 +39,7 @@ const DebugPage = () => {
       <Helmet>
         <title>Debug Logs - Hercules Junk Removal</title>
         <meta name="description" content="Debug logs for API integrations." />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="min-h-screen bg-gray-900 text-white flex flex-col">
         <Header />

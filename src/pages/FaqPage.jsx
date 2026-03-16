@@ -56,7 +56,7 @@ const FaqPage = () => {
   return (
     <>
        <Helmet>
-        <title>Junk Removal FAQ | Hercules Junk Removal | Kenmore & Greater Seattle</title>
+        <title>Junk Removal FAQ | Hercules Junk Removal</title>
         <meta name="description" content="Get answers to your junk removal questions. Learn what we take, pricing, scheduling & payment options. Serving Kenmore, Bothell, Kirkland & Greater Seattle." />
         <link rel="canonical" href="https://hercjunk.com/faq" />
          <script type="application/ld+json">

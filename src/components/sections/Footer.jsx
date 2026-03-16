@@ -71,7 +71,7 @@ const Footer = () => {
                  </a>
                </li>
                <li className="text-sm text-gray-400 pt-2">
-                 Hours: Mon-Sun: 8am - 8pm
+                 Hours: Open 24/7
                </li>
              </ul>
           </div>

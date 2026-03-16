@@ -18,6 +18,7 @@ const ServiceAreasPage = () => {
       <Helmet>
         <title>Service Areas - Hercules Junk Removal | Greater Seattle</title>
         <meta name="description" content="We provide junk removal services across the Greater Seattle Area, including Kenmore, Bothell, Kirkland, Shoreline, Lynnwood, and many more cities." />
+        <link rel="canonical" href="https://hercjunk.com/service-areas" />
       </Helmet>
       <div className="flex-grow bg-yellow-400 text-black">
         <main className="container mx-auto px-4 py-16">

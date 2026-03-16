@@ -6,14 +6,32 @@ import Reviews from '@/components/sections/Reviews';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
+import ServingAreasSection from '@/components/sections/ServingAreasSection';
 
 const FurnitureRemovalPage = () => {
   return (
     <>
       <Helmet>
-        <title>Furniture Removal Kenmore & Bothell | Mattress & Couch Disposal</title>
+        <title>Furniture Removal | Hercules Junk Removal</title>
         <meta name="description" content="Fast, affordable furniture removal in Kenmore, Bothell, and Kirkland. We haul away old couches, mattresses, tables, and more. We donate what we can!" />
         <link rel="canonical" href="https://hercjunk.com/furniture-removal" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Furniture Removal | Hercules Junk Removal" />
+        <meta property="og:description" content="Fast, affordable furniture removal in Kenmore, Bothell, and Kirkland. We haul away old couches, mattresses, tables, and more. We donate what we can!" />
+        <meta property="og:url" content="https://hercjunk.com/furniture-removal" />
+        <meta property="og:image" content="https://hercjunk.com/images/hercules-truck.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Furniture Removal | Hercules Junk Removal" />
+        <meta name="twitter:description" content="Fast, affordable furniture removal in Kenmore, Bothell, and Kirkland. We haul away old couches, mattresses, tables, and more. We donate what we can!" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hercjunk.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://hercjunk.com/services" },
+            { "@type": "ListItem", "position": 3, "name": "Furniture Removal", "item": "https://hercjunk.com/furniture-removal" }
+          ]
+        })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
@@ -110,6 +128,8 @@ const FurnitureRemovalPage = () => {
            </div>
         </div>
       </section>
+
+      <ServingAreasSection />
 
       <Reviews />
     </>

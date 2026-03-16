@@ -7,4 +7,4 @@ Disallow: /debug
 Disallow: /test-email
 Disallow: /login
 
-Sitemap: https://herculesjunkremoval.com/sitemap.xml
+Sitemap: https://hercjunk.com/sitemap.xml

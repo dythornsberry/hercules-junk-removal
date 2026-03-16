@@ -35,6 +35,7 @@ const LoginPage = () => {
     <>
       <Helmet>
         <title>Admin Login - Hercules Junk Removal</title>
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
         <motion.div

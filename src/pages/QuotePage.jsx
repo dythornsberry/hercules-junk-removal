@@ -15,7 +15,7 @@ const QuotePage = () => {
   return (
     <>
       <Helmet>
-        <title>Book Junk Removal | Hercules Junk Removal | Kenmore & Greater Seattle</title>
+        <title>Book Junk Removal | Hercules Junk Removal</title>
         <meta name="description" content="Book your junk removal pickup online in 60 seconds. Same-day and next-day service available in Kenmore, Bothell, Kirkland & Greater Seattle." />
         <link rel="canonical" href="https://hercjunk.com/quote" />
       </Helmet>

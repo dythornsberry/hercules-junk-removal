@@ -6,14 +6,32 @@ import Reviews from '@/components/sections/Reviews';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
+import ServingAreasSection from '@/components/sections/ServingAreasSection';
 
 const ConstructionDebrisRemovalPage = () => {
   return (
     <>
       <Helmet>
-        <title>Construction Debris Removal Kenmore & Bothell | Job Site Cleanup</title>
+        <title>Construction Debris Removal | Hercules Junk</title>
         <meta name="description" content="Fast construction debris removal for contractors and homeowners in Kenmore, WA. We haul drywall, wood, tile, flooring, and renovation waste." />
         <link rel="canonical" href="https://hercjunk.com/construction-debris-removal" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Construction Debris Removal | Hercules Junk" />
+        <meta property="og:description" content="Fast construction debris removal for contractors and homeowners in Kenmore, WA. We haul drywall, wood, tile, flooring, and renovation waste." />
+        <meta property="og:url" content="https://hercjunk.com/construction-debris-removal" />
+        <meta property="og:image" content="https://hercjunk.com/images/hercules-truck.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Construction Debris Removal | Hercules Junk" />
+        <meta name="twitter:description" content="Fast construction debris removal for contractors and homeowners in Kenmore, WA. We haul drywall, wood, tile, flooring, and renovation waste." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hercjunk.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://hercjunk.com/services" },
+            { "@type": "ListItem", "position": 3, "name": "Construction Debris Removal", "item": "https://hercjunk.com/construction-debris-removal" }
+          ]
+        })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
@@ -110,6 +128,8 @@ const ConstructionDebrisRemovalPage = () => {
            </div>
         </div>
       </section>
+
+      <ServingAreasSection />
 
       <Reviews />
     </>

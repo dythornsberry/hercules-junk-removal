@@ -6,6 +6,7 @@ import Reviews from '@/components/sections/Reviews';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
+import ServingAreasSection from '@/components/sections/ServingAreasSection';
 
 const GarageCleanoutsPage = () => {
   return (
@@ -14,6 +15,23 @@ const GarageCleanoutsPage = () => {
         <title>Garage Cleanouts Kenmore & Kirkland | Garage Junk Removal</title>
         <meta name="description" content="Reclaim your parking space! Professional garage cleanout services in Kenmore, WA. We sort, load, haul, and sweep up afterwards. Local & Insured." />
         <link rel="canonical" href="https://hercjunk.com/garage-cleanouts" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Garage Cleanouts Kenmore & Kirkland | Garage Junk Removal" />
+        <meta property="og:description" content="Reclaim your parking space! Professional garage cleanout services in Kenmore, WA. We sort, load, haul, and sweep up afterwards. Local & Insured." />
+        <meta property="og:url" content="https://hercjunk.com/garage-cleanouts" />
+        <meta property="og:image" content="https://hercjunk.com/images/hercules-truck.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Garage Cleanouts Kenmore & Kirkland | Garage Junk Removal" />
+        <meta name="twitter:description" content="Reclaim your parking space! Professional garage cleanout services in Kenmore, WA. We sort, load, haul, and sweep up afterwards. Local & Insured." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hercjunk.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://hercjunk.com/services" },
+            { "@type": "ListItem", "position": 3, "name": "Garage Cleanouts", "item": "https://hercjunk.com/garage-cleanouts" }
+          ]
+        })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
@@ -108,6 +126,8 @@ const GarageCleanoutsPage = () => {
            </div>
         </div>
       </section>
+
+      <ServingAreasSection />
 
       <Reviews />
     </>

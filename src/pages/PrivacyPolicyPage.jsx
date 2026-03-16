@@ -7,6 +7,7 @@ const PrivacyPolicyPage = () => {
       <Helmet>
         <title>Privacy Policy | Hercules Junk Removal</title>
         <meta name="description" content="Our privacy policy explains how Hercules Junk Removal collects and uses your data for quotes and services." />
+        <link rel="canonical" href="https://hercjunk.com/privacy-policy" />
       </Helmet>
       <div className="flex-grow bg-gray-50 text-black">
         <main className="container mx-auto px-4 py-16 sm:py-20 max-w-3xl">

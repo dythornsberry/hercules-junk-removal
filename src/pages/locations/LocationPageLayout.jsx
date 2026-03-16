@@ -24,6 +24,34 @@ const LocationPageLayout = ({
   const businessPhoneNumberFormatted = '(425) 406-3445';
   const canonicalUrl = `https://hercjunk.com/${slug}`;
 
+  const ogImageUrl = 'https://hercjunk.com/images/hercules-truck.jpg';
+  const pageTitle = h1;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://hercjunk.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": "https://hercjunk.com/service-areas"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": `Junk Removal ${city}`,
+        "item": canonicalUrl
+      }
+    ]
+  };
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -61,10 +89,19 @@ const LocationPageLayout = ({
   return (
     <>
       <Helmet>
-        <title>{h1}</title>
+        <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={metaDescription} />
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
       <div className="flex-grow bg-white text-black">
         <main>

@@ -85,6 +85,7 @@ const AdminPage = () => {
       <Helmet>
         <title>Admin Dashboard - Hercules Junk Removal</title>
         <meta name="description" content="View all incoming quote requests." />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="min-h-screen bg-gray-900 text-white p-4 sm:p-6 lg:p-8">
         <div className="max-w-7xl mx-auto">

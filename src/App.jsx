@@ -34,6 +34,12 @@ const JunkRemovalLakeForestParkPage = lazy(() => import('@/pages/locations/JunkR
 const JunkRemovalMountlakeTerracePage = lazy(() => import('@/pages/locations/JunkRemovalMountlakeTerracePage.jsx'));
 const JunkRemovalLynnwoodPage = lazy(() => import('@/pages/locations/JunkRemovalLynnwoodPage.jsx'));
 const JunkRemovalShorelinePage = lazy(() => import('@/pages/locations/JunkRemovalShorelinePage.jsx'));
+const JunkRemovalSeattlePage = lazy(() => import('@/pages/locations/JunkRemovalSeattlePage.jsx'));
+const JunkRemovalBellevuePage = lazy(() => import('@/pages/locations/JunkRemovalBellevuePage.jsx'));
+const JunkRemovalRedmondPage = lazy(() => import('@/pages/locations/JunkRemovalRedmondPage.jsx'));
+const JunkRemovalSammamishPage = lazy(() => import('@/pages/locations/JunkRemovalSammamishPage.jsx'));
+const JunkRemovalEdmondsPage = lazy(() => import('@/pages/locations/JunkRemovalEdmondsPage.jsx'));
+const NotFoundPage = lazy(() => import('@/pages/NotFoundPage.jsx'));
 
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = sessionStorage.getItem('hercules-auth') === 'true';
@@ -78,32 +84,40 @@ function App() {
               <Route path="/junk-removal-lynnwood" element={<JunkRemovalLynnwoodPage />} />
               
               <Route path="/junk-removal-shoreline" element={<JunkRemovalShorelinePage />} />
+              <Route path="/junk-removal-seattle" element={<JunkRemovalSeattlePage />} />
+              <Route path="/junk-removal-bellevue" element={<JunkRemovalBellevuePage />} />
+              <Route path="/junk-removal-redmond" element={<JunkRemovalRedmondPage />} />
+              <Route path="/junk-removal-sammamish" element={<JunkRemovalSammamishPage />} />
+              <Route path="/junk-removal-edmonds" element={<JunkRemovalEdmondsPage />} />
 
               {/* Protected Routes */}
-              <Route 
-                path="/admin" 
+              <Route
+                path="/admin"
                 element={
                   <ProtectedRoute>
                     <AdminPage />
                   </ProtectedRoute>
-                } 
+                }
               />
-              <Route 
-                path="/debug" 
+              <Route
+                path="/debug"
                 element={
                   <ProtectedRoute>
                     <DebugPage />
                   </ProtectedRoute>
-                } 
+                }
               />
-              <Route 
-                path="/test-email" 
+              <Route
+                path="/test-email"
                 element={
                   <ProtectedRoute>
                     <TestEmailPage />
                   </ProtectedRoute>
-                } 
+                }
               />
+
+              {/* 404 Catch-All */}
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
         </div>
