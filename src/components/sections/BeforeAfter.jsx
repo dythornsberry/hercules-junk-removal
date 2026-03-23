@@ -7,19 +7,15 @@ import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 const BeforeAfter = () => {
   const results = [
     {
-      location: 'Kirkland Garage Cleanout',
-      caption: 'Full double-car garage cleared in 2 hours',
-      image: {
-        alt: 'Side-by-side before and after of a garage cleanout in Kirkland, WA.',
-        src: 'https://horizons-cdn.hostinger.com/043d3248-867c-48dc-bfa5-01141b7ae321/d30a8382aa673de9d6936e5f2d18efff.webp'
-      }
-    },
-    {
-      location: 'Bothell Yard Debris',
-      caption: 'Removed 2 tons of overgrown brush & waste',
-      image: {
-        alt: 'Side-by-side before and after of yard debris removal in Bothell, WA.',
-        src: 'https://horizons-cdn.hostinger.com/043d3248-867c-48dc-bfa5-01141b7ae321/4a4e4dd506c2ddcadb324f4c5f5d3b57.jpg'
+      location: 'Kenmore Garage Cleanout',
+      caption: 'Full garage cleared in under 2 hours',
+      before: {
+        alt: 'Dylan from Hercules Junk Removal pointing at garage full of junk before cleanup in Kenmore, WA.',
+        src: '/images/jobs/dylan-before.webp'
+      },
+      after: {
+        alt: 'Dylan from Hercules Junk Removal giving thumbs up in front of empty clean garage after cleanup in Kenmore, WA.',
+        src: '/images/jobs/dylan-after.webp'
       }
     }
   ];
@@ -43,7 +39,7 @@ const BeforeAfter = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 relative z-10">
+        <div className="max-w-3xl mx-auto relative z-10">
           {results.map((result, index) => (
             <motion.div
               key={index}
@@ -53,16 +49,29 @@ const BeforeAfter = () => {
               viewport={{ once: true }}
               className="bg-black p-2 rounded-3xl shadow-2xl border-2 border-zinc-800 overflow-hidden flex flex-col group hover:border-[#FFC107] transition-all duration-300"
             >
-              <div className="relative overflow-hidden rounded-t-2xl">
-                <img 
-                  className="w-full h-[350px] object-cover transform group-hover:scale-105 transition-transform duration-700" 
-                  alt={result.image.alt} 
-                  src={result.image.src} 
-                  loading="lazy"
-                  width="800"
-                  height="600"
-                />
-                <div className="absolute top-4 left-4 bg-[#FFC107] text-black font-black uppercase text-xs px-3 py-1 rounded shadow-lg">Before & After</div>
+              <div className="grid grid-cols-2 gap-1">
+                <div className="relative overflow-hidden rounded-tl-2xl">
+                  <img
+                    className="w-full h-[300px] sm:h-[350px] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    alt={result.before.alt}
+                    src={result.before.src}
+                    loading="lazy"
+                    width="400"
+                    height="350"
+                  />
+                  <div className="absolute top-3 left-3 bg-red-600 text-white font-black uppercase text-xs px-3 py-1 rounded shadow-lg">Before</div>
+                </div>
+                <div className="relative overflow-hidden rounded-tr-2xl">
+                  <img
+                    className="w-full h-[300px] sm:h-[350px] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    alt={result.after.alt}
+                    src={result.after.src}
+                    loading="lazy"
+                    width="400"
+                    height="350"
+                  />
+                  <div className="absolute top-3 left-3 bg-green-600 text-white font-black uppercase text-xs px-3 py-1 rounded shadow-lg">After</div>
+                </div>
               </div>
               <div className="p-8 text-center bg-black rounded-b-2xl">
                 <h3 className="text-2xl font-black text-white mb-3">{result.location}</h3>

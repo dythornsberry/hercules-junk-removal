@@ -5,6 +5,7 @@ import Hero from '@/components/sections/Hero.jsx';
 import TrustBadgeStrip from '@/components/sections/TrustBadgeStrip.jsx';
 import HowItWorks from '@/components/sections/HowItWorks.jsx';
 import BeforeAfter from '@/components/sections/BeforeAfter.jsx';
+import VideoSection from '@/components/sections/VideoSection.jsx';
 import HercJunkPricingSection from '@/components/sections/HercJunkPricingSection.jsx';
 import GoogleReviewsWidget from '@/components/sections/GoogleReviewsWidget.jsx';
 import ServiceAreaMap from '@/components/sections/ServiceAreaMap.jsx';
@@ -77,7 +78,10 @@ const HomePage = () => {
       
       {/* 4. Visual Proof of Work */}
       <BeforeAfter />
-      
+
+      {/* 4.5 Video Proof */}
+      <VideoSection />
+
       {/* 5. Transparent Pricing */}
       <HercJunkPricingSection />
 
