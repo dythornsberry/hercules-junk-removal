@@ -19,7 +19,7 @@ const faqData = [
   },
   {
     question: "How does pricing work?",
-    answer: "It's based on how much space your stuff takes up in the truck. Our prices cover everything: labor, travel, and disposal. No hidden fees. We'll give you a firm price before we start.",
+    answer: "It's based on how much space your stuff takes up in the truck. We give you the price before we start loading.",
   },
   {
     question: "Can you come today?",

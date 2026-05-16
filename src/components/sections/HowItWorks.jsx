@@ -1,46 +1,44 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { CalendarCheck, Truck, Smile } from 'lucide-react';
+import { DollarSign, MessageCircle, Phone, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const steps = [
   {
-    icon: <CalendarCheck className="h-10 w-10 text-black" />,
-    title: '1. Book a Time',
-    description: 'Book online in 60 seconds. We can often come the same day.',
+    icon: <MessageCircle className="h-10 w-10 text-black" />,
+    title: '1. Call Or Text',
+    description: 'Tell us what you need hauled.',
+  },
+  {
+    icon: <DollarSign className="h-10 w-10 text-black" />,
+    title: '2. We Give A Price',
+    description: 'You know the cost before we load.',
   },
   {
     icon: <Truck className="h-10 w-10 text-black" />,
-    title: '2. We Haul It Away',
-    description: 'We show up on time, give you a firm price, and load everything up.',
-  },
-  {
-    icon: <Smile className="h-10 w-10 text-black" />,
-    title: '3. Enjoy Your Space',
-    description: 'We sweep up, take payment, and you get your space back fast.',
+    title: '3. We Haul It',
+    description: 'We load the truck and take it away.',
   },
 ];
 
 const HowItWorks = () => {
-  const handleCalendlyClick = (e) => {
-    e.preventDefault();
-    openCalendlyPopup();
-  };
-
   return (
-    <section className="py-20 px-4 bg-yellow-400 text-black">
+    <section className="py-16 px-4 bg-yellow-400 text-black">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight">How It Works</h2>
-          <p className="text-xl font-semibold opacity-90 max-w-2xl mx-auto">
-            We've made getting rid of junk easier than ordering a pizza.
+        <div className="mb-12 border-4 border-black bg-white p-5 text-left shadow-[7px_7px_0_#000] md:p-7">
+          <p className="mb-2 inline-block bg-black px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-[#FFC107]">
+            How It Works
+          </p>
+          <h2 className="text-4xl sm:text-5xl font-black mb-3 tracking-[-0.04em]">Call, price, haul.</h2>
+          <p className="text-xl font-black opacity-90 max-w-3xl">
+            We show up with the big truck and load the junk.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12 lg:gap-8 relative">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 relative">
           {/* Connector Line (Desktop only) */}
-          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-1 bg-black/10 -z-0 rounded-full"></div>
+          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-1 bg-black/20 -z-0"></div>
 
           {steps.map((step, index) => (
             <motion.div
@@ -49,12 +47,12 @@ const HowItWorks = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="relative z-10 flex flex-col items-center text-center group"
+              className="relative z-10 flex flex-col items-start border-4 border-black bg-white p-6 text-left shadow-[6px_6px_0_#000] group"
             >
-              <div className="bg-white p-6 rounded-full shadow-lg mb-6 border-4 border-black transform transition-transform hover:scale-110 duration-300">
+              <div className="bg-[#FFC107] p-4 shadow-lg mb-5 border-4 border-black transform transition-transform hover:translate-x-1 hover:translate-y-1 duration-300">
                 {step.icon}
               </div>
-              <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
+              <h3 className="text-2xl font-black mb-3 tracking-tight">{step.title}</h3>
               <p className="text-lg leading-relaxed font-medium opacity-90 max-w-xs">
                 {step.description}
               </p>
@@ -62,10 +60,17 @@ const HowItWorks = () => {
           ))}
         </div>
 
-        <div className="text-center mt-20">
-          <Button onClick={handleCalendlyClick} className="bg-black text-white hover:bg-gray-800 text-xl font-black py-8 px-12 rounded-xl shadow-2xl hover:scale-105 transition-all">
-            Book Now
+        <div className="text-center mt-12 flex flex-col items-center gap-4">
+          <Button asChild className="bg-black text-white hover:bg-gray-800 text-2xl font-black py-8 px-14 rounded-md border-4 border-black shadow-[6px_6px_0_rgba(0,0,0,0.35)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all w-full max-w-md">
+            <Link to="/quote">Get A Quote</Link>
           </Button>
+          <a
+            href="tel:4254063445"
+            className="flex items-center gap-2 text-base font-black text-black hover:text-black bg-white hover:bg-white/80 border-2 border-black px-6 py-3 shadow-[3px_3px_0_#000] transition-all duration-200"
+          >
+            <Phone className="w-5 h-5" />
+            Call/text (425) 406-3445
+          </a>
         </div>
       </div>
     </section>

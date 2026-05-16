@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const ServiceHero = ({ title, subtitle, imageAlt, imageSrc }) => {
   const businessPhoneNumber = '4254063445';
@@ -35,12 +35,12 @@ const ServiceHero = ({ title, subtitle, imageAlt, imageSrc }) => {
                 </Button>
               </a>
               <Button
+                asChild
                 variant="outline"
                 size="lg"
                 className="w-full sm:w-auto border-4 border-black text-black hover:bg-black hover:text-yellow-400 text-xl font-bold py-6 px-8 rounded-xl bg-transparent transition-all"
-                onClick={() => openCalendlyPopup()}
               >
-                Book Online
+                <Link to="/quote">Get a Quote</Link>
               </Button>
             </div>
           </motion.div>

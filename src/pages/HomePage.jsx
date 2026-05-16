@@ -16,19 +16,31 @@ import Cta from '@/components/sections/Cta.jsx';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   "@id": "https://hercjunk.com",
   "name": "Hercules Junk Removal",
   "description": "Fast, affordable junk removal in Kenmore, Bothell, Kirkland & Greater Seattle. Single items from $99. Same-day service available.",
   "url": "https://hercjunk.com",
   "telephone": "+14254063445",
+  "email": "dythornsberry@gmail.com",
   "priceRange": "$99-$649",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    "opens": "00:00",
-    "closes": "23:59"
+  "image": "https://hercjunk.com/images/hercules-truck.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kenmore",
+    "addressRegion": "WA",
+    "postalCode": "98028",
+    "addressCountry": "US"
   },
+  "founder": {
+    "@type": "Person",
+    "name": "Dylan Thornsberry",
+    "jobTitle": "Owner & Operator"
+  },
+  "sameAs": [
+    "https://www.youtube.com/@hercjunk"
+  ],
+  "openingHours": "Mo-Su 00:00-23:59",
   "areaServed": [
     { "@type": "City", "name": "Kenmore", "sameAs": "https://en.wikipedia.org/wiki/Kenmore,_Washington" },
     { "@type": "City", "name": "Bothell", "sameAs": "https://en.wikipedia.org/wiki/Bothell,_Washington" },
@@ -37,7 +49,12 @@ const localBusinessSchema = {
     { "@type": "City", "name": "Woodinville", "sameAs": "https://en.wikipedia.org/wiki/Woodinville,_Washington" },
     { "@type": "City", "name": "Lake Forest Park", "sameAs": "https://en.wikipedia.org/wiki/Lake_Forest_Park,_Washington" },
     { "@type": "City", "name": "Mountlake Terrace", "sameAs": "https://en.wikipedia.org/wiki/Mountlake_Terrace,_Washington" },
-    { "@type": "City", "name": "Shoreline", "sameAs": "https://en.wikipedia.org/wiki/Shoreline,_Washington" }
+    { "@type": "City", "name": "Shoreline", "sameAs": "https://en.wikipedia.org/wiki/Shoreline,_Washington" },
+    { "@type": "City", "name": "Seattle", "sameAs": "https://en.wikipedia.org/wiki/Seattle" },
+    { "@type": "City", "name": "Bellevue", "sameAs": "https://en.wikipedia.org/wiki/Bellevue,_Washington" },
+    { "@type": "City", "name": "Redmond", "sameAs": "https://en.wikipedia.org/wiki/Redmond,_Washington" },
+    { "@type": "City", "name": "Sammamish", "sameAs": "https://en.wikipedia.org/wiki/Sammamish,_Washington" },
+    { "@type": "City", "name": "Edmonds", "sameAs": "https://en.wikipedia.org/wiki/Edmonds,_Washington" }
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -52,7 +69,8 @@ const localBusinessSchema = {
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Household Junk Removal" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Furniture Removal" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Garage Cleanouts" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Construction Debris Removal" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Construction Debris Removal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Yard Waste Removal" } }
     ]
   }
 };
@@ -62,7 +80,7 @@ const HomePage = () => {
     <>
       <Helmet>
         <title>Junk Removal in Kenmore & Greater Seattle from $99 | Hercules Junk Removal</title>
-        <meta name="description" content="Fast, affordable junk removal in Kenmore, Bothell, Kirkland & Greater Seattle. Single items from $99. Book online in 60 seconds. Same-day service available. Licensed & insured." />
+        <meta name="description" content="Fast, affordable junk removal in Kenmore, Bothell, Kirkland & Greater Seattle. Single items from $99. Request a free quote or call today. Same-day service available." />
         <link rel="canonical" href="https://hercjunk.com/" />
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
@@ -101,7 +119,7 @@ const HomePage = () => {
         sectionId="callback-form-homepage"
         sourceLabel="Homepage"
         heading="Want us to reach out first?"
-        description="If you are not ready to book a slot yet, send your number and we will text or call you back."
+        description="Not sure what it will cost? Send your number and we will text or call you back. Photos help too."
       />
       
       {/* 9. Final Conversion */}

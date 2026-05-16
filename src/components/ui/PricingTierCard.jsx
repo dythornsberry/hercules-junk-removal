@@ -1,17 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button.jsx';
 import TruckLoadVisualSVG from '@/components/ui/TruckLoadVisualSVG.jsx';
 import TruckLoadVisual1_8 from '@/components/ui/TruckLoadVisual1_8.jsx';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const PricingTierCard = ({ tier, index }) => {
-  const handleBookClick = (e) => {
-    e.preventDefault();
-    openCalendlyPopup();
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -36,11 +31,13 @@ const PricingTierCard = ({ tier, index }) => {
       
       <p className="text-gray-400 text-sm mb-6 flex-grow">{tier.desc}</p>
       
-      <Button 
-        onClick={handleBookClick}
+      <Button
+        asChild
         className="w-full bg-[#FF9500] text-black hover:bg-[#e68600] font-bold transition-transform group-hover:scale-[1.02]"
       >
-        Book Now <ArrowRight className="ml-1 w-4 h-4 hidden lg:inline" />
+        <Link to="/quote">
+          Get a Quote <ArrowRight className="ml-1 w-4 h-4 hidden lg:inline" />
+        </Link>
       </Button>
     </motion.div>
   );

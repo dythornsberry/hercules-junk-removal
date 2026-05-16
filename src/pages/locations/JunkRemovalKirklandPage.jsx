@@ -7,8 +7,8 @@ const JunkRemovalKirklandPage = () => {
       city="Kirkland"
       slug="junk-removal-kirkland"
       h1="Junk Removal in Kirkland, WA from $99 – Same-Day"
-      blurb="Professional junk removal across Kirkland — from the waterfront to Totem Lake. Book online in 60 seconds or call for a free estimate."
-      metaDescription="Same-day junk removal in Kirkland, WA from $99. Furniture, garage cleanouts, appliances & more. Licensed & insured. Book online in 60 seconds."
+      blurb="Professional junk removal across Kirkland — from the waterfront to Totem Lake. Request a free quote or call for a free estimate."
+      metaDescription="Same-day junk removal in Kirkland, WA from $99. Furniture, garage cleanouts, appliances & more. Licensed & insured. Request a free quote fast."
       zipCodes={['98033', '98034']}
       neighborhoods={[
         'Downtown Kirkland', 'Juanita', 'Totem Lake',
@@ -21,7 +21,7 @@ const JunkRemovalKirklandPage = () => {
           paragraphs: [
             "From the charming downtown waterfront to the family neighborhoods of Juanita and Finn Hill, Kirkland homeowners trust Hercules Junk Removal to handle their cleanouts quickly and professionally. We're a short drive from anywhere in Kirkland and offer same-day service most days of the week.",
             "Kirkland's mix of mid-century homes and newer construction means we see everything — basement cleanouts full of decades of storage, garage purges before a remodel, and post-move furniture that won't fit in the new place. No job is too small or too cluttered for our team.",
-            "We price by the space your items take up in our truck, starting at $99 for a single item. You'll know your exact price before we start — no surprises, no hidden fees, no hourly charges that run up the bill."
+            "We price by the space your items take up in our truck, starting at $99 for a single item. We give you the number before loading."
           ]
         },
         {

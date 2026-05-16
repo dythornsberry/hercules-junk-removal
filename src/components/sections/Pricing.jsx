@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Truck, Box, Boxes, Package } from 'lucide-react';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const Pricing = () => {
   const tiers = [
@@ -46,11 +46,6 @@ const Pricing = () => {
     },
   ];
 
-  const handleCalendlyClick = (e) => {
-    e.preventDefault();
-    openCalendlyPopup();
-  };
-
   return (
     <section id="pricing" className="py-20 sm:py-24 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -63,7 +58,7 @@ const Pricing = () => {
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Clear, Upfront Pricing</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Our volume-based pricing includes labor, disposal fees, and travel. No hidden fees.
+            Pricing is based on how much room your junk takes in the truck.
           </p>
         </motion.div>
 
@@ -88,11 +83,11 @@ const Pricing = () => {
               <p className="text-3xl font-bold text-white mb-2">{tier.price}<span className="text-sm font-normal text-gray-400"> + tax</span></p>
               <p className="text-sm text-gray-300 flex-grow mb-6">{tier.description}</p>
               
-              <Button 
-                onClick={handleCalendlyClick}
+              <Button
+                asChild
                 className="w-full bg-[#FFC107] text-black hover:bg-[#e6ae06] font-bold mt-auto py-6"
               >
-                Book Now
+                <Link to="/quote">Get a Quote</Link>
               </Button>
             </motion.div>
           ))}
@@ -116,12 +111,12 @@ const Pricing = () => {
         
         <div className="text-center mt-12">
              <Button
+                asChild
                 variant="cta"
                 size="lg"
-                onClick={handleCalendlyClick}
                 className="py-6 px-10 text-lg"
               >
-                Book Now
+                <Link to="/quote">Get a Quote</Link>
               </Button>
         </div>
       </div>

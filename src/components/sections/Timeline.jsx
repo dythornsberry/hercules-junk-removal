@@ -7,17 +7,17 @@ const Timeline = () => {
     {
       icon: <PhoneCall className="h-10 w-10 text-black" />,
       title: '1. Call or Text Us',
-      description: 'Get a fast, clear quote and pick a time that works for you.',
+      description: 'Send your name and number. We get back to you fast.',
     },
     {
       icon: <Truck className="h-10 w-10 text-black" />,
       title: '2. We Arrive & Haul',
-      description: 'On time, uniformed, friendly. You point, we do the lifting.',
+      description: 'Big box truck. You point, we load it.',
     },
     {
       icon: <Leaf className="h-10 w-10 text-black" />,
       title: '3. Eco-Friendly Disposal',
-      description: 'We donate and recycle whenever possible.',
+      description: 'We donate or recycle what we can.',
     },
   ];
 
@@ -32,7 +32,7 @@ const Timeline = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl sm:text-5xl font-black mb-4">How It Works</h2>
-          <p className="text-lg sm:text-xl text-black/80">Junk removal in three simple steps.</p>
+          <p className="text-lg sm:text-xl text-black/80">Send it in, get a quote, get it hauled.</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -43,9 +43,9 @@ const Timeline = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center text-center"
+              className="bg-white p-8 border-4 border-black shadow-[6px_6px_0_#FFC107] flex flex-col items-center text-center even:-rotate-1 odd:rotate-1"
             >
-              <div className="bg-yellow-400 p-4 rounded-full mb-6 shadow-md">
+              <div className="bg-yellow-400 p-4 border-2 border-black mb-6 shadow-[3px_3px_0_rgba(0,0,0,0.35)]">
                 {step.icon}
               </div>
               <h3 className="text-2xl font-bold mb-4">{step.title}</h3>

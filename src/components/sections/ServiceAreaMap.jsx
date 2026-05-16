@@ -30,7 +30,7 @@ const ServiceAreaMap = () => {
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Service Areas</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Based in Kenmore, we proudly serve our neighbors in Bothell, Kirkland, Lynnwood, and surrounding communities.
+            Based in Kenmore and hauling junk across Bothell, Kirkland, Lynnwood, Shoreline, Lake Forest Park, and nearby.
           </p>
         </div>
 

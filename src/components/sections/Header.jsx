@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Dumbbell, Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button.jsx';
-import {
-  CALENDLY_BOOKING_URL,
-  handleCalendlyClick as handleCalendlyLinkClick,
-} from '@/lib/calendlyUtils.js';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,18 +22,16 @@ const Header = () => {
     }
   };
 
-  const handleCalendlyClick = (e) => {
-    setIsOpen(false);
-    handleCalendlyLinkClick(e);
-  };
-
   return (
     <header className="bg-[#1A1A1A] sticky top-0 z-50 border-b border-gray-800 shadow-sm">
       <div className="container mx-auto px-4 h-20 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3 group relative z-50" onClick={() => setIsOpen(false)}>
-          <Dumbbell className="h-8 w-8 text-[#FFC107] transform group-hover:rotate-12 transition-transform duration-300" />
-          <span className="text-2xl font-black text-white tracking-tight">
-            Hercules Junk
+          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFC107] text-black shadow-lg shadow-[#FFC107]/20">
+            <Dumbbell className="h-7 w-7 transform group-hover:rotate-12 transition-transform duration-300" />
+          </span>
+          <span className="leading-none">
+            <span className="block text-2xl font-black text-white tracking-tight">Hercules Junk</span>
+            <span className="hidden sm:block text-[11px] font-bold uppercase tracking-[0.22em] text-[#FFC107]">Kenmore, WA</span>
           </span>
         </Link>
 
@@ -58,9 +52,9 @@ const Header = () => {
             asChild
             className="bg-[#FFC107] text-black hover:bg-[#e6ae06] font-bold px-6 h-12 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-xl"
           >
-            <a href={CALENDLY_BOOKING_URL} onClick={handleCalendlyClick}>
-              BOOK ONLINE
-            </a>
+            <Link to="/quote" onClick={() => setIsOpen(false)}>
+              GET A QUOTE
+            </Link>
           </Button>
         </div>
 
@@ -89,9 +83,9 @@ const Header = () => {
               </a>
             </Button>
             <Button asChild className="w-full h-14 bg-[#FFC107] text-black text-xl font-bold hover:bg-[#e6ae06] transition-all duration-300 active:scale-95">
-              <a href={CALENDLY_BOOKING_URL} onClick={handleCalendlyClick}>
-                BOOK ONLINE
-              </a>
+              <Link to="/quote" onClick={() => setIsOpen(false)}>
+                GET A QUOTE
+              </Link>
             </Button>
           </nav>
         </div>

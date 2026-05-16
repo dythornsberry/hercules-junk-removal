@@ -23,7 +23,7 @@ const HercJunkPricingSection = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight"
           >
-            Transparent <span className="text-[#FF9500]">Pricing</span>
+            Big Truck <span className="text-[#FF9500]">Value</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ const HercJunkPricingSection = () => {
             viewport={{ once: true }}
             className="text-lg text-gray-600 max-w-2xl mx-auto font-medium"
           >
-            You only pay for the space your items take up in our truck. No hidden fees, no surprises.
+            Our truck holds 18.6 cubic yards. More room in the truck means fewer trips and better value on bigger junk piles.
           </motion.p>
         </div>
 

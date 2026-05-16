@@ -20,7 +20,7 @@ const GoogleReviewsWidget = () => {
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">See What Our Customers Say</h2>
           <p className="text-lg text-gray-600 font-medium max-w-2xl mx-auto">
-            Don't just take our word for it. See what your neighbors are saying about our fast and reliable service.
+            Real Google reviews from local junk removal jobs.
           </p>
         </div>
         {/* Elfsight Google Reviews Widget Container */}

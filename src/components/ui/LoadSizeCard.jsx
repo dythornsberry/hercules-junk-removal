@@ -1,14 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const LoadSizeCard = ({ title, price, description, tag, index = 0 }) => {
-  const handleCalendlyClick = (e) => {
-    e.preventDefault();
-    openCalendlyPopup();
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -34,12 +29,12 @@ const LoadSizeCard = ({ title, price, description, tag, index = 0 }) => {
         {description}
       </p>
       
-      <button 
-        onClick={handleCalendlyClick}
+      <Link
+        to="/quote"
         className="w-full bg-white/5 hover:bg-[#FFC107] text-white hover:text-black font-bold py-2.5 rounded-lg mt-auto transition-all duration-300 hover:scale-105 active:scale-95 flex justify-center items-center text-sm"
       >
-        Book This Pickup <ArrowRight className="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-      </button>
+        Get a Quote <ArrowRight className="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      </Link>
     </motion.div>
   );
 };

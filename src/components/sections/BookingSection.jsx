@@ -48,7 +48,7 @@ const BookingSection = () => {
 
         <div className="text-center mb-10">
           <p className="text-gray-400 flex items-center justify-center gap-2 text-sm">
-            Not sure what size you need? Call/text us a photo: <a href="tel:4254063445" className="text-white hover:text-[#FFC107] transition-colors font-bold">425-406-3445</a>
+            Not sure what size you need? Call or text us: <a href="tel:4254063445" className="text-white hover:text-[#FFC107] transition-colors font-bold">425-406-3445</a>
           </p>
         </div>
 
@@ -102,7 +102,7 @@ const BookingSection = () => {
               <CheckCircle2 className="w-6 h-6 text-[#FFC107] shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-bold text-white mb-1">Clear Estimates</h4>
-                <p className="text-sm text-gray-400">We confirm your exact price on-site before we start any work. No surprises.</p>
+                <p className="text-sm text-gray-400">We give you the price before we start loading.</p>
               </div>
             </div>
             <div className="flex items-start gap-3">

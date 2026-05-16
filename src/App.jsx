@@ -5,14 +5,12 @@ import Footer from '@/components/sections/Footer.jsx';
 import StickyContactBar from '@/components/sections/StickyContactBar.jsx';
 import ScrollToTop from '@/components/ScrollToTop.jsx';
 import Header from '@/components/sections/Header.jsx';
-import CalendlyPopup from '@/components/ui/CalendlyPopup.jsx';
 import HercJunkPricingSection from '@/components/sections/HercJunkPricingSection.jsx';
 
 // Lazy load pages to optimize performance and prevent circular dependencies
 const HomePage = lazy(() => import('@/pages/HomePage.jsx'));
 const AboutPage = lazy(() => import('@/pages/AboutPage.jsx'));
 const QuotePage = lazy(() => import('@/pages/QuotePage.jsx'));
-const BookingPage = lazy(() => import('@/pages/BookingPage.jsx'));
 const AdminPage = lazy(() => import('@/pages/AdminPage.jsx'));
 const LoginPage = lazy(() => import('@/pages/LoginPage.jsx'));
 const DebugPage = lazy(() => import('@/pages/DebugPage.jsx'));
@@ -50,7 +48,6 @@ function App() {
   return (
     <>
       <ScrollToTop />
-      <CalendlyPopup />
       <div className="flex flex-col min-h-screen">
         <Header />
         <div className="flex-grow flex flex-col">
@@ -61,7 +58,7 @@ function App() {
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/faq" element={<FaqPage />} />
               <Route path="/quote" element={<QuotePage />} />
-              <Route path="/booking" element={<BookingPage />} />
+              <Route path="/booking" element={<Navigate to="/quote" replace />} />
               <Route path="/pricing" element={<div className="pt-20"><HercJunkPricingSection /></div>} />
               <Route path="/service-areas" element={<ServiceAreasPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />

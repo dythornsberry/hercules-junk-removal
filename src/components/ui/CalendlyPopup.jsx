@@ -7,7 +7,7 @@ const CalendlyPopup = () => {
     initCalendlyWidget().catch(() => {
       // Booking clicks handle their own fallback if the preload fails.
     });
-    
+
     return () => {
       // Optional cleanup if component unmounts, but usually we want to keep it
       // so subsequent clicks respond instantly.

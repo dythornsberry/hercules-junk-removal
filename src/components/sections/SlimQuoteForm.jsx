@@ -5,29 +5,21 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Loader2, AlertTriangle, CheckCircle } from 'lucide-react';
-import { supabase } from '@/lib/customSupabaseClient';
 import { useToast } from '@/components/ui/use-toast.js';
+import { submitLead } from '@/lib/leadSubmission.js';
 
 const SlimQuoteForm = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
     description: '',
   });
   const [smsOptIn, setSmsOptIn] = useState(true);
   const [phoneError, setPhoneError] = useState('');
-  const [emailError, setEmailError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(null); 
   const businessPhoneNumberFormatted = '425-406-3445';
-
-  const validateEmail = (email) => {
-    if (!email) return true;
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -41,10 +33,6 @@ const SlimQuoteForm = () => {
         setPhoneError('');
       }
     }
-    if (name === 'email') {
-      if (!validateEmail(value)) setEmailError('Please enter a valid email address.');
-      else setEmailError('');
-    }
   };
 
   const handleSubmit = async (e) => {
@@ -53,10 +41,6 @@ const SlimQuoteForm = () => {
     let hasError = false;
     if (formData.phone.replace(/\D/g, '').length !== 10) {
       setPhoneError('Phone must be 10 digits.');
-      hasError = true;
-    }
-    if (!validateEmail(formData.email)) {
-      setEmailError('Please enter a valid email address.');
       hasError = true;
     }
     
@@ -73,36 +57,20 @@ const SlimQuoteForm = () => {
     setSubmissionStatus(null);
 
     try {
+      const normalizedPhone = formData.phone.replace(/\D/g, '');
       const quoteData = {
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
+        name: formData.name.trim(),
+        phone: normalizedPhone,
+        email: '',
         description: formData.description || 'Slim form submission',
         location: 'Not provided', 
         sms_opt_in: smsOptIn,
         created_at: new Date().toISOString(),
       };
       
-      const { error: invokeError } = await supabase.functions.invoke('forward-to-zapier', {
-        body: quoteData,
-      });
-
-      if (invokeError) throw new Error('Failed to send data to Zapier proxy.');
-
-      // Send email notification independently
-      supabase.functions.invoke('send-form-notification-email', {
-        body: {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          location: 'Slim Form',
-          description: formData.description || 'Slim form submission',
-          submissionTime: new Date().toISOString()
-        }
-      }).catch(err => console.error("Failed to send email notification:", err));
-      
+      await submitLead(quoteData);
       setSubmissionStatus('success');
-      setFormData({ name: '', phone: '', email: '', description: ''});
+      setFormData({ name: '', phone: '', description: ''});
       setSmsOptIn(true);
       window.dispatchEvent(new CustomEvent('form_submitted'));
       
@@ -165,19 +133,6 @@ const SlimQuoteForm = () => {
             className="mt-1 bg-gray-100 border-gray-300 text-black placeholder:text-gray-500 transition-all duration-300"
             placeholder="Your Name"
           />
-        </div>
-        <div>
-          <Label htmlFor="email-slim" className="text-black font-semibold">Email <span className="font-normal text-gray-500">(Optional)</span></Label>
-          <Input
-            id="email-slim"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            className={`mt-1 bg-gray-100 border-gray-300 text-black placeholder:text-gray-500 transition-all duration-300 ${emailError ? 'border-red-500' : ''}`}
-            placeholder="email@example.com"
-          />
-          {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
         </div>
         <div>
           <Label htmlFor="phone-slim" className="text-black font-semibold">Phone</Label>

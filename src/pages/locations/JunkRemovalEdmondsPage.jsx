@@ -8,7 +8,7 @@ const JunkRemovalEdmondsPage = () => {
       slug="junk-removal-edmonds"
       h1="Junk Removal in Edmonds, WA from $99"
       blurb="Local junk removal in Edmonds. We haul furniture, appliances, yard waste, and construction debris with same-day pickup available."
-      metaDescription="Same-day junk removal in Edmonds, WA from $99. Furniture, appliances, yard waste, and full cleanouts. Licensed and insured. Book online now."
+      metaDescription="Same-day junk removal in Edmonds, WA from $99. Furniture, appliances, yard waste, and full cleanouts. Licensed and insured. Request a free quote now."
       zipCodes={['98020', '98026']}
       neighborhoods={[
         'Downtown Edmonds', 'Perrinville', 'Meadowdale',
@@ -27,7 +27,7 @@ const JunkRemovalEdmondsPage = () => {
         {
           title: "Why Edmonds Locals Choose Hercules",
           paragraphs: [
-            "We are a small, local crew -- not a franchise. You will deal directly with the owner, get an honest price with no hidden fees, and watch us sweep up the area before we leave. That personal touch is what sets us apart from the big guys.",
+            "We are a small local crew with a big box truck. We give you the price before loading, haul the junk, and sweep up the area before we leave.",
             "We donate usable items to local charities and recycle metals, wood, and other materials whenever possible. We believe in responsible disposal and keeping as much out of the landfill as we can. Fast service, fair prices, and doing the right thing -- that is our approach."
           ]
         }

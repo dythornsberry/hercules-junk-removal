@@ -6,7 +6,6 @@ import Cta from '@/components/sections/Cta';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Phone, CheckCircle2, MapPin, ArrowRight } from 'lucide-react';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const LocationPageLayout = ({
   city,
@@ -81,9 +80,9 @@ const LocationPageLayout = ({
     }
   };
 
-  const handleBookClick = (e) => {
+  const handleQuoteClick = (e) => {
     e.preventDefault();
-    openCalendlyPopup();
+    window.location.href = '/quote';
   };
 
   return (
@@ -122,10 +121,10 @@ const LocationPageLayout = ({
 
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
                   <Button
-                    onClick={handleBookClick}
+                    onClick={handleQuoteClick}
                     className="bg-black text-white hover:bg-gray-800 font-black text-xl px-10 py-8 rounded-xl shadow-xl"
                   >
-                    Book Now <ArrowRight className="w-6 h-6 ml-2" />
+                    Get a Quote <ArrowRight className="w-6 h-6 ml-2" />
                   </Button>
                   <a href={`tel:${businessPhoneNumber}`} className="flex items-center gap-2 text-black font-bold px-8 py-6 rounded-xl border-2 border-black hover:bg-black/10 transition-all">
                     <Phone className="w-6 h-6" />

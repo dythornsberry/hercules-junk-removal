@@ -1,14 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const QuickPickCard = ({ title, price, description, tag, index = 0 }) => {
-  const handleCalendlyClick = (e) => {
-    e.preventDefault();
-    openCalendlyPopup();
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -36,12 +31,12 @@ const QuickPickCard = ({ title, price, description, tag, index = 0 }) => {
           {description}
         </p>
 
-        <button
-          onClick={handleCalendlyClick}
+        <Link
+          to="/quote"
           className="w-full bg-[#FFC107] text-black hover:bg-[#e6ae06] font-bold py-4 rounded-xl mt-auto shadow-md transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-xl flex justify-center items-center text-lg"
         >
-          Book This Pickup <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </button>
+          Get a Quote <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </Link>
       </div>
     </motion.div>
   );

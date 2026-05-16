@@ -7,17 +7,17 @@ const TrustSection = () => {
     {
       icon: <Star className="h-10 w-10 text-black" />,
       title: '5-Star Google Rated',
-      description: 'Trusted by your neighbors.',
+      description: 'Real reviews from local jobs.',
     },
     {
       icon: <ShieldCheck className="h-10 w-10 text-black" />,
       title: 'Licensed & Insured',
-      description: 'Your property is always protected.',
+      description: 'Covered for the heavy lifting.',
     },
     {
       icon: <Leaf className="h-10 w-10 text-black" />,
       title: 'Eco-Friendly Disposal',
-      description: 'We recycle and donate items.',
+      description: 'Donate or recycle when possible.',
     },
   ];
 
@@ -32,9 +32,9 @@ const TrustSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-yellow-300/50 p-8 rounded-2xl shadow-lg flex flex-col items-center text-center"
+              className="bg-yellow-300/70 p-8 border-4 border-black shadow-[6px_6px_0_#000] flex flex-col items-center text-center even:rotate-1 odd:-rotate-1"
             >
-              <div className="bg-yellow-400 p-4 rounded-full mb-6 shadow-md">
+              <div className="bg-yellow-400 p-4 border-2 border-black mb-6 shadow-[3px_3px_0_rgba(0,0,0,0.35)]">
                 {point.icon}
               </div>
               <h3 className="text-2xl font-bold mb-2">{point.title}</h3>

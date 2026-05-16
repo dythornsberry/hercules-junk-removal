@@ -25,7 +25,7 @@ const PricingSection = () => {
             viewport={{ once: true }}
             className="text-lg md:text-xl text-gray-400 font-medium max-w-3xl mx-auto"
           >
-            Volume-based pricing means you only pay for the space you use in our massive box trucks. No hidden fees.
+            Pricing is based on how much room your junk takes in the truck.
           </motion.p>
         </div>
 

@@ -27,7 +27,7 @@ const HomePageReviews = () => {
           viewport={{ once: true }}
           className="text-2xl font-bold text-center text-black mb-8"
         >
-          50+ happy neighbors served (5-star on google)
+          50+ local jobs hauled (5-star on Google)
         </motion.h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((review, index) => (

@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, Calendar, Zap, Shield, Star } from 'lucide-react';
+import { Phone, MessageCircle, Zap, Shield, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const Cta = () => {
   const businessPhoneNumber = '4254063445';
@@ -10,11 +10,6 @@ const Cta = () => {
 
   const handleCallClick = () => {
     window.dispatchEvent(new CustomEvent('call_clicked'));
-  };
-
-  const handleCalendlyClick = (e) => {
-    e.preventDefault();
-    openCalendlyPopup();
   };
 
   return (
@@ -35,56 +30,55 @@ const Cta = () => {
         >
           <div className="inline-flex items-center gap-2 bg-black/10 px-4 py-1 rounded-full border border-black/10">
              <Zap className="h-4 w-4 text-black fill-current" />
-             <span className="text-sm font-bold text-black uppercase">Limited slots available for today</span>
+             <span className="text-sm font-bold text-black uppercase">Same-day is often possible</span>
           </div>
 
           <h2 className="text-5xl md:text-6xl font-black text-black tracking-tight drop-shadow-sm">
-             Ready to Get Rid of It?
+             Want a price?
           </h2>
           <p className="text-2xl font-medium text-black/90 max-w-2xl mx-auto">
-             Get your space back today. Fast, simple, and straightforward.
+             Send the form or call. We will give you a straight answer and let you know what is possible.
           </p>
           
           <div className="flex flex-col gap-6 justify-center items-center mt-8">
               <Button
+                asChild
                 variant="cta"
                 size="xl"
                 className="w-full max-w-md h-auto py-8 bg-black text-white hover:bg-gray-800 shadow-2xl transition-all hover:scale-105"
-                onClick={handleCalendlyClick}
               >
-                <div className="flex flex-col items-center">
-                    <div className="flex items-center">
-                      <Calendar className="mr-3 h-8 w-8" />
-                      <span className="text-2xl font-bold">Book Now</span>
-                    </div>
-                    <span className="text-sm font-normal text-white/80 mt-1">Takes less than 60 seconds</span>
-                </div>
+                <Link to="/quote">
+                  <div className="flex flex-col items-center">
+                      <div className="flex items-center">
+                        <span className="text-2xl font-bold">Send My Info</span>
+                      </div>
+                      <span className="text-sm font-normal text-white/80 mt-1">Name, phone, done. We will follow up.</span>
+                  </div>
+                </Link>
               </Button>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
-              <a href={`tel:${businessPhoneNumber}`} onClick={handleCallClick} className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  className="bg-white text-black hover:bg-gray-100 text-xl font-bold py-6 px-10 rounded-xl shadow-xl transform hover:scale-105 transition-all duration-300 w-full min-w-[260px] border-2 border-black"
-                >
-                  <span>
-                    <Phone className="mr-3 h-6 w-6" />
-                    Call Now
-                  </span>
-                </Button>
-              </a>
-              
-              <a href={`tel:${businessPhoneNumber}`} className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  className="bg-black/10 text-black hover:bg-black/20 text-xl font-bold py-6 px-10 rounded-xl shadow-none transform hover:scale-105 transition-all duration-300 w-full min-w-[260px]"
-                >
-                  <span>
-                    <Phone className="mr-3 h-6 w-6" />
-                    {businessPhoneNumberFormatted}
-                  </span>
-                </Button>
-              </a>
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-black hover:bg-gray-100 text-xl font-bold py-6 px-10 rounded-xl shadow-xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto min-w-[260px] border-2 border-black"
+              >
+                <Link to="/quote">
+                  <MessageCircle className="mr-3 h-6 w-6" />
+                  Use the Form
+                </Link>
+              </Button>
+
+              <Button
+                asChild
+                size="lg"
+                className="bg-black/10 text-black hover:bg-black/20 text-xl font-bold py-6 px-10 rounded-xl shadow-none transform hover:scale-105 transition-all duration-300 w-full sm:w-auto min-w-[260px]"
+              >
+                <a href={`tel:${businessPhoneNumber}`} onClick={handleCallClick}>
+                  <Phone className="mr-3 h-6 w-6" />
+                  {businessPhoneNumberFormatted}
+                </a>
+              </Button>
             </div>
             
             {/* Trust Badges under CTAs */}

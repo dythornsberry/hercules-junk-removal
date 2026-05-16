@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dumbbell } from 'lucide-react';
-import {
-  CALENDLY_BOOKING_URL,
-  handleCalendlyClick,
-} from '@/lib/calendlyUtils.js';
 
 const Footer = () => {
   const businessPhoneNumber = '4254063445';
@@ -66,9 +62,9 @@ const Footer = () => {
                  </a>
                </li>
                 <li>
-                 <a href={CALENDLY_BOOKING_URL} onClick={handleCalendlyClick} className="text-sm text-yellow-400 font-bold hover:text-yellow-300">
-                   Book Online
-                 </a>
+                 <Link to="/quote" className="text-sm text-yellow-400 font-bold hover:text-yellow-300">
+                   Get a Quote
+                 </Link>
                </li>
                <li className="text-sm text-gray-400 pt-2">
                  Hours: Open 24/7

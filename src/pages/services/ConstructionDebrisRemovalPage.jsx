@@ -5,7 +5,6 @@ import ServiceHero from '@/components/sections/ServiceHero';
 import Reviews from '@/components/sections/Reviews';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 import ServingAreasSection from '@/components/sections/ServingAreasSection';
 
 const ConstructionDebrisRemovalPage = () => {
@@ -37,8 +36,14 @@ const ConstructionDebrisRemovalPage = () => {
           "@type": "Service",
           "name": "Construction Debris Removal",
           "description": "Fast construction debris removal for contractors and homeowners in Kenmore, WA. We haul drywall, wood, tile, flooring, and renovation waste.",
-          "provider": { "@type": "LocalBusiness", "name": "Hercules Junk Removal", "telephone": "+14254063445" },
-          "areaServed": { "@type": "State", "name": "Washington" },
+          "provider": { "@id": "https://hercjunk.com" },
+          "serviceType": "Construction Debris Removal",
+          "areaServed": [
+            { "@type": "City", "name": "Kenmore", "addressRegion": "WA" },
+            { "@type": "City", "name": "Bothell", "addressRegion": "WA" },
+            { "@type": "City", "name": "Kirkland", "addressRegion": "WA" },
+            { "@type": "City", "name": "Seattle", "addressRegion": "WA" }
+          ],
           "url": "https://hercjunk.com/construction-debris-removal"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -117,8 +122,8 @@ const ConstructionDebrisRemovalPage = () => {
            <h2 className="text-3xl font-black mb-6">Need a debris pickup?</h2>
            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">Call us for a quick estimate. We can often clear your site the same day.</p>
            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-black text-white hover:bg-gray-800 text-lg px-8 py-6 rounded-xl shadow-lg" onClick={() => openCalendlyPopup()}>
-              Book Now <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 text-lg px-8 py-6 rounded-xl shadow-lg">
+              <Link to="/quote">Get a Quote <ArrowRight className="ml-2 h-5 w-5" /></Link>
             </Button>
             <a href="tel:4254063445">
               <Button size="lg" variant="outline" className="border-2 border-black text-black hover:bg-black hover:text-white text-lg px-8 py-6 rounded-xl">

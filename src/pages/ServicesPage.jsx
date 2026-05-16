@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Sofa, Home, TreePine, HardHat, Tv, Truck, Bed, HelpCircle, Check, Phone, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 // Updated services array with internal links where available
 const services = [
@@ -86,7 +85,7 @@ const ServicesPage = () => {
           >
             <div className="text-center mb-12">
               <h1 className="text-4xl sm:text-5xl font-black text-black mb-4">What We Haul</h1>
-              <p className="text-lg sm:text-xl text-black/80 font-semibold max-w-2xl mx-auto">From single item pickups to full property cleanouts. If you don't want it, we can probably take it. Just point!</p>
+              <p className="text-lg sm:text-xl text-black/80 font-semibold max-w-2xl mx-auto">From single item pickups to full property cleanouts. If you don't want it, we can probably take it.</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -110,8 +109,8 @@ const ServicesPage = () => {
                   <p className="text-gray-400 flex-grow mb-6 leading-relaxed">{service.description}</p>
                    
                    {service.link === '/quote' ? (
-                      <Button className="w-full bg-yellow-400 text-black font-bold hover:bg-white hover:text-black transition-colors" onClick={() => openCalendlyPopup()}>
-                          Book Now
+                      <Button className="w-full bg-yellow-400 text-black font-bold hover:bg-white hover:text-black transition-colors" onClick={() => window.location.href = '/quote'}>
+                          Get a Quote
                       </Button>
                    ) : (
                       <Link to={service.link}>

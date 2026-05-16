@@ -1,13 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const PricingTable = ({ tiers }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
       <div className="bg-[#1a1a1a] text-white p-6 border-b border-[#FF9500]">
         <h3 className="text-2xl font-black tracking-tight">Upfront Pricing</h3>
-        <p className="text-gray-400 mt-1 text-sm">Clear, volume-based rates with no hidden fees.</p>
+        <p className="text-gray-400 mt-1 text-sm">Rates are based on truck space.</p>
       </div>
       
       <div className="overflow-x-auto">
@@ -27,11 +29,11 @@ const PricingTable = ({ tiers }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
                 viewport={{ once: true }}
-                onClick={() => openCalendlyPopup()}
+                onClick={() => navigate('/quote')}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    openCalendlyPopup();
+                    navigate('/quote');
                   }
                 }}
                 role="button"

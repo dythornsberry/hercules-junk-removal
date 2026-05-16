@@ -8,7 +8,7 @@ const JunkRemovalSeattlePage = () => {
       slug="junk-removal-seattle"
       h1="Junk Removal in Seattle, WA from $99"
       blurb="Full-service junk removal across Seattle. We haul furniture, appliances, yard waste, construction debris, and more with same-day availability."
-      metaDescription="Same-day junk removal in Seattle, WA from $99. Furniture, appliances, yard waste, and construction debris. Licensed and insured. Book online now."
+      metaDescription="Same-day junk removal in Seattle, WA from $99. Furniture, appliances, yard waste, and construction debris. Licensed and insured. Request a free quote now."
       zipCodes={['98101', '98102', '98103', '98104', '98105', '98106', '98107', '98108', '98109', '98112', '98115', '98116', '98117', '98118', '98119', '98121', '98122', '98125', '98126', '98133', '98136', '98144', '98146', '98155', '98177', '98178', '98188', '98199']}
       neighborhoods={[
         'Capitol Hill', 'Ballard', 'Fremont', 'Wallingford', 'Green Lake',

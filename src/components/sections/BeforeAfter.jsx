@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { Phone } from 'lucide-react';
 import SatisfactionGuaranteeBadge from '@/components/ui/SatisfactionGuaranteeBadge';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const BeforeAfter = () => {
   const results = [
@@ -52,25 +53,25 @@ const BeforeAfter = () => {
               <div className="grid grid-cols-2 gap-1">
                 <div className="relative overflow-hidden rounded-tl-2xl">
                   <img
-                    className="w-full h-[300px] sm:h-[350px] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-[250px] sm:h-[400px] md:h-[450px] object-cover transform group-hover:scale-105 transition-transform duration-700"
                     alt={result.before.alt}
                     src={result.before.src}
                     loading="lazy"
                     width="400"
-                    height="350"
+                    height="450"
                   />
-                  <div className="absolute top-3 left-3 bg-red-600 text-white font-black uppercase text-xs px-3 py-1 rounded shadow-lg">Before</div>
+                  <div className="absolute top-3 left-3 bg-red-600 text-white font-black uppercase text-sm px-4 py-1.5 rounded shadow-lg">Before</div>
                 </div>
                 <div className="relative overflow-hidden rounded-tr-2xl">
                   <img
-                    className="w-full h-[300px] sm:h-[350px] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-[250px] sm:h-[400px] md:h-[450px] object-cover transform group-hover:scale-105 transition-transform duration-700"
                     alt={result.after.alt}
                     src={result.after.src}
                     loading="lazy"
                     width="400"
-                    height="350"
+                    height="450"
                   />
-                  <div className="absolute top-3 left-3 bg-green-600 text-white font-black uppercase text-xs px-3 py-1 rounded shadow-lg">After</div>
+                  <div className="absolute top-3 left-3 bg-green-600 text-white font-black uppercase text-sm px-4 py-1.5 rounded shadow-lg">After</div>
                 </div>
               </div>
               <div className="p-8 text-center bg-black rounded-b-2xl">
@@ -81,13 +82,20 @@ const BeforeAfter = () => {
           ))}
         </div>
 
-        <div className="text-center mt-20 relative z-10">
+        <div className="text-center mt-20 relative z-10 flex flex-col items-center gap-4">
           <Button
-            onClick={() => openCalendlyPopup()}
-            className="bg-[#FFC107] text-black hover:bg-white text-xl font-black py-8 px-12 rounded-xl shadow-2xl hover:-translate-y-1 transition-all"
+            asChild
+            className="bg-[#FFC107] text-black hover:bg-white text-2xl font-black py-8 px-14 rounded-xl shadow-2xl hover:-translate-y-1 transition-all w-full max-w-md"
           >
-            Ready to Clear It Out?
+            <Link to="/quote">Ready to Clear It Out?</Link>
           </Button>
+          <a
+            href="tel:4254063445"
+            className="flex items-center gap-2 text-base font-bold text-white/70 hover:text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl px-6 py-3 transition-all duration-200"
+          >
+            <Phone className="w-5 h-5" />
+            Prefer to talk first? Call (425) 406-3445
+          </a>
         </div>
       </div>
     </section>

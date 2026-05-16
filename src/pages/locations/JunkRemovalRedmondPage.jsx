@@ -8,7 +8,7 @@ const JunkRemovalRedmondPage = () => {
       slug="junk-removal-redmond"
       h1="Junk Removal in Redmond, WA from $99"
       blurb="Reliable junk removal in Redmond. We haul furniture, appliances, yard waste, and construction debris with same-day pickup available."
-      metaDescription="Same-day junk removal in Redmond, WA from $99. Furniture, appliances, yard waste, and debris hauling. Licensed and insured. Book online in 60 seconds."
+      metaDescription="Same-day junk removal in Redmond, WA from $99. Furniture, appliances, yard waste, and debris hauling. Licensed and insured. Request a free quote fast."
       zipCodes={['98052', '98053', '98073', '98074']}
       neighborhoods={[
         'Downtown Redmond', 'Education Hill', 'Overlake', 'Willows',
@@ -21,7 +21,7 @@ const JunkRemovalRedmondPage = () => {
           title: "Redmond's Local Junk Removal Experts",
           paragraphs: [
             "Hercules Junk Removal serves Redmond and the surrounding Eastside communities. From clearing out a cluttered garage on Education Hill to hauling away old furniture from a home near Marymoor Park, we handle all types of residential and light commercial junk removal.",
-            "Redmond is growing fast, and with new builds and renovations come piles of construction debris, old appliances, and unwanted furniture. We are equipped to handle it all with volume-based pricing starting at just $99."
+            "Redmond is growing fast, and with new builds and renovations come piles of construction debris, old appliances, and unwanted furniture. We handle it with volume-based pricing starting at $99."
           ]
         },
         {

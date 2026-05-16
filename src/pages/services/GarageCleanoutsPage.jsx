@@ -5,7 +5,6 @@ import ServiceHero from '@/components/sections/ServiceHero';
 import Reviews from '@/components/sections/Reviews';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 import ServingAreasSection from '@/components/sections/ServingAreasSection';
 
 const GarageCleanoutsPage = () => {
@@ -37,8 +36,14 @@ const GarageCleanoutsPage = () => {
           "@type": "Service",
           "name": "Garage Cleanout Service",
           "description": "Professional garage cleanout services in Kenmore, WA. We sort, load, haul, and sweep up afterwards.",
-          "provider": { "@type": "LocalBusiness", "name": "Hercules Junk Removal", "telephone": "+14254063445" },
-          "areaServed": { "@type": "State", "name": "Washington" },
+          "provider": { "@id": "https://hercjunk.com" },
+          "serviceType": "Garage Cleanout",
+          "areaServed": [
+            { "@type": "City", "name": "Kenmore", "addressRegion": "WA" },
+            { "@type": "City", "name": "Bothell", "addressRegion": "WA" },
+            { "@type": "City", "name": "Kirkland", "addressRegion": "WA" },
+            { "@type": "City", "name": "Seattle", "addressRegion": "WA" }
+          ],
           "url": "https://hercjunk.com/garage-cleanouts"
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -46,7 +51,7 @@ const GarageCleanoutsPage = () => {
           "@type": "FAQPage",
           "mainEntity": [
             { "@type": "Question", "name": "How long does a garage cleanout take?", "acceptedAnswer": { "@type": "Answer", "text": "Most single-car garage cleanouts take 1-2 hours. A packed two-car garage may take 2-3 hours. We handle all the sorting, loading, and hauling." }},
-            { "@type": "Question", "name": "Do I need to sort my garage junk first?", "acceptedAnswer": { "@type": "Answer", "text": "Nope! Just point to what goes and we handle the rest. We separate recyclable metals, donatable items, and trash as we load." }},
+            { "@type": "Question", "name": "Do I need to sort my garage junk first?", "acceptedAnswer": { "@type": "Answer", "text": "Point to what goes and we handle the rest. We separate recyclable metals, donatable items, and trash as we load." }},
             { "@type": "Question", "name": "Do you sweep up after the cleanout?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we don't leave a mess. After we load everything, we sweep the area clean so your garage is ready to use right away." }}
           ]
         })}</script>
@@ -69,7 +74,7 @@ const GarageCleanoutsPage = () => {
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center font-bold text-black text-xl">1</div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">You Point, We Guide</h3>
-                    <p className="text-gray-600">Just show us what goes. You don't need to pile it up or drag it to the curb. We grab it from wherever it sits.</p>
+                    <p className="text-gray-600">Show us what goes. You don't need to pile it up or drag it to the curb. We grab it from wherever it sits.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -112,11 +117,11 @@ const GarageCleanoutsPage = () => {
            <Sparkles className="h-12 w-12 text-yellow-400 mx-auto mb-6" />
            <h2 className="text-3xl font-bold mb-4">A Clean Start for Your Home</h2>
            <p className="text-xl text-gray-300 mb-8">
-             A cluttered garage is often the biggest source of stress in a home. Let us handle the hard work in just a few hours, so you can breathe easier.
+             A cluttered garage is often the biggest source of stress in a home. Let us handle the hard work so you can use the space again.
            </p>
            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 text-lg px-8 py-6 rounded-xl font-bold" onClick={() => openCalendlyPopup()}>
-              Book Now <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild className="bg-yellow-400 text-black hover:bg-yellow-500 text-lg px-8 py-6 rounded-xl font-bold">
+              <Link to="/quote">Get a Quote <ArrowRight className="ml-2 h-5 w-5" /></Link>
             </Button>
             <a href="tel:4254063445">
               <Button variant="outline" className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black text-lg px-8 py-6 rounded-xl font-bold">

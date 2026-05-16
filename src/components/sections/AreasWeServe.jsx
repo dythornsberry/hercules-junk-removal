@@ -4,15 +4,15 @@ import { motion } from 'framer-motion';
 const areas = [
   {
     name: 'Kenmore',
-    description: 'As a Kenmore-based business, we are your neighbors! We offer the fastest response times for junk removal right here at home, whether you are near Saint Edward State Park or closer to the Burke-Gilman Trail.'
+    description: 'Based in Kenmore, so this is usually our quickest area. Same-day pickup is often possible if the truck has room.'
   },
   {
     name: 'Bothell',
-    description: 'From downtown Bothell to the sprawling neighborhoods, we provide quick and reliable junk hauling. We help families and businesses keep their properties clean, whether you are renovating or just decluttering your space.'
+    description: 'From downtown Bothell to the surrounding neighborhoods, we haul furniture, yard waste, garage junk, and renovation debris.'
   },
   {
     name: 'Kirkland',
-    description: 'Serving the beautiful city of Kirkland, we handle everything from old furniture removal in Moss Bay to yard waste cleanup in Juanita. We respect your property and ensure a spotless cleanup every time.'
+    description: 'Furniture, yard waste, garage junk, and cleanup jobs around Kirkland. Send a number and we will get you a quote.'
   },
   {
     name: 'Woodinville',
@@ -20,15 +20,15 @@ const areas = [
   },
   {
     name: 'Lynnwood',
-    description: 'For Lynnwood residents, we offer reliable junk removal with same-day pickup. Our team handles everything from single items to full cleanouts—just call or text for a free quote.'
+    description: 'Single items, furniture, garage cleanouts, and junk piles around Lynnwood. Call or text for a quote.'
   },
   {
     name: 'Lake Forest Park',
-    description: 'We love serving the community of Lake Forest Park. We help our neighbors with responsible junk disposal, recycling everything we can to help preserve the natural beauty of the area around Lake Washington.'
+    description: 'Quick junk pickup in Lake Forest Park. We donate or recycle what we can and haul the rest to the right place.'
   },
   {
     name: 'Mountlake Terrace',
-    description: 'For residents of Mountlake Terrace, we offer dependable junk removal services. Whether it is a single item pickup or a full garage cleanout, we are just a quick call away for a free, no-obligation quote.'
+    description: 'Single item pickups, full garage cleanouts, and junk piles around Mountlake Terrace. Call or text for a quote.'
   },
 ];
 
@@ -43,9 +43,9 @@ const AreasWeServe = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl font-black text-black mb-4">Proudly Serving Your Neighborhood</h2>
+          <h2 className="text-4xl sm:text-5xl font-black text-black mb-4">Service Areas</h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Based in Kenmore, we proudly serve our neighbors in Woodinville, Bothell, Kirkland, Lynnwood, and surrounding communities.
+            Based in Kenmore and hauling across Bothell, Kirkland, Lynnwood, Woodinville, and nearby.
           </p>
         </motion.div>
         

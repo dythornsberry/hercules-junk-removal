@@ -5,28 +5,22 @@ import { Button } from '@/components/ui/button.jsx';
 import { Input } from '@/components/ui/input.jsx';
 import { Checkbox } from '@/components/ui/checkbox.jsx';
 import { Loader2, CheckCircle2, Phone } from 'lucide-react';
+import { submitLead } from '@/lib/leadSubmission.js';
 
 const DEFAULT_PHONE = '4254063445';
 const DEFAULT_PHONE_FORMATTED = '(425) 406-3445';
 
-const validateEmail = (email) => {
-  if (!email) return true;
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(email);
-};
-
 const CallbackSection = ({
   sourceLabel = 'Website',
   heading = 'Prefer a callback instead?',
-  description = 'Leave your number and we will text or call you back to help with pricing or booking.',
+  description = 'Leave your number and we will text or call you back. Nothing fancy.',
   compact = false,
   sectionId,
 }) => {
   const fieldIdBase = sourceLabel.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '' });
   const [smsOptIn, setSmsOptIn] = useState(true);
   const [phoneError, setPhoneError] = useState('');
-  const [emailError, setEmailError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(null);
 
@@ -37,10 +31,6 @@ const CallbackSection = ({
     if (name === 'phone') {
       const digits = value.replace(/\D/g, '');
       setPhoneError(digits.length > 0 && digits.length !== 10 ? 'Phone must be 10 digits.' : '');
-    }
-
-    if (name === 'email') {
-      setEmailError(validateEmail(value) ? '' : 'Please enter a valid email address.');
     }
   };
 
@@ -55,11 +45,6 @@ const CallbackSection = ({
       hasError = true;
     }
 
-    if (!validateEmail(formData.email)) {
-      setEmailError('Please enter a valid email address.');
-      hasError = true;
-    }
-
     if (hasError) return;
 
     setIsLoading(true);
@@ -69,7 +54,7 @@ const CallbackSection = ({
     const quoteData = {
       name: formData.name.trim(),
       phone: normalizedPhone,
-      email: formData.email.trim(),
+      email: '',
       location: sourceLabel,
       description: `Callback request from ${sourceLabel}`,
       sms_opt_in: smsOptIn,
@@ -77,18 +62,9 @@ const CallbackSection = ({
     };
 
     try {
-      const res = await fetch('/api/callback', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(quoteData),
-      });
-
-      if (!res.ok) {
-        throw new Error('Failed to send callback request.');
-      }
-
+      await submitLead(quoteData);
       setSubmissionStatus('success');
-      setFormData({ name: '', phone: '', email: '' });
+      setFormData({ name: '', phone: '' });
       setSmsOptIn(true);
       window.dispatchEvent(new CustomEvent('form_submitted'));
     } catch (error) {
@@ -124,7 +100,7 @@ const CallbackSection = ({
                 <div>
                   <h3 className="text-lg sm:text-xl font-bold text-white">Want to talk first?</h3>
                   <p className="mt-1 text-sm text-gray-400">
-                    Drop your info and we'll reach out to answer any questions before you book.
+                    Drop your info and we will reach out. Photos help too, once we text you.
                   </p>
                 </div>
                 <p className="text-xs text-gray-500">
@@ -137,8 +113,8 @@ const CallbackSection = ({
               {submissionStatus === 'success' ? (
                 <div className="text-center py-2">
                   <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-white mb-2">Request received</h3>
-                  <p className="text-gray-400 mb-6">We will text or call you shortly during business hours.</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">Got it.</h3>
+                  <p className="text-gray-400 mb-6">We will text or call you back as soon as we can.</p>
                   <Button
                     type="button"
                     onClick={() => setSubmissionStatus(null)}
@@ -166,44 +142,25 @@ const CallbackSection = ({
                       />
                     </div>
                     <div className="space-y-1.5">
-                      <label htmlFor={`callback-email-${fieldIdBase}`} className="text-sm font-semibold text-white">
-                        Email <span className="text-gray-500 font-normal">(Optional)</span>
+                      <label htmlFor={`callback-phone-${fieldIdBase}`} className="text-sm font-semibold text-white">
+                        Phone number
                       </label>
                       <Input
-                        id={`callback-email-${fieldIdBase}`}
-                        name="email"
-                        type="email"
-                        value={formData.email}
+                        id={`callback-phone-${fieldIdBase}`}
+                        name="phone"
+                        type="tel"
+                        inputMode="tel"
+                        autoComplete="tel"
+                        value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="you@example.com"
-                        autoComplete="email"
+                        placeholder="(425) 555-0123"
+                        required
                         className={`bg-black/50 border-gray-700 text-white placeholder:text-gray-500 h-12 rounded-xl px-4 focus-visible:ring-[#FFC107] ${
-                          emailError ? 'border-red-500' : ''
+                          phoneError ? 'border-red-500' : ''
                         }`}
                       />
-                      {emailError && <p className="text-red-500 text-xs">{emailError}</p>}
+                      {phoneError && <p className="text-red-500 text-xs">{phoneError}</p>}
                     </div>
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <label htmlFor={`callback-phone-${fieldIdBase}`} className="text-sm font-semibold text-white">
-                      Phone number
-                    </label>
-                    <Input
-                      id={`callback-phone-${fieldIdBase}`}
-                      name="phone"
-                      type="tel"
-                      inputMode="tel"
-                      autoComplete="tel"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="(425) 555-0123"
-                      required
-                      className={`bg-black/50 border-gray-700 text-white placeholder:text-gray-500 h-12 rounded-xl px-4 focus-visible:ring-[#FFC107] ${
-                        phoneError ? 'border-red-500' : ''
-                      }`}
-                    />
-                    {phoneError && <p className="text-red-500 text-xs">{phoneError}</p>}
                   </div>
 
                   <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-black/30 p-3">
@@ -240,13 +197,12 @@ const CallbackSection = ({
                           Sending...
                         </>
                       ) : (
-                        'Request a Callback'
+                        'Send My Info'
                       )}
                     </Button>
                     <Button
                       asChild
-                      variant="outline"
-                      className="w-full sm:w-auto border-gray-700 text-white hover:bg-white/10"
+                      className="w-full sm:w-auto border border-gray-700 bg-[#111111] text-white hover:bg-white/10"
                     >
                       <a href={`tel:${DEFAULT_PHONE}`}>
                         <Phone className="mr-2 h-4 w-4" />
@@ -256,7 +212,7 @@ const CallbackSection = ({
                   </div>
 
                   <p className="text-xs text-gray-500">
-                    We typically respond within a few hours during business hours.
+                    Name and phone is enough to get started.
                   </p>
                 </form>
               )}

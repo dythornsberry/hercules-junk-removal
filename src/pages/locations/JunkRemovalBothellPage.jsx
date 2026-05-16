@@ -8,7 +8,7 @@ const JunkRemovalBothellPage = () => {
       slug="junk-removal-bothell"
       h1="Junk Removal in Bothell, WA from $99 – Same-Day"
       blurb="Fast, reliable junk removal serving all of Bothell. From Canyon Park to downtown, we haul away your unwanted items the same day."
-      metaDescription="Same-day junk removal in Bothell, WA from $99. Furniture, yard waste, appliances & more. Licensed & insured local team. Book online in 60 seconds."
+      metaDescription="Same-day junk removal in Bothell, WA from $99. Furniture, yard waste, appliances & more. Licensed & insured local team. Request a free quote fast."
       zipCodes={['98011', '98012', '98021']}
       neighborhoods={[
         'Canyon Park', 'North Creek', 'Country Village',

@@ -8,7 +8,7 @@ const JunkRemovalBellevuePage = () => {
       slug="junk-removal-bellevue"
       h1="Junk Removal in Bellevue, WA from $99"
       blurb="Fast, affordable junk removal across Bellevue. We haul furniture, appliances, yard waste, and construction debris with same-day availability."
-      metaDescription="Affordable junk removal in Bellevue, WA from $99. Furniture, appliances, construction debris, and full cleanouts. Licensed and insured. Book online."
+      metaDescription="Affordable junk removal in Bellevue, WA from $99. Furniture, appliances, construction debris, and full cleanouts. Licensed and insured. Request a free quote."
       zipCodes={['98004', '98005', '98006', '98007', '98008', '98009', '98015']}
       neighborhoods={[
         'Downtown Bellevue', 'Crossroads', 'Factoria', 'Newport',

@@ -82,31 +82,45 @@ function extractRoutes(appJsxPath) {
 }
 
 function findReactFiles(dir) {
-  return fs.readdirSync(dir).map(item => path.join(dir, item));
+  const results = [];
+  const items = fs.readdirSync(dir, { withFileTypes: true });
+  for (const item of items) {
+    const fullPath = path.join(dir, item.name);
+    if (item.isDirectory()) {
+      results.push(...findReactFiles(fullPath));
+    } else if (item.name.endsWith('.jsx') || item.name.endsWith('.tsx')) {
+      results.push(fullPath);
+    }
+  }
+  return results;
 }
 
 function extractHelmetData(content, filePath, routes) {
-  const cleanedContent = cleanContent(content);
-  
-  if (!EXTRACTION_REGEX.helmetTest.test(cleanedContent)) {
-    return null;
-  }
-  
-  const helmetMatch = content.match(EXTRACTION_REGEX.helmet);
-  if (!helmetMatch) return null;
-  
-  const helmetContent = helmetMatch[1];
-  const titleMatch = helmetContent.match(EXTRACTION_REGEX.title);
-  const descMatch = helmetContent.match(EXTRACTION_REGEX.description);
-  
+  // Extract title directly from raw content
+  const titleMatch = content.match(/<title[^>]*>\s*(.*?)\s*<\/title>/i);
+  const descMatch = content.match(/<meta\s+name=["']description["']\s+content=["'](.*?)["']/i);
+  const canonicalMatch = content.match(/rel=["']canonical["']\s+href=["'](https?:\/\/[^"']+)["']/i);
+
+  if (!titleMatch && !descMatch) return null;
+
   const title = cleanText(titleMatch?.[1]);
   const description = cleanText(descMatch?.[1]);
-  
-  const fileName = path.basename(filePath, path.extname(filePath));
-  const url = routes.length && routes.has(fileName) 
-    ? routes.get(fileName) 
-    : generateFallbackUrl(fileName);
-  
+
+  // Prefer canonical URL, then route map, then fallback
+  let url;
+  if (canonicalMatch) {
+    try {
+      url = new URL(canonicalMatch[1]).pathname;
+    } catch {
+      url = canonicalMatch[1];
+    }
+  } else {
+    const fileName = path.basename(filePath, path.extname(filePath));
+    url = (routes.size && routes.has(fileName))
+      ? routes.get(fileName)
+      : generateFallbackUrl(fileName);
+  }
+
   return {
     url,
     title: title || 'Untitled Page',
@@ -119,13 +133,46 @@ function generateFallbackUrl(fileName) {
   return cleanName === 'app' ? '/' : `/${cleanName}`;
 }
 
+const EXCLUDED_PAGES = ['/admin', '/login', '/debug', '/test-email', '/notfound', '/testemail', '/locationpagelayout'];
+
+const LOCATION_PAGES = [
+  { slug: 'kenmore', city: 'Kenmore' },
+  { slug: 'bothell', city: 'Bothell' },
+  { slug: 'kirkland', city: 'Kirkland' },
+  { slug: 'woodinville', city: 'Woodinville' },
+  { slug: 'lake-forest-park', city: 'Lake Forest Park' },
+  { slug: 'mountlake-terrace', city: 'Mountlake Terrace' },
+  { slug: 'lynnwood', city: 'Lynnwood' },
+  { slug: 'shoreline', city: 'Shoreline' },
+  { slug: 'seattle', city: 'Seattle' },
+  { slug: 'bellevue', city: 'Bellevue' },
+  { slug: 'redmond', city: 'Redmond' },
+  { slug: 'sammamish', city: 'Sammamish' },
+  { slug: 'edmonds', city: 'Edmonds' },
+];
+
 function generateLlmsTxt(pages) {
-  const sortedPages = pages.sort((a, b) => a.title.localeCompare(b.title));
-  const pageEntries = sortedPages.map(page => 
-    `- [${page.title}](${page.url}): ${page.description}`
+  const publicPages = pages.filter(p => !EXCLUDED_PAGES.includes(p.url));
+  const sortedPages = publicPages.sort((a, b) => a.title.localeCompare(b.title));
+  const pageEntries = sortedPages.map(page =>
+    `- [${page.title}](https://hercjunk.com${page.url}): ${page.description}`
   ).join('\n');
-  
-  return `## Pages\n${pageEntries}`;
+
+  const locationEntries = LOCATION_PAGES.map(loc =>
+    `- [Junk Removal in ${loc.city}, WA](https://hercjunk.com/junk-removal-${loc.slug}): Same-day junk removal in ${loc.city}, WA from $99. Licensed & insured.`
+  ).join('\n');
+
+  return `# Hercules Junk Removal
+
+> Local junk removal in Kenmore and Greater Seattle from $99. Same-day service. Owner: Dylan Thornsberry. Phone: (425) 406-3445.
+
+Serving: Kenmore, Bothell, Kirkland, Lynnwood, Woodinville, Lake Forest Park, Mountlake Terrace, Shoreline, Seattle, Bellevue, Redmond, Sammamish, Edmonds
+
+## Pages
+${pageEntries}
+
+## Location Pages
+${locationEntries}`;
 }
 
 function ensureDirectoryExists(dirPath) {

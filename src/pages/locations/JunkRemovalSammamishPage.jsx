@@ -8,7 +8,7 @@ const JunkRemovalSammamishPage = () => {
       slug="junk-removal-sammamish"
       h1="Junk Removal in Sammamish, WA from $99"
       blurb="Professional junk removal in Sammamish. We haul furniture, appliances, yard waste, and construction debris with same-day service available."
-      metaDescription="Fast junk removal in Sammamish, WA from $99. Furniture, appliances, yard waste, and full property cleanouts. Licensed and insured. Book online."
+      metaDescription="Fast junk removal in Sammamish, WA from $99. Furniture, appliances, yard waste, and full property cleanouts. Licensed and insured. Request a free quote."
       zipCodes={['98074', '98075']}
       neighborhoods={[
         'Pine Lake', 'Klahanie', 'Beaver Lake', 'Sahalee',

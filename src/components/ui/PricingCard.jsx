@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button.jsx';
 import { ArrowRight } from 'lucide-react';
 import TruckFillIndicator from '@/components/ui/TruckFillIndicator.jsx';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
 
 const PricingCard = ({ 
   loadSize, 
@@ -13,11 +13,6 @@ const PricingCard = ({
   fillPercentage,
   index = 0 
 }) => {
-  const handleCalendlyClick = (e) => {
-    e.preventDefault();
-    openCalendlyPopup();
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -50,11 +45,13 @@ const PricingCard = ({
           {description}
         </p>
         
-        <Button 
-          onClick={handleCalendlyClick}
+        <Button
+          asChild
           className="w-full bg-[#FFC107] text-black hover:bg-[#e6ae06] font-bold py-6 rounded-xl mt-auto shadow-md transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-xl group"
         >
-          Book This Pickup <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <Link to="/quote">
+            Get a Quote <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </Button>
       </div>
     </motion.div>

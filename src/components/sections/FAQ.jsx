@@ -12,13 +12,13 @@ const FAQ = () => {
       question: "Do you charge extra for anything?",
       answer: "Some items cost extra to dispose of (mattresses, appliances with refrigerant, tires, pianos). Stairs or difficult access may add a small labor fee. We always tell you the total before we begin."
     },
-    {
-      question: "Do I need to be home?",
-      answer: "Not always. As long as we can access the items, we can handle it. Just let us know when you book."
-    },
+  {
+    question: "Do I need to be home?",
+      answer: "Not always. As long as we can access the items, we can handle it. Let us know when you book."
+  },
     {
       question: "How fast can you come?",
-      answer: "We can often do same-day or next-day pickups. Book online and pick the earliest slot that works for you."
+      answer: "We can often do same-day or next-day pickups. Send a quick quote request or call/text us, and we will help you find the earliest available pickup."
     },
     {
       question: "How can I pay?",

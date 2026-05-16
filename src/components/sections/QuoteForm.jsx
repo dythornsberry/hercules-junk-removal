@@ -5,29 +5,21 @@ import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { motion } from 'framer-motion';
 import { Loader2, AlertTriangle, CheckCircle, ShieldCheck } from 'lucide-react';
-import { supabase } from '@/lib/customSupabaseClient';
 import { Link } from 'react-router-dom';
 import { useToast } from '@/components/ui/use-toast.js';
+import { submitLead } from '@/lib/leadSubmission.js';
 
 const QuoteForm = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
   });
   const [smsOptIn, setSmsOptIn] = useState(true);
   const [phoneError, setPhoneError] = useState('');
-  const [emailError, setEmailError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState(null);
   const businessPhoneNumberFormatted = '425-406-3445';
-
-  const validateEmail = (email) => {
-    if (!email) return true; // Optional
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -41,14 +33,6 @@ const QuoteForm = () => {
         setPhoneError('');
       }
     }
-    
-    if (name === 'email') {
-      if (!validateEmail(value)) {
-        setEmailError('Please enter a valid email address.');
-      } else {
-        setEmailError('');
-      }
-    }
   };
 
   const handleSubmit = async (e) => {
@@ -57,10 +41,6 @@ const QuoteForm = () => {
     let hasError = false;
     if (formData.phone.replace(/\D/g, '').length !== 10) {
       setPhoneError('Phone must be 10 digits.');
-      hasError = true;
-    }
-    if (!validateEmail(formData.email)) {
-      setEmailError('Please enter a valid email address.');
       hasError = true;
     }
     
@@ -77,36 +57,20 @@ const QuoteForm = () => {
     setSubmissionStatus(null);
 
     try {
+      const normalizedPhone = formData.phone.replace(/\D/g, '');
       const quoteData = {
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
+        name: formData.name.trim(),
+        phone: normalizedPhone,
+        email: '',
         location: 'Not provided (Quote Page)',
         description: 'Quote Page submission (Standard)',
         sms_opt_in: smsOptIn,
         created_at: new Date().toISOString(),
       };
       
-      const { error: invokeError } = await supabase.functions.invoke('forward-to-zapier', {
-        body: quoteData,
-      });
-
-      if (invokeError) throw new Error('Failed to send data to Zapier proxy.');
-      
-      // Send email notification independently
-      supabase.functions.invoke('send-form-notification-email', {
-        body: {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          location: 'Quote Page',
-          description: 'Standard Quote Request',
-          submissionTime: new Date().toISOString()
-        }
-      }).catch(err => console.error("Failed to send email notification:", err));
-
+      await submitLead(quoteData);
       setSubmissionStatus('success');
-      setFormData({ name: '', phone: '', email: '' });
+      setFormData({ name: '', phone: '' });
       setSmsOptIn(true);
       window.dispatchEvent(new CustomEvent('form_submitted'));
       
@@ -139,7 +103,7 @@ const QuoteForm = () => {
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-4 tracking-tight">Get a Free Quote</h2>
           <p className="text-lg text-gray-600">
-            Just enter your name and number. We'll call you fast to give you a price.
+            Leave your number. We'll call you with a price.
           </p>
         </motion.div>
 
@@ -200,21 +164,6 @@ const QuoteForm = () => {
                     placeholder="Your Name"
                   />
                 </div>
-                
-                 <div>
-                  <Label htmlFor="email-quote" className="text-base font-bold text-gray-900 ml-1">Email <span className="text-gray-400 font-normal">(Optional)</span></Label>
-                  <Input
-                    id="email-quote"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className={`mt-1.5 bg-gray-50 border-gray-200 focus:bg-white focus:border-yellow-400 h-14 text-lg px-4 transition-all duration-300 text-black ${emailError ? 'border-red-500 bg-red-50' : ''}`}
-                    placeholder="email@example.com"
-                  />
-                  {emailError && <p className="text-red-500 text-sm mt-1 ml-1 font-medium">{emailError}</p>}
-                </div>
-                
                 <div>
                   <Label htmlFor="phone-quote" className="text-base font-bold text-gray-900 ml-1">Phone Number</Label>
                   <Input

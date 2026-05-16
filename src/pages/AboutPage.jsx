@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Button } from '@/components/ui/button';
 import { Toaster } from '@/components/ui/toaster';
 import { Phone, ArrowRight } from 'lucide-react';
-import { openCalendlyPopup } from '@/lib/calendlyUtils.js';
+import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
   const businessPhoneNumber = '4254063445';
@@ -12,9 +12,23 @@ const AboutPage = () => {
   return (
     <>
       <Helmet>
-        <title>About Hercules Junk Removal | Kenmore, WA | Meet the Owner</title>
-        <meta name="description" content="Meet Dylan, owner of Hercules Junk Removal in Kenmore, WA. Local, licensed & insured junk hauling for Bothell, Kirkland & Greater Seattle. 5-star rated." />
+        <title>About Hercules Junk Removal | Kenmore, WA Junk Hauling</title>
+        <meta name="description" content="Kenmore-based junk removal with fast response, a large box truck, fair pricing, and credit card payments. Serving Bothell, Kirkland, Lynnwood, and nearby." />
         <link rel="canonical" href="https://hercjunk.com/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About Hercules Junk Removal | Kenmore, WA Junk Hauling" />
+        <meta property="og:description" content="Kenmore-based junk removal with fast response, a large box truck, fair pricing, and credit card payments." />
+        <meta property="og:url" content="https://hercjunk.com/about" />
+        <meta property="og:image" content="https://hercjunk.com/images/hercules-truck.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Dylan Thornsberry",
+          "jobTitle": "Owner & Operator",
+          "worksFor": { "@id": "https://hercjunk.com" },
+          "address": { "@type": "PostalAddress", "addressLocality": "Kenmore", "addressRegion": "WA" }
+        })}</script>
       </Helmet>
       <div className="flex-grow bg-yellow-400 text-black">
         <main>
@@ -22,34 +36,40 @@ const AboutPage = () => {
             <div className="container mx-auto max-w-5xl">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="text-center md:text-left">
-                  <h1 className="text-4xl sm:text-5xl font-black text-black mb-4">Meet Dylan, Owner of Hercules Junk Removal</h1>
+                  <h1 className="text-4xl sm:text-5xl font-black text-black mb-4">Kenmore Junk Removal That Gets It Done</h1>
                   <p className="text-lg text-black/80 mb-6">
-                    Hi, I’m Dylan. I started Hercules Junk Removal here in Kenmore for a simple reason: to offer a friendly, reliable service that helps my neighbors.
+                    Hercules Junk Removal is based in Kenmore, WA. Call or send your number and we will get back to you fast.
+                  </p>
+                  <p className="text-lg text-black/80 mb-6">
+                    We run a large box truck, so most jobs fit in one load. That keeps the job simple and helps keep the price fair.
                   </p>
                   <p className="text-lg text-black/80 mb-6 font-bold">
-                    Our goal is simple: help you clear out the clutter without the stress. No hidden fees, just honest work.
+                    Furniture, garage junk, yard waste, appliances, cleanouts, random piles in the driveway - point at it and we haul it.
                   </p>
-                  <p className="text-lg text-black/80 mb-8">
-                    We are fully licensed and insured. We also donate or recycle whatever we can. We've done about 50 jobs so far and are growing thanks to happy customers spreading the word.
+                  <p className="text-lg text-black/80 mb-6">
+                    We are licensed and insured, take credit cards, and dispose of items the right way. Usable stuff gets donated when possible. Metal, wood, and green waste get recycled when we can.
+                  </p>
+                  <p className="text-lg text-black/80 mb-6">
+                    We serve Kenmore, Bothell, Kirkland, Lynnwood, Shoreline, Lake Forest Park, Woodinville, and nearby.
                   </p>
                   <p className="text-lg text-black/80 mb-8 font-bold">
-                    Thanks for looking us up. I’d love to earn your business.
+                    Fast quote. Big truck. Easy cleanup.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col gap-4 w-full">
                     <Button
                       size="lg"
-                      className="bg-black text-white hover:bg-gray-800 text-lg font-bold py-6 px-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300"
-                      onClick={() => openCalendlyPopup()}
+                      className="bg-black text-white hover:bg-gray-800 text-xl font-bold py-7 px-10 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 w-full"
+                      onClick={() => window.location.href = '/quote'}
                     >
-                      Book Now <ArrowRight className="ml-2 h-5 w-5" />
+                      Get a Quote <ArrowRight className="ml-2 h-6 w-6" />
                     </Button>
-                    <a href={`tel:${businessPhoneNumber}`}>
+                    <a href={`tel:${businessPhoneNumber}`} className="w-full">
                       <Button
                         size="lg"
                         variant="outline"
-                        className="border-2 border-black text-black hover:bg-black hover:text-white text-lg font-bold py-6 px-8 rounded-xl w-full"
+                        className="border-2 border-black text-black hover:bg-black hover:text-white text-xl font-bold py-7 px-10 rounded-xl w-full"
                       >
-                        <Phone className="mr-2 h-5 w-5" />
+                        <Phone className="mr-2 h-6 w-6" />
                         {businessPhoneNumberFormatted}
                       </Button>
                     </a>

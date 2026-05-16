@@ -22,7 +22,7 @@ const CustomerReviewsSection = () => {
             viewport={{ once: true }}
             className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-medium"
           >
-            Don't just take our word for it. See what real customers in the greater Seattle area are saying about our fast, friendly, and reliable junk removal services.
+            Real reviews from junk removal jobs around Kenmore, Bothell, Kirkland, and nearby.
           </motion.p>
         </div>
 

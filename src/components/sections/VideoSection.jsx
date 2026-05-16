@@ -1,9 +1,25 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
+
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Garage Cleanout in Kenmore WA — Hercules Junk Removal",
+  "description": "Watch a real garage cleanout from start to finish — done in under 2 hours by Hercules Junk Removal in Kenmore, WA.",
+  "thumbnailUrl": "https://img.youtube.com/vi/_XXk67bDZOU/maxresdefault.jpg",
+  "uploadDate": "2025-03-01",
+  "embedUrl": "https://www.youtube.com/embed/_XXk67bDZOU",
+  "url": "https://www.youtube.com/watch?v=_XXk67bDZOU",
+  "publisher": { "@id": "https://hercjunk.com" }
+};
 
 const VideoSection = () => {
   return (
     <section className="py-16 sm:py-20 px-4 bg-black">
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(videoSchema)}</script>
+      </Helmet>
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

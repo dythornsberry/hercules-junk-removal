@@ -8,7 +8,7 @@ const JunkRemovalLakeForestParkPage = () => {
       slug="junk-removal-lake-forest-park"
       h1="Junk Removal in Lake Forest Park, WA from $99 – Same-Day"
       blurb="Serving Lake Forest Park and the surrounding neighborhoods. Local, fast junk hauling with transparent pricing."
-      metaDescription="Same-day junk removal in Lake Forest Park, WA from $99. Furniture, yard waste, appliances & more. Licensed & insured. Book online in 60 seconds."
+      metaDescription="Same-day junk removal in Lake Forest Park, WA from $99. Furniture, yard waste, appliances & more. Licensed & insured. Request a free quote fast."
       zipCodes={['98155']}
       neighborhoods={[
         'Town Center', 'Sheridan Beach', 'Horizon View',
@@ -21,7 +21,7 @@ const JunkRemovalLakeForestParkPage = () => {
           paragraphs: [
             "Lake Forest Park is a tight-knit, tree-filled community nestled between Kenmore and Shoreline along the north end of Lake Washington. The wooded lots and established homes here create unique junk removal needs — from storm debris and fallen branches to basement cleanouts in older homes.",
             "Hercules Junk Removal is based nearby in Kenmore, making us one of the closest and fastest junk removal services for Lake Forest Park residents. We know the winding residential streets and can navigate properties with limited access that bigger trucks can't reach.",
-            "Our pricing is simple and transparent. We charge by the space your items take in our truck, starting at $99. No hourly rates, no surprise fees. We confirm your price before we start."
+            "Pricing is based on the space your items take in our truck, starting at $99. We give you the price before loading."
           ]
         },
         {

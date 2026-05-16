@@ -38,7 +38,7 @@ const Services = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-black text-black mb-6">What We Haul</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            From single item pickups to full property cleanouts, we handle the heavy lifting so you don't have to.
+            Single items, full cleanouts, garage piles, yard waste, and bulky stuff that needs a truck.
           </p>
         </div>
 
