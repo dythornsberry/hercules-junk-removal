@@ -130,7 +130,8 @@ const Hero = () => {
             {submissionStatus === 'success' ? (
               <div className="text-center py-4">
                 <CheckCircle2 className="w-14 h-14 text-green-500 mx-auto mb-3" />
-                <h3 className="text-xl font-bold text-white mb-2">Got it, thanks.</h3>
+                <h3 className="text-xl font-black text-white mb-1">Got it.</h3>
+                <p className="text-sm text-gray-400 mb-3">We'll call you back fast — usually under 30 min.</p>
                 <Button
                   type="button"
                   onClick={() => setSubmissionStatus(null)}
@@ -142,7 +143,7 @@ const Hero = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-3">
                 <div className="border-b-2 border-white/15 pb-3">
-                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#FFC107]">Quick quote</p>
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#FFC107]">Get a price in 10 min</p>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <div className="space-y-1">

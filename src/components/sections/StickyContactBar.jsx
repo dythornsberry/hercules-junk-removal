@@ -14,14 +14,14 @@ const StickyContactBar = () => {
       <a
         href={`tel:${businessPhoneNumber}`}
         onClick={handleCallClick}
-        className="flex-1 bg-white text-black flex flex-col items-center justify-center py-3 active:bg-gray-100 transition-colors border-t border-gray-200"
+        className="flex-1 bg-black text-white flex flex-col items-center justify-center py-3 active:bg-gray-900 transition-colors border-t-4 border-[#FFC107]"
       >
-        <Phone className="h-6 w-6 mb-0.5" />
-        <span className="text-xs font-bold uppercase tracking-wide">Call (425) 406-3445</span>
+        <Phone className="h-6 w-6 mb-0.5 text-[#FFC107]" />
+        <span className="text-xs font-black uppercase tracking-wide">Call (425) 406-3445</span>
       </a>
       <Link
         to="/quote"
-        className="flex-[1.5] bg-yellow-400 text-black flex flex-col items-center justify-center py-3 active:bg-yellow-500 transition-colors border-t border-yellow-500"
+        className="flex-[1.5] bg-[#FFC107] text-black flex flex-col items-center justify-center py-3 active:bg-[#e6ae06] transition-colors border-t-4 border-black"
       >
         <MessageCircle className="h-6 w-6 mb-0.5" />
         <span className="text-xs font-black uppercase tracking-wide">Get a Quote</span>

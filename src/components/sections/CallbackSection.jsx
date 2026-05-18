@@ -94,8 +94,8 @@ const CallbackSection = ({
             <p className="mt-3 text-sm md:text-base text-gray-400 max-w-xl mx-auto">{description}</p>
           </motion.div>
 
-          <div className="bg-[#1A1A1A] rounded-2xl border border-gray-800 shadow-2xl overflow-hidden">
-            <div className="border-b border-gray-800 px-5 py-5 sm:px-6">
+          <div className="bg-[#1A1A1A] border-4 border-gray-800 shadow-[6px_6px_0_rgba(0,0,0,0.4)] overflow-hidden">
+            <div className="border-b-2 border-gray-800 px-5 py-5 sm:px-6">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <h3 className="text-lg sm:text-xl font-bold text-white">Want to talk first?</h3>
@@ -113,7 +113,8 @@ const CallbackSection = ({
               {submissionStatus === 'success' ? (
                 <div className="text-center py-2">
                   <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-white mb-2">Got it.</h3>
+                  <h3 className="text-2xl font-black text-white mb-1">Got it.</h3>
+                  <p className="text-sm text-gray-400 mb-3">We'll call you back fast — usually under 30 min.</p>
                   <Button
                     type="button"
                     onClick={() => setSubmissionStatus(null)}
@@ -137,7 +138,7 @@ const CallbackSection = ({
                         placeholder="Your name"
                         required
                         autoComplete="name"
-                        className="bg-black/50 border-gray-700 text-white placeholder:text-gray-500 h-12 rounded-xl px-4 focus-visible:ring-[#FFC107]"
+                        className="bg-black/50 border-2 border-gray-700 text-white placeholder:text-gray-500 h-12 rounded-md px-4 focus-visible:ring-[#FFC107]"
                       />
                     </div>
                     <div className="space-y-1.5">
@@ -154,7 +155,7 @@ const CallbackSection = ({
                         onChange={handleInputChange}
                         placeholder="(425) 555-0123"
                         required
-                        className={`bg-black/50 border-gray-700 text-white placeholder:text-gray-500 h-12 rounded-xl px-4 focus-visible:ring-[#FFC107] ${
+                        className={`bg-black/50 border-2 border-gray-700 text-white placeholder:text-gray-500 h-12 rounded-md px-4 focus-visible:ring-[#FFC107] ${
                           phoneError ? 'border-red-500' : ''
                         }`}
                       />
@@ -162,7 +163,7 @@ const CallbackSection = ({
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-black/30 p-3">
+                  <div className="flex items-start gap-3 border-2 border-white/10 bg-black/30 p-3">
                     <Checkbox
                       id={`callback-sms-${fieldIdBase}`}
                       checked={smsOptIn}
@@ -188,7 +189,7 @@ const CallbackSection = ({
                     <Button
                       type="submit"
                       disabled={isLoading}
-                      className="w-full sm:flex-1 bg-[#FFC107] text-black hover:bg-[#e6ae06] h-12 rounded-xl font-bold shadow-lg transition-all duration-300 hover:scale-[1.01] active:scale-95"
+                      className="w-full sm:flex-1 bg-[#FFC107] text-black hover:bg-[#e6ae06] h-12 rounded-md font-black shadow-[4px_4px_0_rgba(255,255,255,0.1)] transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:scale-95"
                     >
                       {isLoading ? (
                         <>
