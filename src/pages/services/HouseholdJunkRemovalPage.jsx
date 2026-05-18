@@ -12,16 +12,16 @@ const HouseholdJunkRemovalPage = () => {
     <>
       <Helmet>
         <title>Junk Removal Service Kenmore WA | Residential Trash Hauling</title>
-        <meta name="description" content="Local residential junk removal in Kenmore, WA. We clear out attics, basements, sheds, and whole homes. Licensed, insured, and 5-star rated." />
+        <meta name="description" content="Local residential junk removal in Kenmore, WA. We clear out attics, basements, sheds, and whole homes. Licensed, insured, and ready for same-day pickup." />
         <link rel="canonical" href="https://hercjunk.com/household-junk-removal" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Junk Removal Service Kenmore WA | Residential Trash Hauling" />
-        <meta property="og:description" content="Local residential junk removal in Kenmore, WA. We clear out attics, basements, sheds, and whole homes. Licensed, insured, and 5-star rated." />
+        <meta property="og:description" content="Local residential junk removal in Kenmore, WA. We clear out attics, basements, sheds, and whole homes. Licensed, insured, and ready for same-day pickup." />
         <meta property="og:url" content="https://hercjunk.com/household-junk-removal" />
         <meta property="og:image" content="https://hercjunk.com/images/hercules-truck.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Junk Removal Service Kenmore WA | Residential Trash Hauling" />
-        <meta name="twitter:description" content="Local residential junk removal in Kenmore, WA. We clear out attics, basements, sheds, and whole homes. Licensed, insured, and 5-star rated." />
+        <meta name="twitter:description" content="Local residential junk removal in Kenmore, WA. We clear out attics, basements, sheds, and whole homes. Licensed, insured, and ready for same-day pickup." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",

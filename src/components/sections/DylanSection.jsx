@@ -22,10 +22,10 @@ const DylanSection = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight">Fast junk removal. No hassle.</h2>
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed mb-8">
               <p className="font-medium text-xl text-white">
-                Local to Kenmore. Fast response, fair prices, and we haul the heavy stuff.
+                Dylan is local to Kenmore. Fast response, fair prices, and the heavy stuff gets hauled.
               </p>
               <p>
-                The box truck holds 18.6 cubic yards, so most jobs fit in one load. That keeps it simple, avoids extra trips, and yes, we take credit cards.
+                The box truck is bigger than a pickup or small dump trailer, so most jobs fit in one load. That helps keep the price fair, and yes, credit cards are accepted.
               </p>
               <div className="border-2 border-[#FFC107] bg-[#FFC107]/10 p-4 font-black text-white shadow-[4px_4px_0_rgba(255,193,7,0.25)]">
                 Good for garage piles, furniture, yard waste, appliances, and random junk.

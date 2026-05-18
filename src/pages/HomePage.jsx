@@ -8,6 +8,7 @@ import BeforeAfter from '@/components/sections/BeforeAfter.jsx';
 import VideoSection from '@/components/sections/VideoSection.jsx';
 import HercJunkPricingSection from '@/components/sections/HercJunkPricingSection.jsx';
 import GoogleReviewsWidget from '@/components/sections/GoogleReviewsWidget.jsx';
+import LocalSeoBlock from '@/components/sections/LocalSeoBlock.jsx';
 import ServiceAreaMap from '@/components/sections/ServiceAreaMap.jsx';
 import DylanSection from '@/components/sections/DylanSection.jsx';
 import FAQ from '@/components/sections/FAQ.jsx';
@@ -17,13 +18,15 @@ import Cta from '@/components/sections/Cta.jsx';
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
-  "@id": "https://hercjunk.com",
+  "@id": "https://hercjunk.com/#localbusiness",
   "name": "Hercules Junk Removal",
-  "description": "Fast, affordable junk removal in Kenmore, Bothell, Kirkland & Greater Seattle. Single items from $99. Same-day service available.",
+  "description": "Kenmore-based junk removal serving Kenmore, Bothell, Kirkland, Lynnwood, and nearby. Fast pickup, affordable prices, and a big box truck.",
   "url": "https://hercjunk.com",
   "telephone": "+14254063445",
   "email": "dythornsberry@gmail.com",
   "priceRange": "$99-$649",
+  "paymentAccepted": "Cash, Credit Card, Venmo, Zelle",
+  "currenciesAccepted": "USD",
   "image": "https://hercjunk.com/images/hercules-truck.jpg",
   "address": {
     "@type": "PostalAddress",
@@ -41,6 +44,22 @@ const localBusinessSchema = {
     "https://www.youtube.com/@hercjunk"
   ],
   "openingHours": "Mo-Su 00:00-23:59",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
   "areaServed": [
     { "@type": "City", "name": "Kenmore", "sameAs": "https://en.wikipedia.org/wiki/Kenmore,_Washington" },
     { "@type": "City", "name": "Bothell", "sameAs": "https://en.wikipedia.org/wiki/Bothell,_Washington" },
@@ -56,12 +75,6 @@ const localBusinessSchema = {
     { "@type": "City", "name": "Sammamish", "sameAs": "https://en.wikipedia.org/wiki/Sammamish,_Washington" },
     { "@type": "City", "name": "Edmonds", "sameAs": "https://en.wikipedia.org/wiki/Edmonds,_Washington" }
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "7",
-    "bestRating": "5"
-  },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Junk Removal Services",
@@ -79,8 +92,8 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Junk Removal in Kenmore & Greater Seattle from $99 | Hercules Junk Removal</title>
-        <meta name="description" content="Fast, affordable junk removal in Kenmore, Bothell, Kirkland & Greater Seattle. Single items from $99. Request a free quote or call today. Same-day service available." />
+        <title>Junk Removal Kenmore WA & Bothell | Same-Day Pickup | Hercules Junk Removal</title>
+        <meta name="description" content="Kenmore-based junk removal serving Kenmore, Bothell, Kirkland, and nearby. Fast pickup, affordable prices, big box truck, and quotes from $99." />
         <link rel="canonical" href="https://hercjunk.com/" />
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
@@ -106,7 +119,10 @@ const HomePage = () => {
       {/* 6. Deeper Social Proof */}
       <GoogleReviewsWidget />
 
-      {/* 7. Service Area Qualification & Local Connection */}
+      {/* 7. Local SEO / Service Area Qualification */}
+      <LocalSeoBlock />
+
+      {/* 8. Service Area Qualification & Local Connection */}
       <ServiceAreaMap />
       <DylanSection />
       
@@ -118,8 +134,8 @@ const HomePage = () => {
         compact
         sectionId="callback-form-homepage"
         sourceLabel="Homepage"
-        heading="Want us to reach out first?"
-        description="Not sure what it will cost? Send your number and we will text or call you back. Photos help too."
+        heading="Want a quick quote?"
+        description="Name, phone, what needs to go."
       />
       
       {/* 9. Final Conversion */}

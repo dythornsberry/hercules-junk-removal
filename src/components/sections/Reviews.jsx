@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const reviews = [
@@ -12,7 +11,7 @@ const reviews = [
   {
     name: 'Ryder A.',
     location: 'Bothell, WA',
-    text: 'Dylan and the team did an amazing job. Super affordable and easy to talk to.',
+    text: 'Dylan did an amazing job. Super affordable and easy to talk to.',
   },
   {
     name: 'Owen A.',
@@ -20,14 +19,6 @@ const reviews = [
     text: 'Took care of it fast and did a great job. Thanks Dylan!',
   }
 ];
-
-const StarRating = () => (
-  <div className="flex text-yellow-400">
-    {[...Array(5)].map((_, i) => (
-      <Star key={i} className="h-5 w-5 fill-current" />
-    ))}
-  </div>
-);
 
 const Reviews = () => {
   const googleReviewsUrl = "https://www.google.com/search?q=hercules+junk+removal+reviews";
@@ -42,7 +33,7 @@ const Reviews = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-white">What Our Neighbors Say</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white">What Neighbors Say</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
@@ -55,7 +46,9 @@ const Reviews = () => {
               viewport={{ once: true }}
               className="bg-gray-900 p-8 rounded-2xl shadow-md border border-gray-700 flex flex-col"
             >
-              <StarRating />
+              <p className="mb-4 inline-block w-fit border border-[#f5c400] px-2 py-1 text-xs font-black uppercase tracking-wide text-[#f5c400]">
+                Local feedback
+              </p>
               <p className="text-base text-gray-300 flex-grow my-4">"{review.text}"</p>
               <div className="text-right mt-auto">
                 <p className="font-bold text-white">- {review.name}</p>

@@ -6,19 +6,19 @@ const FAQ = () => {
   const faqs = [
     {
       question: "How does pricing work?",
-      answer: "We price by how much space your stuff takes up in our truck. Prices range from $99 for a single item to $649 for a full truck. We confirm your exact price before we start."
+      answer: "Pricing is based on how much space your stuff takes up in the truck. Prices range from $99 for a single item to $649 for a full truck. The exact price is confirmed before loading."
     },
     {
       question: "Do you charge extra for anything?",
-      answer: "Some items cost extra to dispose of (mattresses, appliances with refrigerant, tires, pianos). Stairs or difficult access may add a small labor fee. We always tell you the total before we begin."
+      answer: "Some items cost extra to dispose of (mattresses, appliances with refrigerant, tires, pianos). Stairs or difficult access may add a small labor fee. You get the total before the job starts."
     },
   {
     question: "Do I need to be home?",
-      answer: "Not always. As long as we can access the items, we can handle it. Let us know when you book."
+      answer: "Not always. If the items are accessible, pickup can usually still happen. Mention it when you book."
   },
     {
       question: "How fast can you come?",
-      answer: "We can often do same-day or next-day pickups. Send a quick quote request or call/text us, and we will help you find the earliest available pickup."
+      answer: "Same-day or next-day pickups are often available. Send a quick quote request or call/text."
     },
     {
       question: "How can I pay?",
@@ -47,7 +47,7 @@ const FAQ = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Frequently Asked Questions</h2>
-          <p className="text-gray-400 text-lg">Everything you need to know about our service.</p>
+          <p className="text-gray-400 text-lg">Quick answers before you book.</p>
         </div>
 
         <Accordion type="single" collapsible className="w-full space-y-4">

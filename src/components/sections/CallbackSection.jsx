@@ -13,7 +13,7 @@ const DEFAULT_PHONE_FORMATTED = '(425) 406-3445';
 const CallbackSection = ({
   sourceLabel = 'Website',
   heading = 'Prefer a callback instead?',
-  description = 'Leave your number and we will text or call you back. Nothing fancy.',
+  description = 'Name, phone, what needs to go.',
   compact = false,
   sectionId,
 }) => {
@@ -100,7 +100,7 @@ const CallbackSection = ({
                 <div>
                   <h3 className="text-lg sm:text-xl font-bold text-white">Want to talk first?</h3>
                   <p className="mt-1 text-sm text-gray-400">
-                    Drop your info and we will reach out. Photos help too, once we text you.
+                    Send the basics and get a quote.
                   </p>
                 </div>
                 <p className="text-xs text-gray-500">
@@ -114,7 +114,6 @@ const CallbackSection = ({
                 <div className="text-center py-2">
                   <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-white mb-2">Got it.</h3>
-                  <p className="text-gray-400 mb-6">We will text or call you back as soon as we can.</p>
                   <Button
                     type="button"
                     onClick={() => setSubmissionStatus(null)}
@@ -171,7 +170,7 @@ const CallbackSection = ({
                       className="mt-0.5 border-gray-600 data-[state=checked]:bg-[#FFC107] data-[state=checked]:text-black"
                     />
                     <label htmlFor={`callback-sms-${fieldIdBase}`} className="text-xs leading-relaxed text-gray-400 cursor-pointer">
-                      I agree to be contacted about my quote by call or text. See our{' '}
+                      I agree to be contacted about my quote by call or text. See the{' '}
                       <Link to="/privacy-policy" className="text-[#FFC107] hover:underline">
                         privacy policy
                       </Link>
@@ -181,7 +180,7 @@ const CallbackSection = ({
 
                   {submissionStatus === 'error' && (
                     <p className="text-sm text-red-400">
-                      We could not submit your request right now. Please try again or call us directly.
+                      Could not submit your request right now. Please try again or call directly.
                     </p>
                   )}
 

@@ -24,7 +24,7 @@ const LocationPageLayout = ({
   const canonicalUrl = `https://hercjunk.com/${slug}`;
 
   const ogImageUrl = 'https://hercjunk.com/images/hercules-truck.jpg';
-  const pageTitle = h1;
+  const pageTitle = `${h1} | Same-Day Pickup | Hercules Junk Removal`;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -57,9 +57,12 @@ const LocationPageLayout = ({
     "name": `Junk Removal in ${city}`,
     "provider": {
       "@type": "LocalBusiness",
+      "@id": "https://hercjunk.com/#localbusiness",
       "name": "Hercules Junk Removal",
-      "telephone": "+14254063445"
+      "telephone": "+14254063445",
+      "url": "https://hercjunk.com/"
     },
+    "url": canonicalUrl,
     "areaServed": {
       "@type": "City",
       "name": city,

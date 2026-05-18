@@ -34,9 +34,9 @@ const BeforeAfter = () => {
           <div className="flex justify-center mb-6">
             <SatisfactionGuaranteeBadge className="bg-white/5 border-white/10 text-[#FFC107]" />
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">See Our Results</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">Real Job Photos</h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto font-medium">
-            From cluttered garages to overgrown yards, see the fast difference we can make for your space.
+            Real before and after photos from local junk removal jobs.
           </p>
         </motion.div>
 

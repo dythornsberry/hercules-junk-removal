@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button.jsx';
 import { Input } from '@/components/ui/input.jsx';
 import { Checkbox } from '@/components/ui/checkbox.jsx';
-import { Phone, CheckCircle2, Star, Loader2, ArrowRight, MapPin, Truck } from 'lucide-react';
+import { Phone, CheckCircle2, Loader2, ArrowRight, MapPin, Truck } from 'lucide-react';
 import { submitLead } from '@/lib/leadSubmission.js';
 
 const DEFAULT_PHONE = '4254063445';
@@ -89,7 +89,7 @@ const Hero = () => {
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
             <span className="inline-flex rotate-1 items-center gap-1.5 bg-black text-[#FFC107] border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
-              <Truck className="w-3.5 h-3.5" /> 18.6 Yard Box Truck
+              <Truck className="w-3.5 h-3.5" /> Big Box Truck
             </span>
             <span className="inline-flex -rotate-1 items-center gap-1.5 bg-white text-black border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_#000]">
               <MapPin className="w-3.5 h-3.5" /> Kenmore, WA Based
@@ -100,9 +100,6 @@ const Hero = () => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
               Same-Day Pickup
-            </span>
-            <span className="inline-flex -rotate-1 items-center gap-1 bg-white text-black border-2 border-black px-3 py-1 text-xs font-bold uppercase tracking-wide shadow-[3px_3px_0_#000]">
-              <Star className="w-3 h-3 fill-current" /> 5-Star Google
             </span>
           </div>
 
@@ -123,17 +120,6 @@ const Hero = () => {
             Fast quotes. Same-day pickup.
           </motion.p>
 
-          <div className="mb-6 grid max-w-2xl grid-cols-1 gap-2 text-left sm:grid-cols-3">
-            {['Call or text', 'Credit cards ok', '18.6 yd capacity'].map((item) => (
-              <div
-                key={item}
-                className="border-2 border-black bg-white px-3 py-2 text-sm font-black uppercase tracking-tight shadow-[3px_3px_0_#000]"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-
           {/* Lead Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -145,7 +131,6 @@ const Hero = () => {
               <div className="text-center py-4">
                 <CheckCircle2 className="w-14 h-14 text-green-500 mx-auto mb-3" />
                 <h3 className="text-xl font-bold text-white mb-2">Got it, thanks.</h3>
-                <p className="text-gray-400 mb-4 text-sm">We will text or call you back as soon as we can.</p>
                 <Button
                   type="button"
                   onClick={() => setSubmissionStatus(null)}
@@ -158,7 +143,6 @@ const Hero = () => {
               <form onSubmit={handleSubmit} className="space-y-3">
                 <div className="border-b-2 border-white/15 pb-3">
                   <p className="text-xs font-black uppercase tracking-[0.2em] text-[#FFC107]">Quick quote</p>
-                  <p className="mt-1 text-lg font-black text-white">We will call or text you back.</p>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <div className="space-y-1">
@@ -204,14 +188,14 @@ const Hero = () => {
                     className="mt-0.5 border-gray-600 data-[state=checked]:bg-[#FFC107] data-[state=checked]:text-black"
                   />
                   <label htmlFor="hero-sms" className="text-xs leading-relaxed text-gray-400 cursor-pointer">
-                    I agree to be contacted by call or text. See our{' '}
+                    I agree to be contacted by call or text. See the{' '}
                     <Link to="/privacy-policy" className="text-[#FFC107] hover:underline">privacy policy</Link>.
                   </label>
                 </div>
 
                 {submissionStatus === 'error' && (
                   <p className="text-sm text-red-400">
-                    Something went wrong. Please try again or call us directly.
+                    Something went wrong. Please try again or call directly.
                   </p>
                 )}
 
@@ -227,7 +211,7 @@ const Hero = () => {
                     </>
                   ) : (
                     <>
-                      Send My Number <ArrowRight className="ml-2 h-5 w-5" />
+                      Get A Quote <ArrowRight className="ml-2 h-5 w-5" />
                     </>
                   )}
                 </Button>
@@ -246,8 +230,25 @@ const Hero = () => {
           <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-sm font-black text-black bg-white/60 p-4 border-2 border-black inline-flex shadow-[4px_4px_0_#000] mt-6 -rotate-[0.4deg]">
             <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-black" /> Fast Quotes</span>
             <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-black" /> Licensed & Insured</span>
-            <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-black" /> 18.6 Yard Truck</span>
+            <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-black" /> Big Box Truck</span>
           </div>
+
+          <figure className="mt-6 max-w-2xl border-4 border-black bg-white p-2 text-left">
+            <picture>
+              <source srcSet="/images/hercules-truck.webp" type="image/webp" />
+              <img
+                src="/images/hercules-truck.jpg"
+                alt="Hercules Junk Removal box truck with logo parked in a driveway"
+                className="h-auto w-full object-cover"
+                loading="eager"
+                width="1024"
+                height="1024"
+              />
+            </picture>
+            <figcaption className="pt-2 text-sm font-black text-black">
+              Big box truck based in Kenmore.
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>

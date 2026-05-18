@@ -76,7 +76,7 @@ const QuoteForm = () => {
       
       toast({
         title: "Quote Request Sent!",
-        description: "We'll be in touch shortly to confirm details.",
+        description: "Dylan got your info.",
       });
 
     } catch (error) {
@@ -84,7 +84,7 @@ const QuoteForm = () => {
       setSubmissionStatus('error');
       toast({
         title: "Submission Failed",
-        description: "There was a problem submitting your request. Please call us directly.",
+        description: "There was a problem submitting your request. Please call directly.",
         variant: "destructive"
       });
     } finally {
@@ -103,7 +103,7 @@ const QuoteForm = () => {
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-4 tracking-tight">Get a Free Quote</h2>
           <p className="text-lg text-gray-600">
-            Leave your number. We'll call you with a price.
+            Name, phone, what needs to go.
           </p>
         </motion.div>
 
@@ -121,8 +121,7 @@ const QuoteForm = () => {
                 <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle className="h-10 w-10 text-green-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-black mb-2">Request Received!</h3>
-                <p className="text-gray-600">We'll call or text you shortly to confirm the details.</p>
+                <h3 className="text-2xl font-bold text-black mb-2">Got it.</h3>
                 <Button 
                   onClick={() => setSubmissionStatus(null)}
                   className="mt-8 bg-gray-100 text-gray-900 hover:bg-gray-200 transition-all duration-300 hover:scale-105 active:scale-95"
@@ -136,7 +135,7 @@ const QuoteForm = () => {
                   <AlertTriangle className="h-10 w-10 text-red-600" />
                 </div>
                 <h3 className="text-xl font-bold text-black mb-2">Connection Error</h3>
-                <p className="text-gray-600 mb-6">We couldn't submit your form. Please try again or call us directly.</p>
+                <p className="text-gray-600 mb-6">Could not submit your form. Please try again or call directly.</p>
                 <a href={`tel:${businessPhoneNumberFormatted.replace(/-/g, '')}`}>
                   <Button variant="cta" className="w-full transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-xl">
                     Call {businessPhoneNumberFormatted}
@@ -216,9 +215,6 @@ const QuoteForm = () => {
                     'Get My Free Quote →'
                   )}
                 </Button>
-                <p className="text-center text-xs text-gray-400 mt-4 font-medium">
-                  We'll call you within 5–15 minutes to confirm details and price.
-                </p>
               </div>
             </form>
           )}

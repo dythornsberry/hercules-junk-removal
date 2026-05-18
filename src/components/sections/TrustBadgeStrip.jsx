@@ -1,6 +1,5 @@
 import React from 'react';
 import { CreditCard, Shield, Truck, Zap } from 'lucide-react';
-import GoogleReviewBadge from '@/components/ui/GoogleReviewBadge';
 
 const TrustBadgeStrip = () => {
   return (
@@ -14,7 +13,7 @@ const TrustBadgeStrip = () => {
           
           <div className="flex items-center justify-center gap-2">
             <Truck className="h-5 w-5 text-white" />
-            <span className="text-sm font-semibold text-white uppercase tracking-wide">18.6 yd box truck</span>
+            <span className="text-sm font-semibold text-white uppercase tracking-wide">big box truck</span>
           </div>
           
           <div className="flex items-center gap-2">
@@ -24,11 +23,7 @@ const TrustBadgeStrip = () => {
 
           <div className="flex items-center justify-center gap-2">
             <CreditCard className="h-5 w-5 text-white" />
-            <span className="text-sm font-semibold text-white uppercase tracking-wide">cards accepted</span>
-          </div>
-
-          <div className="flex items-center justify-center sm:col-span-2 lg:col-span-4">
-            <GoogleReviewBadge className="scale-90 bg-white/10 border-white/20 text-white" />
+            <span className="text-sm font-semibold text-white uppercase tracking-wide">Venmo / Zelle / Card</span>
           </div>
         </div>
       </div>

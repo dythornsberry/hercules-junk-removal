@@ -6,9 +6,9 @@ const JunkRemovalKenmorePage = () => {
     <LocationPageLayout
       city="Kenmore"
       slug="junk-removal-kenmore"
-      h1="Junk Removal in Kenmore, WA from $99 – Same-Day"
-      blurb="Your local junk removal team based right here in Kenmore. We haul furniture, appliances, yard waste, and more — with same-day availability."
-      metaDescription="Same-day junk removal in Kenmore, WA from $99. We haul furniture, appliances, yard waste, and more. Licensed & insured. Request a free quote fast."
+      h1="Junk Removal in Kenmore, WA"
+      blurb="Kenmore-based junk removal for furniture, garage junk, yard waste, appliances, and cleanouts. Same-day pickup is available."
+      metaDescription="Junk removal in Kenmore, WA from a Kenmore-based hauler. Furniture, garage junk, yard waste, appliances, cleanouts, same-day pickup, and quotes from $99."
       zipCodes={['98028']}
       neighborhoods={[
         'Kenmore Downtown', 'Inglewood', 'Moorlands', 'Linwood',
@@ -17,18 +17,18 @@ const JunkRemovalKenmorePage = () => {
       ]}
       localContent={[
         {
-          title: "Your Neighbors in Kenmore Trust Hercules",
+          title: "Kenmore-based junk removal",
           paragraphs: [
-            "Hercules Junk Removal is proud to call Kenmore home. As a locally owned and operated business based right here in the 98028, we know the neighborhoods, the tight driveways, and the specific challenges that come with junk removal in our lakeside community.",
-            "Whether you're clearing out a garage near Inglewood, hauling old furniture from a home along the Burke-Gilman Trail, or tackling yard debris after a storm in Moorlands, we're close by and ready to help.",
-            "We handle everything from single-item pickups like a mattress or old couch to full property cleanouts. Pricing starts at $99 and is based on how much room your junk takes in the truck."
+            "Hercules Junk Removal is based in Kenmore, WA, so 98028 is the home base. That helps for faster pickup around Inglewood, Moorlands, Arrowhead, downtown Kenmore, and the north end of Lake Washington.",
+            "Garage cleanout near Inglewood, old furniture by the Burke-Gilman Trail, yard debris after a storm in Moorlands - the job is simple. Point at what needs to go and it gets loaded.",
+            "Single items, garage piles, appliances, yard waste, move-out junk, and full cleanouts are priced by how much room the load takes in the truck. Quotes start at $99."
           ]
         },
         {
-          title: "Why Kenmore Residents Choose Hercules",
+          title: "Fast pickup, big truck, fair price",
           paragraphs: [
-            "Living near Lake Washington means enjoying the beauty of the Pacific Northwest, but it also means dealing with seasonal yard debris, renovation waste from aging homes, and the general clutter that accumulates over the years. We see it all — and we haul it all.",
-            "Unlike the big national franchises, we're a small local crew that treats your property with respect. We donate usable items to local charities, recycle what we can, and only landfill what's truly trash. Our goal is to keep as much out of the landfill as possible while giving you back your space fast."
+            "Kenmore homes collect the usual stuff: garage boxes, old couches, broken appliances, brush piles, remodel debris, and random junk in the driveway.",
+            "The box truck has more room than a pickup bed, which helps on bigger piles. Usable items get donated when possible, metal and green waste get recycled when possible, and the rest goes to the right place."
           ]
         }
       ]}

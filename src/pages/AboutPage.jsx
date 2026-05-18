@@ -38,19 +38,19 @@ const AboutPage = () => {
                 <div className="text-center md:text-left">
                   <h1 className="text-4xl sm:text-5xl font-black text-black mb-4">Kenmore Junk Removal That Gets It Done</h1>
                   <p className="text-lg text-black/80 mb-6">
-                    Hercules Junk Removal is based in Kenmore, WA. Call or send your number and we will get back to you fast.
+                    Hercules Junk Removal is owned by Dylan and based in Kenmore, WA. Call for a fast quote or fill out the form.
                   </p>
                   <p className="text-lg text-black/80 mb-6">
-                    We run a large box truck, so most jobs fit in one load. That keeps the job simple and helps keep the price fair.
+                    The box truck is large, so most jobs fit in one load. That keeps the job simple and helps keep the price fair.
                   </p>
                   <p className="text-lg text-black/80 mb-6 font-bold">
-                    Furniture, garage junk, yard waste, appliances, cleanouts, random piles in the driveway - point at it and we haul it.
+                    Furniture, garage junk, yard waste, appliances, cleanouts, random piles in the driveway - point at it and it gets hauled.
                   </p>
                   <p className="text-lg text-black/80 mb-6">
-                    We are licensed and insured, take credit cards, and dispose of items the right way. Usable stuff gets donated when possible. Metal, wood, and green waste get recycled when we can.
+                    Licensed and insured. Venmo, Zelle, card, and cash are fine. Quick pickup, easy scheduling, reliable service.
                   </p>
                   <p className="text-lg text-black/80 mb-6">
-                    We serve Kenmore, Bothell, Kirkland, Lynnwood, Shoreline, Lake Forest Park, Woodinville, and nearby.
+                    Serving Kenmore, Bothell, Kirkland, Lynnwood, Shoreline, Lake Forest Park, Woodinville, and nearby.
                   </p>
                   <p className="text-lg text-black/80 mb-8 font-bold">
                     Fast quote. Big truck. Easy cleanup.

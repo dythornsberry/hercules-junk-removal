@@ -8,17 +8,17 @@ const steps = [
   {
     icon: <MessageCircle className="h-10 w-10 text-black" />,
     title: '1. Call Or Text',
-    description: 'Tell us what you need hauled.',
+    description: 'Tell us what needs to go.',
   },
   {
     icon: <DollarSign className="h-10 w-10 text-black" />,
-    title: '2. We Give A Price',
-    description: 'You know the cost before we load.',
+    title: '2. Get A Price',
+    description: 'You know the cost before loading.',
   },
   {
     icon: <Truck className="h-10 w-10 text-black" />,
-    title: '3. We Haul It',
-    description: 'We load the truck and take it away.',
+    title: '3. Junk Gets Hauled',
+    description: 'The truck gets loaded and the junk goes away.',
   },
 ];
 
@@ -32,7 +32,7 @@ const HowItWorks = () => {
           </p>
           <h2 className="text-4xl sm:text-5xl font-black mb-3 tracking-[-0.04em]">Call, price, haul.</h2>
           <p className="text-xl font-black opacity-90 max-w-3xl">
-            We show up with the big truck and load the junk.
+            Simple junk removal from a Kenmore-based owner.
           </p>
         </div>
 

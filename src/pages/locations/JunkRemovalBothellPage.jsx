@@ -6,9 +6,9 @@ const JunkRemovalBothellPage = () => {
     <LocationPageLayout
       city="Bothell"
       slug="junk-removal-bothell"
-      h1="Junk Removal in Bothell, WA from $99 – Same-Day"
-      blurb="Fast, reliable junk removal serving all of Bothell. From Canyon Park to downtown, we haul away your unwanted items the same day."
-      metaDescription="Same-day junk removal in Bothell, WA from $99. Furniture, yard waste, appliances & more. Licensed & insured local team. Request a free quote fast."
+      h1="Junk Removal in Bothell, WA"
+      blurb="Junk removal in Bothell from a Kenmore-based hauler right next door. Furniture, yard waste, appliances, garage junk, and cleanouts."
+      metaDescription="Junk removal in Bothell, WA from a Kenmore-based hauler. Furniture, yard waste, appliances, garage cleanouts, same-day pickup, and quotes from $99."
       zipCodes={['98011', '98012', '98021']}
       neighborhoods={[
         'Canyon Park', 'North Creek', 'Country Village',
@@ -17,18 +17,18 @@ const JunkRemovalBothellPage = () => {
       ]}
       localContent={[
         {
-          title: "Bothell's Trusted Local Junk Hauling Team",
+          title: "Bothell junk hauling from nearby Kenmore",
           paragraphs: [
-            "Bothell is growing fast — new construction, home renovations, and families upgrading their spaces. That means a lot of junk that needs to go somewhere. Hercules Junk Removal serves all of Bothell from Canyon Park down to Bothell Landing, with same-day service available most days.",
-            "We handle everything from single items like an old hot tub or a broken appliance to full-scale garage cleanouts and estate cleanups. Our crew is experienced with the narrow driveways and hillside properties that are common throughout Bothell's older neighborhoods.",
-            "Our pricing is straightforward — we charge by volume, starting at $99 for a single item. We'll give you a firm price on-site before we lift a single thing, so you always know exactly what you're paying."
+            "Bothell is right next to Kenmore, so pickups in Canyon Park, North Creek, Bothell Landing, Westhill, and Norway Hill are normal service calls.",
+            "Old couches, broken appliances, garage junk, hot tubs, yard debris, and move-out piles can all go in the truck. Pricing is based on how much room the load takes.",
+            "Quotes start at $99 for small single-item jobs. The price is confirmed before anything gets loaded."
           ]
         },
         {
-          title: "Yard Waste & Debris Removal in Bothell",
+          title: "Yard waste, garage junk, and cleanouts",
           paragraphs: [
-            "With all the mature trees and lush landscaping in Bothell, yard waste is one of our most common calls. Branches, brush, dirt, sod, and storm debris — we haul it all. Unlike curbside pickup, we come to wherever the debris is in your yard and load it ourselves.",
-            "Whether you're cleaning up after a landscaping project near North Creek or clearing out overgrown brush on a Norway Hill property, Hercules handles the heavy lifting so you don't have to. We recycle green waste and dispose of everything responsibly."
+            "Bothell has plenty of mature trees, remodels, and packed garages. Branches, brush, dirt, sod, scrap wood, old furniture, and general clutter are common jobs.",
+            "The box truck has more room than a pickup bed, which helps keep bigger loads simple. Green waste and metal get recycled when possible."
           ]
         }
       ]}

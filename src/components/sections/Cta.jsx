@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, Zap, Shield, Star } from 'lucide-react';
+import { Phone, MessageCircle, Zap, Shield, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Cta = () => {
@@ -30,14 +30,14 @@ const Cta = () => {
         >
           <div className="inline-flex items-center gap-2 bg-black/10 px-4 py-1 rounded-full border border-black/10">
              <Zap className="h-4 w-4 text-black fill-current" />
-             <span className="text-sm font-bold text-black uppercase">Same-day is often possible</span>
+             <span className="text-sm font-bold text-black uppercase">Same-day pickup</span>
           </div>
 
           <h2 className="text-5xl md:text-6xl font-black text-black tracking-tight drop-shadow-sm">
              Want a price?
           </h2>
           <p className="text-2xl font-medium text-black/90 max-w-2xl mx-auto">
-             Send the form or call. We will give you a straight answer and let you know what is possible.
+             Call or send the form. Fast pickup, affordable prices, big truck.
           </p>
           
           <div className="flex flex-col gap-6 justify-center items-center mt-8">
@@ -52,7 +52,6 @@ const Cta = () => {
                       <div className="flex items-center">
                         <span className="text-2xl font-bold">Send My Info</span>
                       </div>
-                      <span className="text-sm font-normal text-white/80 mt-1">Name, phone, done. We will follow up.</span>
                   </div>
                 </Link>
               </Button>
@@ -65,7 +64,7 @@ const Cta = () => {
               >
                 <Link to="/quote">
                   <MessageCircle className="mr-3 h-6 w-6" />
-                  Use the Form
+                  Get a Quote
                 </Link>
               </Button>
 
@@ -83,8 +82,8 @@ const Cta = () => {
             
             {/* Trust Badges under CTAs */}
             <div className="flex flex-wrap justify-center gap-6 mt-6 text-sm font-bold text-black/80">
-              <div className="flex items-center gap-2"><Shield className="w-5 h-5 text-black" /> 100% Satisfaction Guarantee</div>
-              <div className="flex items-center gap-2"><Star className="w-5 h-5 text-black fill-current" /> 5-Star Rated on Google</div>
+              <div className="flex items-center gap-2"><Shield className="w-5 h-5 text-black" /> Licensed & insured</div>
+              <div className="flex items-center gap-2"><Truck className="w-5 h-5 text-black" /> Big box truck</div>
             </div>
 
           </div>

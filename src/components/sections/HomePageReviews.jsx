@@ -7,7 +7,7 @@ const reviews = [
     author: 'Rhonda M., Kenmore',
   },
   {
-    text: 'Dylan and his crew did an amazing job and were super affordable and very communicative!',
+    text: 'Dylan did an amazing job and was super affordable and very communicative!',
     author: 'Ryder A., Bothell',
   },
   {
@@ -27,7 +27,7 @@ const HomePageReviews = () => {
           viewport={{ once: true }}
           className="text-2xl font-bold text-center text-black mb-8"
         >
-          50+ local jobs hauled (5-star on Google)
+          Local jobs hauled around Kenmore
         </motion.h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((review, index) => (
