@@ -66,26 +66,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[75vh] flex items-center bg-[#FFC107] overflow-hidden">
-      {/* Background Image for splitting on large screens */}
-      <div className="absolute inset-0 z-0 hidden lg:block w-1/2 left-1/2 h-full">
-        <picture>
-          <source srcSet="/images/hercules-truck.webp" type="image/webp" />
-          <img
-            src="/images/hercules-truck.jpg"
-            alt="Hercules Junk Removal branded yellow truck with dumbbell logo parked in residential driveway"
-            className="w-full h-full object-cover object-center"
-            loading="eager"
-            width="1024"
-            height="1024"
-          />
-        </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFC107] via-[#FFC107]/60 to-transparent"></div>
-        <div className="absolute inset-0 bg-black/10"></div>
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10 pt-24 pb-20 lg:py-32">
-        <div className="max-w-3xl mx-auto lg:mx-0 lg:w-[55%] text-center lg:text-left">
+    <section className="relative flex items-center bg-[#FFC107] overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10 pt-28 pb-16 lg:py-28">
+        <div className="max-w-3xl mx-auto text-center lg:text-left">
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
             <span className="inline-flex rotate-1 items-center gap-1.5 bg-black text-[#FFC107] border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
