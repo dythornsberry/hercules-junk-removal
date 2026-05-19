@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Phone } from 'lucide-react';
-import SatisfactionGuaranteeBadge from '@/components/ui/SatisfactionGuaranteeBadge';
 
 const BeforeAfter = () => {
   const results = [
@@ -24,31 +22,21 @@ const BeforeAfter = () => {
   return (
     <section id="results" className="py-20 sm:py-24 px-4 bg-zinc-900 border-t-8 border-[#FFC107]">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <div className="flex justify-center mb-6">
-            <SatisfactionGuaranteeBadge className="bg-white/5 border-white/10 text-[#FFC107]" />
-          </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">Job Photos</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto font-medium">
-            Before and after photos from local junk removal jobs.
+        <div className="mb-12 max-w-2xl">
+          <span className="inline-block rotate-[1deg] bg-[#FFC107] text-black font-black tracking-[0.2em] uppercase text-xs px-3 py-1 border-2 border-black shadow-[3px_3px_0_#000] mb-4">
+            Proof
+          </span>
+          <h2 className="text-4xl sm:text-5xl font-black text-white tracking-tight rotate-[-0.3deg]">Job photos.</h2>
+          <p className="mt-3 text-lg text-gray-400 font-bold">
+            Before and after from local jobs.
           </p>
-        </motion.div>
+        </div>
 
         <div className="max-w-3xl mx-auto relative z-10">
           {results.map((result, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-black border-4 border-black shadow-[8px_8px_0_rgba(255,193,7,0.3)] overflow-hidden flex flex-col group"
+              className="bg-black border-4 border-black shadow-[8px_8px_0_rgba(255,193,7,0.3)] overflow-hidden flex flex-col group rotate-[0.5deg]"
             >
               <div className="grid grid-cols-2 gap-1">
                 <div className="relative overflow-hidden">
@@ -78,7 +66,7 @@ const BeforeAfter = () => {
                 <h3 className="text-2xl font-black text-white mb-3">{result.location}</h3>
                 <p className="text-[#FFC107] font-black text-lg">{result.caption}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

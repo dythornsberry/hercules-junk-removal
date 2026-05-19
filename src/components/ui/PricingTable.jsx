@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
 const PricingTable = ({ tiers }) => {
   const navigate = useNavigate();
@@ -23,12 +22,8 @@ const PricingTable = ({ tiers }) => {
           </thead>
           <tbody>
             {tiers.map((tier, index) => (
-              <motion.tr 
+              <tr
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
-                viewport={{ once: true }}
                 onClick={() => navigate('/quote')}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
@@ -53,7 +48,7 @@ const PricingTable = ({ tiers }) => {
                 <td className="py-4 px-6 text-right">
                   <span className="font-black text-[#FF9500] text-lg">{tier.price}</span>
                 </td>
-              </motion.tr>
+              </tr>
             ))}
           </tbody>
         </table>

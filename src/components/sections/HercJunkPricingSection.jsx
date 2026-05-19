@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import PricingTable from '@/components/ui/PricingTable.jsx';
 import TruckSpecsCard from '@/components/ui/TruckSpecsCard.jsx';
 
@@ -16,24 +15,16 @@ const HercJunkPricingSection = () => {
   return (
     <section id="pricing" className="py-16 md:py-24 bg-gray-50 scroll-mt-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 md:mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight"
-          >
+        <div className="mb-12 md:mb-16 max-w-2xl">
+          <span className="inline-block rotate-[-1deg] bg-black text-[#FF9500] font-black tracking-[0.2em] uppercase text-xs px-3 py-1 border-2 border-black shadow-[3px_3px_0_rgba(0,0,0,0.25)] mb-4">
+            Pricing
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight rotate-[0.3deg]">
             Big Truck <span className="text-[#FF9500]">Value</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto font-medium"
-          >
-            Our truck holds 18.6 cubic yards. More room in the truck means fewer trips and better value on bigger junk piles.
-          </motion.p>
+          </h2>
+          <p className="mt-3 text-lg text-gray-600 font-bold">
+            18.6 cubic yards. More room = fewer trips = better price.
+          </p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-6xl mx-auto items-stretch">

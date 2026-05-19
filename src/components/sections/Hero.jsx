@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button.jsx';
 import { Input } from '@/components/ui/input.jsx';
 import { Checkbox } from '@/components/ui/checkbox.jsx';
@@ -86,30 +85,16 @@ const Hero = () => {
             </span>
           </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-black leading-[1.02] mb-4 tracking-[-0.04em] drop-shadow-sm"
-          >
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-black leading-[1.02] mb-4 tracking-[-0.04em] rotate-[-0.5deg]">
             Junk removal in Kenmore, WA.
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-lg sm:text-xl lg:text-2xl text-black/85 font-black mb-8 max-w-2xl mx-auto lg:mx-0 leading-snug"
-          >
+          <p className="text-lg sm:text-xl lg:text-2xl text-black/85 font-black mb-8 max-w-2xl mx-auto lg:mx-0 leading-snug">
             Fast quotes. Same-day pickup.
-          </motion.p>
+          </p>
 
           {/* Lead Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="bg-black p-5 sm:p-6 shadow-[8px_8px_0_rgba(0,0,0,0.35)] border-4 border-black max-w-lg mx-auto lg:mx-0 rotate-[0.35deg]"
-          >
+          <div className="bg-black p-5 sm:p-6 shadow-[8px_8px_0_rgba(0,0,0,0.35)] border-4 border-black max-w-lg mx-auto lg:mx-0 rotate-[0.6deg]">
             {submissionStatus === 'success' ? (
               <div className="text-center py-4">
                 <CheckCircle2 className="w-14 h-14 text-green-500 mx-auto mb-3" />
@@ -209,7 +194,7 @@ const Hero = () => {
                 </a>
               </form>
             )}
-          </motion.div>
+          </div>
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-sm font-black text-black bg-white/60 p-4 border-2 border-black inline-flex shadow-[4px_4px_0_#000] mt-6 -rotate-[0.4deg]">
             <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-black" /> Fast Quotes</span>
@@ -217,7 +202,7 @@ const Hero = () => {
             <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-black" /> Big Box Truck</span>
           </div>
 
-          <figure className="mt-6 max-w-2xl border-4 border-black bg-white p-2 text-left">
+          <figure className="mt-6 max-w-2xl border-4 border-black bg-white p-2 text-left rotate-[0.8deg] shadow-[8px_8px_0_rgba(0,0,0,0.3)]">
             <picture>
               <source srcSet="/images/hercules-truck.webp" type="image/webp" />
               <img
