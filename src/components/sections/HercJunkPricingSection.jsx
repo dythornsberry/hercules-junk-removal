@@ -27,11 +27,11 @@ const HercJunkPricingSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 max-w-6xl mx-auto items-stretch">
-          <div className="w-full lg:w-3/5">
+        <div className="flex flex-col gap-10 max-w-4xl mx-auto">
+          <div className="w-full">
             <PricingTable tiers={tiers} />
           </div>
-          <div className="w-full lg:w-2/5">
+          <div className="w-full">
             <TruckSpecsCard />
           </div>
         </div>
