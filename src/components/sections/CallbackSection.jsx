@@ -101,7 +101,7 @@ const CallbackSection = ({
                 <div className="text-center py-2">
                   <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
                   <h3 className="text-2xl font-black text-white mb-1">Got it.</h3>
-                  <p className="text-sm text-gray-400 mb-3">We'll call you back fast — usually under 30 min.</p>
+                  <p className="text-sm text-gray-400 mb-3">We'll call you back within 30 min.</p>
                   <Button
                     type="button"
                     onClick={() => setSubmissionStatus(null)}

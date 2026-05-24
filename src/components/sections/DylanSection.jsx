@@ -25,10 +25,10 @@ const DylanSection = () => {
                 I started Hercules out of my truck in Kenmore. Still running it that way.
               </p>
               <p>
-                When you call, you get me — not a call center. I'll come look at the pile, give you a real price, and haul it the same day if I can. The box truck holds more than a pickup so most jobs are one trip.
+                Call the number on the page and you'll get me. I come out, look at your stuff, give you a price. Most jobs get hauled same day. The box truck holds more than a pickup so usually it's one trip.
               </p>
               <p>
-                Licensed and insured. I take cash, card, Venmo, or Zelle — whatever's easiest.
+                Licensed and insured. Cash, card, Venmo, or Zelle all work.
               </p>
             </div>
             <Link to="/quote">

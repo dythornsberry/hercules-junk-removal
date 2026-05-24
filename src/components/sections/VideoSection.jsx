@@ -32,7 +32,7 @@ const VideoSection = () => {
             See Us in Action
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Watch a garage cleanout from start to finish — done in under 2 hours.
+            Garage cleanout from start to finish. Done in under 2 hours.
           </p>
         </motion.div>
 
