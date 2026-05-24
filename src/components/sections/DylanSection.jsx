@@ -22,13 +22,13 @@ const DylanSection = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight rotate-[-0.3deg]">Hey, I'm Dylan.</h2>
             <div className="space-y-5 text-gray-300 text-lg leading-relaxed mb-8">
               <p className="font-bold text-xl text-white">
-                I run Hercules. I show up, I haul, you pay after.
+                I started Hercules out of my truck in Kenmore. Still running it that way.
               </p>
               <p>
-                No call centers. No salesy quote game. You call or text me, I give you a real price, and we get the junk gone. Most jobs fit in one load because the box truck is bigger than a pickup.
+                When you call, you get me — not a call center. I'll come look at the pile, give you a real price, and haul it the same day if I can. The box truck holds more than a pickup so most jobs are one trip.
               </p>
               <p>
-                Based in Kenmore. Licensed and insured. Cash, card, Venmo, Zelle — whatever's easy.
+                Licensed and insured. I take cash, card, Venmo, or Zelle — whatever's easiest.
               </p>
             </div>
             <Link to="/quote">

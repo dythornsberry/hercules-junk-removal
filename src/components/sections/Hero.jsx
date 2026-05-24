@@ -90,7 +90,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-lg sm:text-xl lg:text-2xl text-black/85 font-black mb-3 max-w-2xl mx-auto lg:mx-0 leading-snug">
-            I'm Dylan. I'll show up, haul it, and you pay after.
+            Dylan here. Owner, operator, and the guy doing the hauling.
           </p>
           <p className="text-base sm:text-lg text-black/75 font-bold mb-8 max-w-2xl mx-auto lg:mx-0">
             Quotes from <span className="bg-black text-[#FFC107] px-2 py-0.5 inline-block rotate-[-1deg]">$99</span> · Kenmore, Bothell, Kirkland, Lynnwood + more.
