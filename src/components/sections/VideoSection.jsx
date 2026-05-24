@@ -6,7 +6,7 @@ const videoSchema = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
   "name": "Garage Cleanout in Kenmore WA — Hercules Junk Removal",
-  "description": "Watch a real garage cleanout from start to finish — done in under 2 hours by Hercules Junk Removal in Kenmore, WA.",
+  "description": "Watch a garage cleanout from start to finish — done in under 2 hours by Hercules Junk Removal in Kenmore, WA.",
   "thumbnailUrl": "https://img.youtube.com/vi/_XXk67bDZOU/maxresdefault.jpg",
   "uploadDate": "2025-03-01",
   "embedUrl": "https://www.youtube.com/embed/_XXk67bDZOU",
@@ -32,7 +32,7 @@ const VideoSection = () => {
             See Us in Action
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Watch a real garage cleanout from start to finish — done in under 2 hours.
+            Watch a garage cleanout from start to finish — done in under 2 hours.
           </p>
         </motion.div>
 

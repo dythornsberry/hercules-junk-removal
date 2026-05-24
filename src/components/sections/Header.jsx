@@ -39,8 +39,6 @@ const Header = () => {
         <nav className="hidden md:flex items-center gap-8">
           <Link to="/pricing" onClick={scrollToPricing} className="text-sm font-bold text-gray-300 hover:text-white transition-colors duration-300">Pricing</Link>
           <Link to="/about" className="text-sm font-bold text-gray-300 hover:text-white transition-colors duration-300">About</Link>
-          <Link to="/services" className="text-sm font-bold text-gray-300 hover:text-white transition-colors duration-300">Services</Link>
-          <Link to="/faq" className="text-sm font-bold text-gray-300 hover:text-white transition-colors duration-300">FAQ</Link>
         </nav>
 
         {/* Desktop Actions */}

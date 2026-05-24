@@ -12,7 +12,7 @@ const SatisfactionGuaranteeBadge = ({ className = "" }) => {
         <ShieldCheck className="w-5 h-5" />
       </div>
       <div className="flex flex-col leading-none">
-        <span className="text-xs font-bold uppercase tracking-wider text-inherit">Real job photos</span>
+        <span className="text-xs font-bold uppercase tracking-wider text-inherit">Job photos</span>
         <span className="text-sm font-black text-inherit">Before / after</span>
       </div>
     </motion.div>

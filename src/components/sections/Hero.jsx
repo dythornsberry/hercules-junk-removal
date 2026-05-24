@@ -70,27 +70,30 @@ const Hero = () => {
         <div className="max-w-3xl mx-auto text-center lg:text-left">
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
-            <span className="inline-flex rotate-1 items-center gap-1.5 bg-black text-[#FFC107] border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
-              <Truck className="w-3.5 h-3.5" /> Big Box Truck
+            <span className="inline-flex -rotate-1 items-center gap-1.5 bg-black text-[#FFC107] border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
+              <MapPin className="w-3.5 h-3.5" /> Kenmore, WA
             </span>
-            <span className="inline-flex -rotate-1 items-center gap-1.5 bg-white text-black border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_#000]">
-              <MapPin className="w-3.5 h-3.5" /> Kenmore, WA Based
+            <span className="inline-flex rotate-1 items-center gap-1.5 bg-white text-black border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_#000]">
+              ★★★★★ 4.9 on Google
             </span>
-            <span className="inline-flex rotate-1 items-center gap-1.5 bg-black text-white border-2 border-black px-3 py-1 text-xs font-bold uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
+            <span className="inline-flex -rotate-1 items-center gap-1.5 bg-black text-white border-2 border-black px-3 py-1 text-xs font-bold uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              Same-Day Pickup
+              Booking Today
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-black leading-[1.02] mb-4 tracking-[-0.04em] rotate-[-0.5deg]">
-            Junk removal in Kenmore, WA.
+            Junk gone. Same day.
           </h1>
 
-          <p className="text-lg sm:text-xl lg:text-2xl text-black/85 font-black mb-8 max-w-2xl mx-auto lg:mx-0 leading-snug">
-            Fast quotes. Same-day pickup.
+          <p className="text-lg sm:text-xl lg:text-2xl text-black/85 font-black mb-3 max-w-2xl mx-auto lg:mx-0 leading-snug">
+            I'm Dylan. I'll show up, haul it, and you pay after.
+          </p>
+          <p className="text-base sm:text-lg text-black/75 font-bold mb-8 max-w-2xl mx-auto lg:mx-0">
+            Quotes from <span className="bg-black text-[#FFC107] px-2 py-0.5 inline-block rotate-[-1deg]">$99</span> · Kenmore, Bothell, Kirkland, Lynnwood + more.
           </p>
 
           {/* Lead Form */}

@@ -81,32 +81,19 @@ const CallbackSection = ({
     <section id={sectionId} className={`${wrapperClasses} scroll-mt-28`}>
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-5"
-          >
-            <p className="inline-flex items-center gap-2 rounded-full border border-[#FFC107]/30 bg-[#FFC107]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#FFC107]">
-              Quick Contact
-            </p>
-            <h2 className="mt-4 text-2xl md:text-3xl font-black text-white">{heading}</h2>
-            <p className="mt-3 text-sm md:text-base text-gray-400 max-w-xl mx-auto">{description}</p>
-          </motion.div>
+          <div className="mb-5">
+            <span className="inline-block rotate-[-1deg] bg-[#FFC107] text-black font-black tracking-[0.2em] uppercase text-xs px-3 py-1 border-2 border-black shadow-[3px_3px_0_rgba(0,0,0,0.4)] mb-3">
+              Send it over
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-white rotate-[-0.3deg]">{heading}</h2>
+            <p className="mt-2 text-sm md:text-base text-gray-400 font-bold">{description}</p>
+          </div>
 
           <div className="bg-[#1A1A1A] border-4 border-gray-800 shadow-[6px_6px_0_rgba(0,0,0,0.4)] overflow-hidden">
-            <div className="border-b-2 border-gray-800 px-5 py-5 sm:px-6">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white">Want to talk first?</h3>
-                  <p className="mt-1 text-sm text-gray-400">
-                    Send the basics and get a quote.
-                  </p>
-                </div>
-                <p className="text-xs text-gray-500">
-                  Prefer to call instead? <a href={`tel:${DEFAULT_PHONE}`} className="text-[#FFC107] hover:underline">Call {DEFAULT_PHONE_FORMATTED}</a>
-                </p>
-              </div>
+            <div className="border-b-2 border-gray-800 px-5 py-3 sm:px-6">
+              <p className="text-xs text-gray-500">
+                Prefer to call? <a href={`tel:${DEFAULT_PHONE}`} className="text-[#FFC107] hover:underline font-bold">Call {DEFAULT_PHONE_FORMATTED}</a>
+              </p>
             </div>
 
             <div className="px-5 py-5 sm:px-6 sm:py-6">
