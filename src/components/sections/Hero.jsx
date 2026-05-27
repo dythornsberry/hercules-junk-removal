@@ -74,7 +74,7 @@ const Hero = () => {
               <MapPin className="w-3.5 h-3.5" /> Kenmore, WA
             </span>
             <span className="inline-flex rotate-1 items-center gap-1.5 bg-white text-black border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_#000]">
-              ★★★★★ 4.9 on Google
+              ★★★★★ 5.0 · 9 Google reviews
             </span>
             <span className="inline-flex -rotate-1 items-center gap-1.5 bg-black text-white border-2 border-black px-3 py-1 text-xs font-bold uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
               <span className="relative flex h-2 w-2">
