@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { DollarSign, MessageCircle, Phone, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -40,14 +39,12 @@ const HowItWorks = () => {
           {/* Connector Line (Desktop only) */}
           <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-1 bg-black/20 -z-0"></div>
 
-          {steps.map((step, index) => (
-            <motion.div
+          {steps.map((step, index) => {
+            const tilts = ['rotate-[-0.8deg]', 'rotate-[0.5deg]', 'rotate-[-0.4deg]'];
+            return (
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="relative z-10 flex flex-col items-start border-4 border-black bg-white p-6 text-left shadow-[6px_6px_0_#000] group"
+              className={`relative z-10 flex flex-col items-start border-4 border-black bg-white p-6 text-left shadow-[6px_6px_0_#000] group ${tilts[index]} hover:rotate-0 transition-transform`}
             >
               <div className="bg-[#FFC107] p-4 shadow-lg mb-5 border-4 border-black transform transition-transform hover:translate-x-1 hover:translate-y-1 duration-300">
                 {step.icon}
@@ -56,8 +53,9 @@ const HowItWorks = () => {
               <p className="text-lg leading-relaxed font-medium opacity-90 max-w-xs">
                 {step.description}
               </p>
-            </motion.div>
-          ))}
+            </div>
+            );
+          })}
         </div>
 
         <div className="text-center mt-12 flex flex-col items-center gap-4">

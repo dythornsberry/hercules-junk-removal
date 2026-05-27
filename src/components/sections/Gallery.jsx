@@ -38,7 +38,7 @@ const Gallery = ({ galleryImages }) => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl font-black text-black">Real Jobs, Real Neighbors</h2>
+          <h2 className="text-4xl sm:text-5xl font-black text-black">Job Photos</h2>
         </motion.div>
         
         <div {...handlers} className="relative w-full max-w-3xl mx-auto h-80 rounded-2xl shadow-lg overflow-hidden bg-black cursor-grab active:cursor-grabbing">

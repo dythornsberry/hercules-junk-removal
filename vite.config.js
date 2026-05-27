@@ -264,6 +264,67 @@ const addTransformIndexHtml = {
 	},
 };
 
+const localLeadApiPlugin = {
+	name: 'local-lead-api',
+	configureServer(server) {
+		server.middlewares.use('/api/lead', (req, res, next) => {
+			if (req.method === 'OPTIONS') {
+				res.statusCode = 204;
+				res.setHeader('Access-Control-Allow-Origin', '*');
+				res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+				res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+				res.end();
+				return;
+			}
+
+			if (req.method !== 'POST') {
+				next();
+				return;
+			}
+
+			let body = '';
+
+			req.on('data', (chunk) => {
+				body += chunk;
+			});
+
+			req.on('end', () => {
+				try {
+					const lead = JSON.parse(body || '{}');
+					const phone = String(lead.phone || '').replace(/\D/g, '');
+
+					if (!String(lead.name || '').trim() || phone.length !== 10) {
+						res.statusCode = 400;
+						res.setHeader('Content-Type', 'application/json');
+						res.end(JSON.stringify({ error: 'Name and a 10-digit phone number are required.' }));
+						return;
+					}
+
+					console.info('[local lead mock]', {
+						name: lead.name,
+						phone,
+						location: lead.location,
+						description: lead.description,
+						sms_opt_in: Boolean(lead.sms_opt_in),
+					});
+
+					res.statusCode = 200;
+					res.setHeader('Content-Type', 'application/json');
+					res.end(JSON.stringify({
+						success: true,
+						delivered_to: ['local-dev-log'],
+						skipped: ['zapier', 'resend'],
+					}));
+				} catch (error) {
+					res.statusCode = 400;
+					res.setHeader('Content-Type', 'application/json');
+					res.end(JSON.stringify({ error: 'Invalid JSON payload.' }));
+				}
+			});
+		});
+	},
+};
+
 console.warn = () => {};
 
 const logger = createLogger()
@@ -280,7 +341,7 @@ logger.error = (msg, options) => {
 export default defineConfig({
 	customLogger: logger,
 	plugins: [
-		...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), iframeRouteRestorationPlugin(), selectionModePlugin()] : []),
+		...(isDev ? [localLeadApiPlugin, inlineEditPlugin(), editModeDevPlugin(), iframeRouteRestorationPlugin(), selectionModePlugin()] : []),
 		react(),
 		...(isDev ? [addTransformIndexHtml] : [])
 	],

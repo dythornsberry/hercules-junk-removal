@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, MessageCircle, Zap, Shield, Truck } from 'lucide-react';
+import { Phone, ArrowRight, Shield, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Cta = () => {
@@ -13,79 +13,49 @@ const Cta = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-yellow-300 to-yellow-500 relative overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
-            <div className="absolute top-10 left-10 w-20 h-20 bg-white rounded-full mix-blend-overlay animate-pulse"></div>
-            <div className="absolute bottom-10 right-10 w-32 h-32 bg-white rounded-full mix-blend-overlay animate-pulse delay-700"></div>
-        </div>
-
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+    <section className="py-20 px-4 bg-[#FFC107] relative overflow-hidden border-t-8 border-black">
+      <div className="max-w-3xl mx-auto text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="space-y-8"
+          className="space-y-6"
         >
-          <div className="inline-flex items-center gap-2 bg-black/10 px-4 py-1 rounded-full border border-black/10">
-             <Zap className="h-4 w-4 text-black fill-current" />
-             <span className="text-sm font-bold text-black uppercase">Same-day pickup</span>
-          </div>
+          <span className="inline-block rotate-[-1deg] bg-black text-[#FFC107] font-black tracking-[0.2em] uppercase text-xs px-3 py-1 border-2 border-black shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
+            Same-day pickup
+          </span>
 
-          <h2 className="text-5xl md:text-6xl font-black text-black tracking-tight drop-shadow-sm">
-             Want a price?
+          <h2 className="text-5xl md:text-6xl font-black text-black tracking-tight">
+            Want a price?
           </h2>
-          <p className="text-2xl font-medium text-black/90 max-w-2xl mx-auto">
-             Call or send the form. Fast pickup, affordable prices, big truck.
+          <p className="text-xl font-bold text-black/85 max-w-xl mx-auto">
+            Call or send the form. Fast pickup, big truck.
           </p>
-          
-          <div className="flex flex-col gap-6 justify-center items-center mt-8">
-              <Button
-                asChild
-                variant="cta"
-                size="xl"
-                className="w-full max-w-md h-auto py-8 bg-black text-white hover:bg-gray-800 shadow-2xl transition-all hover:scale-105"
-              >
-                <Link to="/quote">
-                  <div className="flex flex-col items-center">
-                      <div className="flex items-center">
-                        <span className="text-2xl font-bold">Send My Info</span>
-                      </div>
-                  </div>
-                </Link>
-              </Button>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
-              <Button
-                asChild
-                size="lg"
-                className="bg-white text-black hover:bg-gray-100 text-xl font-bold py-6 px-10 rounded-xl shadow-xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto min-w-[260px] border-2 border-black"
-              >
-                <Link to="/quote">
-                  <MessageCircle className="mr-3 h-6 w-6" />
-                  Get a Quote
-                </Link>
-              </Button>
+          <div className="flex flex-col gap-4 justify-center items-center mt-8 max-w-md mx-auto">
+            <Button
+              asChild
+              className="w-full h-16 bg-black text-white hover:bg-gray-900 font-black text-xl border-4 border-black shadow-[6px_6px_0_rgba(0,0,0,0.3)] transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:scale-95"
+            >
+              <Link to="/quote">
+                Get A Quote <ArrowRight className="ml-2 h-6 w-6" />
+              </Link>
+            </Button>
 
-              <Button
-                asChild
-                size="lg"
-                className="bg-black/10 text-black hover:bg-black/20 text-xl font-bold py-6 px-10 rounded-xl shadow-none transform hover:scale-105 transition-all duration-300 w-full sm:w-auto min-w-[260px]"
-              >
-                <a href={`tel:${businessPhoneNumber}`} onClick={handleCallClick}>
-                  <Phone className="mr-3 h-6 w-6" />
-                  {businessPhoneNumberFormatted}
-                </a>
-              </Button>
+            <a
+              href={`tel:${businessPhoneNumber}`}
+              onClick={handleCallClick}
+              className="w-full flex items-center justify-center gap-2 border-4 border-black bg-white px-6 py-4 text-lg font-black text-black shadow-[4px_4px_0_#000] transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:scale-95"
+            >
+              <Phone className="w-5 h-5" />
+              Call or text {businessPhoneNumberFormatted}
+            </a>
+
+            <div className="flex flex-wrap justify-center gap-6 mt-4 text-sm font-black text-black">
+              <span className="flex items-center gap-2"><Shield className="w-4 h-4" /> Licensed & insured</span>
+              <span className="flex items-center gap-2"><Truck className="w-4 h-4" /> Big box truck</span>
             </div>
-            
-            {/* Trust Badges under CTAs */}
-            <div className="flex flex-wrap justify-center gap-6 mt-6 text-sm font-bold text-black/80">
-              <div className="flex items-center gap-2"><Shield className="w-5 h-5 text-black" /> Licensed & insured</div>
-              <div className="flex items-center gap-2"><Truck className="w-5 h-5 text-black" /> Big box truck</div>
-            </div>
-
           </div>
         </motion.div>
       </div>

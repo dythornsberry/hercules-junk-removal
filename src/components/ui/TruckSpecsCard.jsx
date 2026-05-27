@@ -1,19 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import TruckLoadVisualSVG from '@/components/ui/TruckLoadVisualSVG.jsx';
 
 const TruckSpecsCard = () => {
   return (
-    <motion.div 
-      initial={{ opacity: 0, x: 20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
-      className="bg-[#1a1a1a] shadow-[8px_8px_0_#000] border-4 border-[#FF9500] p-6 lg:p-10 flex flex-col h-full relative overflow-hidden"
-    >
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF9500]/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-      
-      <div className="text-center mb-10 relative z-10">
+    <div className="bg-[#1a1a1a] shadow-[8px_8px_0_#000] border-4 border-[#FF9500] p-6 lg:p-10 flex flex-col h-full relative overflow-hidden rotate-[-0.4deg]">
+      <div className="text-left mb-10 relative z-10">
         <p className="inline-block -rotate-1 bg-[#FF9500] text-black px-3 py-1 border-2 border-black font-black text-sm uppercase tracking-widest mb-4 shadow-[3px_3px_0_#fff]">
           18.6 cubic yards
         </p>
@@ -22,7 +13,7 @@ const TruckSpecsCard = () => {
       </div>
 
       <div className="flex-grow flex flex-col items-center justify-center relative z-10">
-        <div className="w-full max-w-full lg:max-w-[90%] mb-12 relative">
+        <div className="w-full max-w-md mb-12 relative">
           {/* Dimension Lines */}
           <div className="absolute -top-8 left-0 right-0 flex items-center justify-center">
             <div className="h-px bg-gray-600 w-full absolute top-1/2"></div>
@@ -36,7 +27,7 @@ const TruckSpecsCard = () => {
           <TruckLoadVisualSVG fillPercentage={100} />
         </div>
 
-        <div className="grid grid-cols-3 gap-4 w-full">
+        <div className="grid grid-cols-3 gap-4 w-full max-w-2xl">
           <div className="bg-black border-2 border-gray-800 hover:border-[#FF9500]/50 transition-colors p-4 text-center shadow-lg">
             <div className="text-3xl font-black text-white">12'</div>
             <div className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-2">Length</div>
@@ -51,7 +42,7 @@ const TruckSpecsCard = () => {
           </div>
         </div>
 
-        <div className="mt-6 w-full border-2 border-white/15 bg-black p-4">
+        <div className="mt-6 w-full max-w-2xl border-2 border-white/15 bg-black p-4">
           <div className="mb-3 flex items-center justify-between gap-3 text-xs font-black uppercase tracking-wider text-gray-300">
             <span>6 ft pickup bed</span>
             <span>1.5-2.5 yd</span>
@@ -84,7 +75,7 @@ const TruckSpecsCard = () => {
           Holds <strong className="font-black text-2xl tracking-tighter">18.6 cubic yards</strong> of junk. Roughly 7-12 pickup bed loads, depending how high you stack it.
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

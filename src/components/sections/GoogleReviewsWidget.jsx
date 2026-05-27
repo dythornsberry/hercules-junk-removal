@@ -30,24 +30,27 @@ const GoogleReviewsWidget = () => {
             People call when they need the junk gone.
           </h2>
           <p className="mt-3 text-lg font-semibold text-gray-700">
-            A few real notes from nearby jobs.
+            A few notes from nearby jobs.
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
-          {reviews.map((review) => (
-            <figure
-              key={`${review.name}-${review.area}`}
-              className="border-4 border-black bg-white p-5 shadow-[6px_6px_0_#000]"
-            >
-              <blockquote className="text-lg font-bold leading-snug text-black">
-                "{review.quote}"
-              </blockquote>
-              <figcaption className="mt-5 border-t-2 border-black pt-3 text-sm font-black uppercase tracking-wide text-gray-800">
-                {review.name} / {review.area}
-              </figcaption>
-            </figure>
-          ))}
+        <div className="grid gap-6 md:grid-cols-3">
+          {reviews.map((review, i) => {
+            const rotations = ['rotate-[-1.2deg]', 'rotate-[0.8deg]', 'rotate-[-0.6deg]'];
+            return (
+              <figure
+                key={`${review.name}-${review.area}`}
+                className={`border-4 border-black bg-white p-5 shadow-[6px_6px_0_#000] ${rotations[i]} hover:rotate-0 transition-transform`}
+              >
+                <blockquote className="text-lg font-bold leading-snug text-black">
+                  "{review.quote}"
+                </blockquote>
+                <figcaption className="mt-5 border-t-2 border-black pt-3 text-sm font-black uppercase tracking-wide text-gray-800">
+                  {review.name} / {review.area}
+                </figcaption>
+              </figure>
+            );
+          })}
         </div>
       </div>
     </section>

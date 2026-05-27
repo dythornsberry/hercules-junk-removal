@@ -12,15 +12,18 @@ const QuotePage = () => {
         <link rel="canonical" href="https://hercjunk.com/quote" />
         <meta property="og:image" content="https://hercjunk.com/images/hercules-truck.jpg" />
       </Helmet>
-      <div className="flex-grow bg-black min-h-[40vh] flex items-center justify-center">
-        <div className="container mx-auto px-4 py-20 text-center">
+      <div className="flex-grow bg-black min-h-[35vh] flex items-center justify-center border-b-8 border-[#FFC107]">
+        <div className="container mx-auto px-4 py-16 text-center">
+          <span className="inline-block rotate-[1deg] bg-[#FFC107] text-black font-black tracking-[0.2em] uppercase text-xs px-3 py-1 border-2 border-black shadow-[3px_3px_0_#000] mb-6">
+            Free Quote
+          </span>
           <h1 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Send your <span className="text-yellow-400">junk removal</span> info
+            Send your <span className="text-[#FFC107]">junk removal</span> info
           </h1>
-          <p className="text-gray-300 text-lg md:text-xl mb-6 max-w-2xl mx-auto">
-            Name, phone, and what needs to go.
+          <p className="text-gray-300 text-lg md:text-xl mb-6 max-w-2xl mx-auto font-bold">
+            Name and phone. That's it.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm font-bold text-gray-300 mb-4">
+          <div className="flex flex-wrap justify-center gap-4 text-sm font-black text-gray-300 mb-4">
             <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFC107]" /> Free Estimates</span>
             <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFC107]" /> Same-Day Available</span>
             <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFC107]" /> Licensed & Insured</span>

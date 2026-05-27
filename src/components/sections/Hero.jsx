@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button.jsx';
 import { Input } from '@/components/ui/input.jsx';
 import { Checkbox } from '@/components/ui/checkbox.jsx';
@@ -66,71 +65,41 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[75vh] flex items-center bg-[#FFC107] overflow-hidden">
-      {/* Background Image for splitting on large screens */}
-      <div className="absolute inset-0 z-0 hidden lg:block w-1/2 left-1/2 h-full">
-        <picture>
-          <source srcSet="/images/hercules-truck.webp" type="image/webp" />
-          <img
-            src="/images/hercules-truck.jpg"
-            alt="Hercules Junk Removal branded yellow truck with dumbbell logo parked in residential driveway"
-            className="w-full h-full object-cover object-center"
-            loading="eager"
-            width="1024"
-            height="1024"
-          />
-        </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFC107] via-[#FFC107]/60 to-transparent"></div>
-        <div className="absolute inset-0 bg-black/10"></div>
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10 pt-24 pb-20 lg:py-32">
-        <div className="max-w-3xl mx-auto lg:mx-0 lg:w-[55%] text-center lg:text-left">
+    <section className="relative flex items-center bg-[#FFC107] overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10 pt-28 pb-16 lg:py-28">
+        <div className="max-w-3xl mx-auto text-center lg:text-left">
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
-            <span className="inline-flex rotate-1 items-center gap-1.5 bg-black text-[#FFC107] border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
-              <Truck className="w-3.5 h-3.5" /> Big Box Truck
+            <span className="inline-flex -rotate-1 items-center gap-1.5 bg-black text-[#FFC107] border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
+              <MapPin className="w-3.5 h-3.5" /> Kenmore, WA
             </span>
-            <span className="inline-flex -rotate-1 items-center gap-1.5 bg-white text-black border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_#000]">
-              <MapPin className="w-3.5 h-3.5" /> Kenmore, WA Based
+            <span className="inline-flex rotate-1 items-center gap-1.5 bg-white text-black border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_#000]">
+              ★★★★★ 5.0 · 9 Google reviews
             </span>
-            <span className="inline-flex rotate-1 items-center gap-1.5 bg-black text-white border-2 border-black px-3 py-1 text-xs font-bold uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
+            <span className="inline-flex -rotate-1 items-center gap-1.5 bg-black text-white border-2 border-black px-3 py-1 text-xs font-bold uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              Same-Day Pickup
+              Booking Today
             </span>
           </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-black leading-[1.02] mb-4 tracking-[-0.04em] drop-shadow-sm"
-          >
-            Junk removal in Kenmore, WA.
-          </motion.h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-black leading-[1.02] mb-4 tracking-[-0.04em] rotate-[-0.5deg]">
+            Junk gone. Same day.
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-lg sm:text-xl lg:text-2xl text-black/85 font-black mb-8 max-w-2xl mx-auto lg:mx-0 leading-snug"
-          >
-            Fast quotes. Same-day pickup.
-          </motion.p>
+          <p className="text-lg sm:text-xl lg:text-2xl text-black/85 font-black mb-8 max-w-2xl mx-auto lg:mx-0 leading-snug">
+            Quotes from <span className="bg-black text-[#FFC107] px-2 py-0.5 inline-block rotate-[-1deg]">$99</span>. Serving Kenmore, Bothell, Kirkland, Lynnwood + nearby.
+          </p>
 
           {/* Lead Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="bg-black p-5 sm:p-6 shadow-[8px_8px_0_rgba(0,0,0,0.35)] border-4 border-black max-w-lg mx-auto lg:mx-0 rotate-[0.35deg]"
-          >
+          <div className="bg-black p-5 sm:p-6 shadow-[8px_8px_0_rgba(0,0,0,0.35)] border-4 border-black max-w-lg mx-auto lg:mx-0 rotate-[0.6deg]">
             {submissionStatus === 'success' ? (
               <div className="text-center py-4">
                 <CheckCircle2 className="w-14 h-14 text-green-500 mx-auto mb-3" />
-                <h3 className="text-xl font-bold text-white mb-2">Got it, thanks.</h3>
+                <h3 className="text-xl font-black text-white mb-1">Got it.</h3>
+                <p className="text-sm text-gray-400 mb-3">We'll call you back within 30 min.</p>
                 <Button
                   type="button"
                   onClick={() => setSubmissionStatus(null)}
@@ -142,7 +111,7 @@ const Hero = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-3">
                 <div className="border-b-2 border-white/15 pb-3">
-                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#FFC107]">Quick quote</p>
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#FFC107]">Get a price in 10 min</p>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <div className="space-y-1">
@@ -225,7 +194,7 @@ const Hero = () => {
                 </a>
               </form>
             )}
-          </motion.div>
+          </div>
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-sm font-black text-black bg-white/60 p-4 border-2 border-black inline-flex shadow-[4px_4px_0_#000] mt-6 -rotate-[0.4deg]">
             <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-black" /> Fast Quotes</span>
@@ -233,7 +202,7 @@ const Hero = () => {
             <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-black" /> Big Box Truck</span>
           </div>
 
-          <figure className="mt-6 max-w-2xl border-4 border-black bg-white p-2 text-left">
+          <figure className="mt-6 max-w-2xl border-4 border-black bg-white p-2 text-left rotate-[0.8deg] shadow-[8px_8px_0_rgba(0,0,0,0.3)]">
             <picture>
               <source srcSet="/images/hercules-truck.webp" type="image/webp" />
               <img
