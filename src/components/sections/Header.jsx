@@ -58,7 +58,7 @@ const Header = () => {
 
         {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
-          <button onClick={toggleMenu} className="text-white p-2 transition-transform duration-300 active:scale-95">
+          <button aria-label={isOpen ? "Close menu" : "Open menu"} aria-expanded={isOpen} aria-controls="mobile-navigation" onClick={toggleMenu} className="text-white p-2 transition-transform duration-300 active:scale-95">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -66,7 +66,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 top-20 bg-[#1A1A1A] z-40 flex flex-col p-6 overflow-y-auto border-t-4 border-[#FFC107]">
+        <div id="mobile-navigation" className="md:hidden fixed inset-0 top-20 bg-[#1A1A1A] z-40 flex flex-col p-6 overflow-y-auto border-t-4 border-[#FFC107]">
           <nav className="flex flex-col gap-6 items-center pt-8">
             <Link to="/pricing" onClick={scrollToPricing} className="text-2xl font-bold text-white hover:text-[#FFC107] transition-colors duration-300">Pricing</Link>
             <Link to="/about" onClick={() => setIsOpen(false)} className="text-2xl font-bold text-white hover:text-[#FFC107] transition-colors duration-300">About</Link>

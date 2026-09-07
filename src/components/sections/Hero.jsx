@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
 import { Input } from '@/components/ui/input.jsx';
 import { Checkbox } from '@/components/ui/checkbox.jsx';
-import { Phone, CheckCircle2, Loader2, ArrowRight, MapPin, Truck } from 'lucide-react';
+import { Phone, CheckCircle2, Loader2, ArrowRight, MessageCircle } from 'lucide-react';
 import { submitLead } from '@/lib/leadSubmission.js';
 
 const DEFAULT_PHONE = '4254063445';
@@ -65,41 +65,32 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative flex items-center bg-[#FFC107] overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10 pt-28 pb-16 lg:py-28">
-        <div className="max-w-3xl mx-auto text-center lg:text-left">
-
-          <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6">
-            <span className="inline-flex -rotate-1 items-center gap-1.5 bg-black text-[#FFC107] border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
-              <MapPin className="w-3.5 h-3.5" /> Kenmore, WA
-            </span>
-            <span className="inline-flex rotate-1 items-center gap-1.5 bg-white text-black border-2 border-black px-3 py-1 text-xs font-black uppercase tracking-wide shadow-[3px_3px_0_#000]">
-              ★★★★★ 5.0 · 9 Google reviews
-            </span>
-            <span className="inline-flex -rotate-1 items-center gap-1.5 bg-black text-white border-2 border-black px-3 py-1 text-xs font-bold uppercase tracking-wide shadow-[3px_3px_0_rgba(0,0,0,0.25)]">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-              </span>
-              Booking Today
-            </span>
+    <section className="bg-[#FFC107]">
+      <div className="container mx-auto px-4 py-6 md:py-12">
+        <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:gap-12 items-start">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-wide mb-3">Kenmore, WA · Licensed & insured</p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-black leading-[1.05] tracking-tight">
+              Junk removal.<br />From $99.
+            </h1>
+            <p className="mt-4 max-w-lg text-lg text-black leading-relaxed">
+              Serving Kenmore, Bothell & nearby. Same-day pickup when available.
+            </p>
+            <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-3">
+              <a href={`tel:${DEFAULT_PHONE}`} className="inline-flex items-center gap-2 py-2 text-lg font-bold text-black hover:underline">
+                <Phone className="h-5 w-5" /> {DEFAULT_PHONE_FORMATTED}
+              </a>
+              <a href={`sms:${DEFAULT_PHONE}`} className="inline-flex items-center gap-2 py-2 text-base font-bold text-black underline underline-offset-4">
+                <MessageCircle className="h-5 w-5" /> Text a photo
+              </a>
+            </div>
           </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-black leading-[1.02] mb-4 tracking-[-0.04em] rotate-[-0.5deg]">
-            Junk gone. Same day.
-          </h1>
-
-          <p className="text-lg sm:text-xl lg:text-2xl text-black/85 font-black mb-8 max-w-2xl mx-auto lg:mx-0 leading-snug">
-            Quotes from <span className="bg-black text-[#FFC107] px-2 py-0.5 inline-block rotate-[-1deg]">$99</span>. Serving Kenmore, Bothell, Kirkland, Lynnwood + nearby.
-          </p>
-
-          {/* Lead Form */}
-          <div className="bg-black p-5 sm:p-6 shadow-[8px_8px_0_rgba(0,0,0,0.35)] border-4 border-black max-w-lg mx-auto lg:mx-0 rotate-[0.6deg]">
+          <div className="bg-black p-4 sm:p-7 lg:row-span-2 lg:col-start-2 lg:row-start-1">
             {submissionStatus === 'success' ? (
-              <div className="text-center py-4">
+              <div className="text-center py-4" role="status">
                 <CheckCircle2 className="w-14 h-14 text-green-500 mx-auto mb-3" />
-                <h3 className="text-xl font-black text-white mb-1">Got it.</h3>
-                <p className="text-sm text-gray-400 mb-3">We'll call you back within 30 min.</p>
+                <h3 className="text-xl font-black text-white mb-1">Thanks, we got your request.</h3>
+                <p className="text-sm text-gray-400 mb-3">Dylan will call to go over the job.</p>
                 <Button
                   type="button"
                   onClick={() => setSubmissionStatus(null)}
@@ -109,11 +100,12 @@ const Hero = () => {
                 </Button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-3">
-                <div className="border-b-2 border-white/15 pb-3">
-                  <p className="text-xs font-black uppercase tracking-[0.2em] text-[#FFC107]">Get a price in 10 min</p>
+              <form onSubmit={handleSubmit} className="space-y-3" aria-label="Request a free quote">
+                <div>
+                  <h2 className="text-2xl font-bold text-white">Get a free quote</h2>
+                  <p className="mt-2 text-base text-gray-300">Leave your number. Dylan will call you.</p>
                 </div>
-                <div className="grid gap-3 sm:grid-cols-2">
+                <div className="grid gap-3">
                   <div className="space-y-1">
                     <label htmlFor="hero-name" className="text-sm font-semibold text-white">
                       Name
@@ -135,6 +127,8 @@ const Hero = () => {
                     </label>
                     <Input
                       id="hero-phone"
+                      aria-invalid={Boolean(phoneError)}
+                      aria-describedby={phoneError ? "hero-phone-error" : undefined}
                       name="phone"
                       type="tel"
                       inputMode="tel"
@@ -145,7 +139,7 @@ const Hero = () => {
                       required
                       className={`bg-white/10 border-2 border-gray-700 text-white placeholder:text-gray-500 h-11 rounded-md px-4 focus-visible:ring-[#FFC107] ${phoneError ? 'border-red-500' : ''}`}
                     />
-                    {phoneError && <p className="text-red-400 text-xs">{phoneError}</p>}
+                    {phoneError && <p id="hero-phone-error" className="text-red-400 text-sm">{phoneError}</p>}
                   </div>
                 </div>
 
@@ -156,14 +150,14 @@ const Hero = () => {
                     onCheckedChange={(checked) => setSmsOptIn(Boolean(checked))}
                     className="mt-0.5 border-gray-600 data-[state=checked]:bg-[#FFC107] data-[state=checked]:text-black"
                   />
-                  <label htmlFor="hero-sms" className="text-xs leading-relaxed text-gray-400 cursor-pointer">
+                  <label htmlFor="hero-sms" className="text-sm leading-relaxed text-gray-400 cursor-pointer">
                     I agree to be contacted by call or text. See the{' '}
                     <Link to="/privacy-policy" className="text-[#FFC107] hover:underline">privacy policy</Link>.
                   </label>
                 </div>
 
                 {submissionStatus === 'error' && (
-                  <p className="text-sm text-red-400">
+                  <p role="alert" className="text-sm text-red-400">
                     Something went wrong. Please try again or call directly.
                   </p>
                 )}
@@ -180,44 +174,24 @@ const Hero = () => {
                     </>
                   ) : (
                     <>
-                      Get A Quote <ArrowRight className="ml-2 h-5 w-5" />
+                      Get my quote <ArrowRight className="ml-2 h-5 w-5" />
                     </>
                   )}
                 </Button>
-
-                <a
-                  href={`tel:${DEFAULT_PHONE}`}
-                  className="flex items-center justify-center gap-2 border-2 border-white/20 bg-white/10 px-4 py-3 text-sm font-bold text-white transition-colors duration-200 hover:bg-white/15"
-                >
-                  <Phone className="w-4 h-4 text-[#FFC107]" />
-                  Call or text {DEFAULT_PHONE_FORMATTED}
-                </a>
               </form>
             )}
           </div>
-
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-sm font-black text-black bg-white/60 p-4 border-2 border-black inline-flex shadow-[4px_4px_0_#000] mt-6 -rotate-[0.4deg]">
-            <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-black" /> Fast Quotes</span>
-            <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-black" /> Licensed & Insured</span>
-            <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-black" /> Big Box Truck</span>
-          </div>
-
-          <figure className="mt-6 max-w-2xl border-4 border-black bg-white p-2 text-left rotate-[0.8deg] shadow-[8px_8px_0_rgba(0,0,0,0.3)]">
-            <picture>
-              <source srcSet="/images/hercules-truck.webp" type="image/webp" />
-              <img
-                src="/images/hercules-truck.jpg"
-                alt="Hercules Junk Removal box truck with logo parked in a driveway"
-                className="h-auto w-full object-cover"
-                loading="eager"
-                width="1024"
-                height="1024"
-              />
-            </picture>
-            <figcaption className="pt-2 text-sm font-black text-black">
-              Big box truck based in Kenmore.
-            </figcaption>
-          </figure>
+          <picture className="block lg:col-start-1">
+            <source srcSet="/images/hercules-truck.webp" type="image/webp" />
+            <img
+              src="/images/hercules-truck.jpg"
+              alt="Hercules Junk Removal truck at a local job"
+              className="aspect-[16/9] w-full object-cover"
+              loading="eager"
+              width="1024"
+              height="1024"
+            />
+          </picture>
         </div>
       </div>
     </section>

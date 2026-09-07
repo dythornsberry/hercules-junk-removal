@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button.jsx';
 import { Input } from '@/components/ui/input.jsx';
 import { Checkbox } from '@/components/ui/checkbox.jsx';
-import { Loader2, CheckCircle2, Phone } from 'lucide-react';
+import { Loader2, CheckCircle2, Phone, MessageCircle } from 'lucide-react';
 import { submitLead } from '@/lib/leadSubmission.js';
 
 const DEFAULT_PHONE = '4254063445';
@@ -12,11 +11,13 @@ const DEFAULT_PHONE_FORMATTED = '(425) 406-3445';
 
 const CallbackSection = ({
   sourceLabel = 'Website',
-  heading = 'Prefer a callback instead?',
-  description = 'Name, phone, what needs to go.',
+  heading = 'Get a free quote',
+  description = 'Leave your number. Dylan will call to go over the job.',
   compact = false,
+  headingLevel = 'h2',
   sectionId,
 }) => {
+  const Heading = headingLevel;
   const fieldIdBase = sourceLabel.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   const [formData, setFormData] = useState({ name: '', phone: '' });
   const [smsOptIn, setSmsOptIn] = useState(true);
@@ -82,26 +83,17 @@ const CallbackSection = ({
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           <div className="mb-5">
-            <span className="inline-block rotate-[-1deg] bg-[#FFC107] text-black font-black tracking-[0.2em] uppercase text-xs px-3 py-1 border-2 border-black shadow-[3px_3px_0_rgba(0,0,0,0.4)] mb-3">
-              Send it over
-            </span>
-            <h2 className="text-3xl md:text-4xl font-black text-white rotate-[-0.3deg]">{heading}</h2>
-            <p className="mt-2 text-sm md:text-base text-gray-400 font-bold">{description}</p>
+            <Heading className="text-3xl md:text-4xl font-bold text-white">{heading}</Heading>
+            <p className="mt-2 text-base text-gray-300">{description}</p>
           </div>
 
-          <div className="bg-[#1A1A1A] border-4 border-gray-800 shadow-[6px_6px_0_rgba(0,0,0,0.4)] overflow-hidden">
-            <div className="border-b-2 border-gray-800 px-5 py-3 sm:px-6">
-              <p className="text-xs text-gray-500">
-                Prefer to call? <a href={`tel:${DEFAULT_PHONE}`} className="text-[#FFC107] hover:underline font-bold">Call {DEFAULT_PHONE_FORMATTED}</a>
-              </p>
-            </div>
-
+          <div className="bg-[#1A1A1A] border border-gray-700">
             <div className="px-5 py-5 sm:px-6 sm:py-6">
               {submissionStatus === 'success' ? (
-                <div className="text-center py-2">
+                <div className="text-center py-2" role="status">
                   <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="text-2xl font-black text-white mb-1">Got it.</h3>
-                  <p className="text-sm text-gray-400 mb-3">We'll call you back within 30 min.</p>
+                  <h3 className="text-2xl font-black text-white mb-1">Thanks, we got your request.</h3>
+                  <p className="text-sm text-gray-400 mb-3">Dylan will call to go over the job.</p>
                   <Button
                     type="button"
                     onClick={() => setSubmissionStatus(null)}
@@ -111,7 +103,7 @@ const CallbackSection = ({
                   </Button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4" aria-label="Request a free quote">
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-1.5">
                       <label htmlFor={`callback-name-${fieldIdBase}`} className="text-sm font-semibold text-white">
@@ -134,6 +126,8 @@ const CallbackSection = ({
                       </label>
                       <Input
                         id={`callback-phone-${fieldIdBase}`}
+                        aria-invalid={Boolean(phoneError)}
+                        aria-describedby={phoneError ? `callback-phone-error-${fieldIdBase}` : undefined}
                         name="phone"
                         type="tel"
                         inputMode="tel"
@@ -146,7 +140,7 @@ const CallbackSection = ({
                           phoneError ? 'border-red-500' : ''
                         }`}
                       />
-                      {phoneError && <p className="text-red-500 text-xs">{phoneError}</p>}
+                      {phoneError && <p id={`callback-phone-error-${fieldIdBase}`} className="text-red-400 text-sm">{phoneError}</p>}
                     </div>
                   </div>
 
@@ -157,7 +151,7 @@ const CallbackSection = ({
                       onCheckedChange={(checked) => setSmsOptIn(Boolean(checked))}
                       className="mt-0.5 border-gray-600 data-[state=checked]:bg-[#FFC107] data-[state=checked]:text-black"
                     />
-                    <label htmlFor={`callback-sms-${fieldIdBase}`} className="text-xs leading-relaxed text-gray-400 cursor-pointer">
+                    <label htmlFor={`callback-sms-${fieldIdBase}`} className="text-sm leading-relaxed text-gray-300 cursor-pointer">
                       I agree to be contacted about my quote by call or text. See the{' '}
                       <Link to="/privacy-policy" className="text-[#FFC107] hover:underline">
                         privacy policy
@@ -167,16 +161,16 @@ const CallbackSection = ({
                   </div>
 
                   {submissionStatus === 'error' && (
-                    <p className="text-sm text-red-400">
+                    <p role="alert" className="text-sm text-red-400">
                       Could not submit your request right now. Please try again or call directly.
                     </p>
                   )}
 
-                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <div className="flex flex-col gap-4">
                     <Button
                       type="submit"
                       disabled={isLoading}
-                      className="w-full sm:flex-1 bg-[#FFC107] text-black hover:bg-[#e6ae06] h-12 rounded-md font-black shadow-[4px_4px_0_rgba(255,255,255,0.1)] transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:scale-95"
+                      className="w-full bg-[#FFC107] text-black hover:bg-[#e6ae06] h-12 rounded-md font-black shadow-[4px_4px_0_rgba(255,255,255,0.1)] transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none active:scale-95"
                     >
                       {isLoading ? (
                         <>
@@ -184,23 +178,18 @@ const CallbackSection = ({
                           Sending...
                         </>
                       ) : (
-                        'Send My Info'
+                        'Get my quote'
                       )}
                     </Button>
-                    <Button
-                      asChild
-                      className="w-full sm:w-auto border border-gray-700 bg-[#111111] text-white hover:bg-white/10"
-                    >
-                      <a href={`tel:${DEFAULT_PHONE}`}>
-                        <Phone className="mr-2 h-4 w-4" />
-                        Call {DEFAULT_PHONE_FORMATTED}
+                    <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-semibold">
+                      <a href={`tel:${DEFAULT_PHONE}`} className="inline-flex items-center gap-2 py-2 text-white hover:underline">
+                        <Phone className="h-4 w-4" /> Call {DEFAULT_PHONE_FORMATTED}
                       </a>
-                    </Button>
+                      <a href={`sms:${DEFAULT_PHONE}`} className="inline-flex items-center gap-2 py-2 text-[#FFC107] underline underline-offset-4">
+                        <MessageCircle className="h-4 w-4" /> Text a photo
+                      </a>
+                    </div>
                   </div>
-
-                  <p className="text-xs text-gray-500">
-                    Name and phone is enough to get started.
-                  </p>
                 </form>
               )}
             </div>

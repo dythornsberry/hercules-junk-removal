@@ -5,12 +5,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 const FAQ = () => {
   const faqs = [
     {
-      question: "How does pricing work?",
-      answer: "Pricing is based on how much space your stuff takes up in the truck. Prices range from $99 for a single item to $649 for a full truck. The exact price is confirmed before loading."
-    },
-    {
       question: "Do you charge extra for anything?",
-      answer: "Some items cost extra to dispose of (mattresses, appliances with refrigerant, tires, pianos). Stairs or difficult access may add a small labor fee. You get the total before the job starts."
+      answer: "Mattresses, refrigerant appliances, tires, pianos, stairs, or difficult access may cost extra. We confirm the total before loading."
     },
   {
     question: "Do I need to be home?",
@@ -18,7 +14,7 @@ const FAQ = () => {
   },
     {
       question: "How fast can you come?",
-      answer: "Same-day or next-day pickups are often available. Send a quick quote request or call/text."
+      answer: "Same-day or next-day pickup is often available. Call or request a quote to check."
     },
     {
       question: "How can I pay?",
@@ -40,29 +36,24 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-24 bg-[#1A1A1A]">
+    <section className="py-10 md:py-14 bg-gray-50 border-t border-gray-200">
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="mb-12">
-          <span className="inline-block rotate-[-1deg] bg-[#FFC107] text-black font-black tracking-[0.2em] uppercase text-xs px-3 py-1 border-2 border-black shadow-[3px_3px_0_#000] mb-4">
-            FAQ
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black text-white">Quick answers.</h2>
-        </div>
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Common questions</h2>
 
-        <Accordion type="single" collapsible className="w-full space-y-3">
+        <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="bg-black border-4 border-gray-800 shadow-[4px_4px_0_rgba(255,193,7,0.15)] overflow-hidden px-6"
+              className="border-b border-gray-300"
             >
-              <AccordionTrigger className="text-left text-white font-black text-lg hover:text-[#FFC107] py-6 [&[data-state=open]]:text-[#FFC107]">
+              <AccordionTrigger className="text-left text-black font-semibold text-base py-5">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-400 text-base leading-relaxed pb-6 font-medium">
+              <AccordionContent className="text-gray-700 text-base leading-relaxed pb-5">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

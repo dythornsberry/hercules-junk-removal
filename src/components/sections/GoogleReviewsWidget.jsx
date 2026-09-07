@@ -20,37 +20,16 @@ const reviews = [
 
 const GoogleReviewsWidget = () => {
   return (
-    <section className="bg-[#f4f0e6] border-y-4 border-black py-12 md:py-16">
+    <section className="bg-gray-50 border-b border-gray-200 py-10 md:py-14">
       <div className="container mx-auto px-4">
-        <div className="mb-8 max-w-2xl">
-          <p className="mb-2 inline-block rotate-[-1deg] bg-black px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-[#f5c400]">
-            Local jobs
-          </p>
-          <h2 className="text-3xl font-black leading-tight text-black md:text-4xl">
-            People call when they need the junk gone.
-          </h2>
-          <p className="mt-3 text-lg font-semibold text-gray-700">
-            A few notes from nearby jobs.
-          </p>
-        </div>
-
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">What customers say</h2>
         <div className="grid gap-6 md:grid-cols-3">
-          {reviews.map((review, i) => {
-            const rotations = ['rotate-[-1.2deg]', 'rotate-[0.8deg]', 'rotate-[-0.6deg]'];
-            return (
-              <figure
-                key={`${review.name}-${review.area}`}
-                className={`border-4 border-black bg-white p-5 shadow-[6px_6px_0_#000] ${rotations[i]} hover:rotate-0 transition-transform`}
-              >
-                <blockquote className="text-lg font-bold leading-snug text-black">
-                  "{review.quote}"
-                </blockquote>
-                <figcaption className="mt-5 border-t-2 border-black pt-3 text-sm font-black uppercase tracking-wide text-gray-800">
-                  {review.name} / {review.area}
-                </figcaption>
-              </figure>
-            );
-          })}
+          {reviews.map((review) => (
+            <figure key={review.name} className="border-l-4 border-[#FFC107] pl-5">
+              <blockquote className="text-lg leading-relaxed text-black">“{review.quote}”</blockquote>
+              <figcaption className="mt-4 text-sm text-gray-600">{review.name} · {review.area}</figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>

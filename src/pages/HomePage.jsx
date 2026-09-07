@@ -1,20 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Header from '@/components/sections/Header.jsx';
 import Hero from '@/components/sections/Hero.jsx';
-import TrustBadgeStrip from '@/components/sections/TrustBadgeStrip.jsx';
-import HowItWorks from '@/components/sections/HowItWorks.jsx';
 import BeforeAfter from '@/components/sections/BeforeAfter.jsx';
 import WhatWeTake from '@/components/sections/WhatWeTake.jsx';
-import VideoSection from '@/components/sections/VideoSection.jsx';
 import HercJunkPricingSection from '@/components/sections/HercJunkPricingSection.jsx';
 import GoogleReviewsWidget from '@/components/sections/GoogleReviewsWidget.jsx';
-import LocalSeoBlock from '@/components/sections/LocalSeoBlock.jsx';
-import ServiceAreaMap from '@/components/sections/ServiceAreaMap.jsx';
 import DylanSection from '@/components/sections/DylanSection.jsx';
 import FAQ from '@/components/sections/FAQ.jsx';
 import CallbackSection from '@/components/sections/CallbackSection.jsx';
-import Cta from '@/components/sections/Cta.jsx';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -99,51 +92,22 @@ const HomePage = () => {
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
       
-      {/* 1. Hero Section */}
-      <Hero />
-      
-      {/* 2. Immediate Trust & Social Proof before scrolling further */}
-      <TrustBadgeStrip />
-      
-      {/* 3. Value Proposition / How it Works */}
-      <HowItWorks />
-      
-      {/* 4. Visual Proof of Work */}
-      <BeforeAfter />
-
-      {/* 4.25 What We Take — pre-qualifier, biggest objection killer */}
-      <WhatWeTake />
-
-      {/* 4.5 Video Proof */}
-      <VideoSection />
-
-      {/* 5. Transparent Pricing */}
-      <HercJunkPricingSection />
-
-      {/* 6. Deeper Social Proof */}
-      <GoogleReviewsWidget />
-
-      {/* 7. Local SEO / Service Area Qualification */}
-      <LocalSeoBlock />
-
-      {/* 8. Service Area Qualification & Local Connection */}
-      <ServiceAreaMap />
-      <DylanSection />
-      
-      {/* 8. Objection Handling */}
-      <FAQ />
-
-      {/* 8.5 Secondary Lead Capture */}
-      <CallbackSection
-        compact
-        sectionId="callback-form-homepage"
-        sourceLabel="Homepage"
-        heading="Want a quick quote?"
-        description="Name, phone, what needs to go."
-      />
-      
-      {/* 9. Final Conversion */}
-      <Cta />
+      <main>
+        <Hero />
+        <HercJunkPricingSection compact />
+        <WhatWeTake />
+        <BeforeAfter />
+        <GoogleReviewsWidget />
+        <DylanSection />
+        <FAQ />
+        <CallbackSection
+          compact
+          sectionId="callback-form-homepage"
+          sourceLabel="Homepage"
+          heading="Get a free quote"
+          description="Leave your number. Dylan will call to go over the job."
+        />
+      </main>
     </>
   );
 };

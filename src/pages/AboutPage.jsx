@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Button } from '@/components/ui/button';
-import { Toaster } from '@/components/ui/toaster';
 import { Phone, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -30,66 +29,35 @@ const AboutPage = () => {
           "address": { "@type": "PostalAddress", "addressLocality": "Kenmore", "addressRegion": "WA" }
         })}</script>
       </Helmet>
-      <div className="flex-grow bg-yellow-400 text-black">
-        <main>
-          <section className="py-16 sm:py-20 px-4">
-            <div className="container mx-auto max-w-5xl">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="text-center md:text-left">
-                  <h1 className="text-4xl sm:text-5xl font-black text-black mb-4">Kenmore Junk Removal That Gets It Done</h1>
-                  <p className="text-lg text-black/80 mb-6">
-                    Hercules Junk Removal is owned by Dylan and based in Kenmore, WA. Call for a fast quote or fill out the form.
-                  </p>
-                  <p className="text-lg text-black/80 mb-6">
-                    The box truck is large, so most jobs fit in one load. That keeps the job simple and helps keep the price fair.
-                  </p>
-                  <p className="text-lg text-black/80 mb-6 font-bold">
-                    Furniture, garage junk, yard waste, appliances, cleanouts, random piles in the driveway - point at it and it gets hauled.
-                  </p>
-                  <p className="text-lg text-black/80 mb-6">
-                    Licensed and insured. Venmo, Zelle, card, and cash are fine. Quick pickup, easy scheduling, reliable service.
-                  </p>
-                  <p className="text-lg text-black/80 mb-6">
-                    Serving Kenmore, Bothell, Kirkland, Lynnwood, Shoreline, Lake Forest Park, Woodinville, and nearby.
-                  </p>
-                  <p className="text-lg text-black/80 mb-8 font-bold">
-                    Fast quote. Big truck. Easy cleanup.
-                  </p>
-                  <div className="flex flex-col gap-4 w-full">
-                    <Button
-                      size="lg"
-                      className="bg-black text-white hover:bg-gray-800 text-xl font-bold py-7 px-10 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 w-full"
-                      onClick={() => window.location.href = '/quote'}
-                    >
-                      Get a Quote <ArrowRight className="ml-2 h-6 w-6" />
-                    </Button>
-                    <a href={`tel:${businessPhoneNumber}`} className="w-full">
-                      <Button
-                        size="lg"
-                        variant="outline"
-                        className="border-2 border-black text-black hover:bg-black hover:text-white text-xl font-bold py-7 px-10 rounded-xl w-full"
-                      >
-                        <Phone className="mr-2 h-6 w-6" />
-                        {businessPhoneNumberFormatted}
-                      </Button>
-                    </a>
-                  </div>
-                </div>
-                <div className="flex justify-center items-center">
-                  <img  
-                    className="rounded-2xl shadow-2xl max-w-full h-auto" 
-                    alt="Dylan, owner of Hercules Junk Removal, taking a selfie in a garage at a job site, wearing a Hercules hat."
-                    src="https://horizons-cdn.hostinger.com/043d3248-867c-48dc-bfa5-01141b7ae321/e21a9b995140fd6b8cd0fc1ea3a96669.jpg" 
-                    loading="lazy"
-                    style={{ transform: 'rotate(90deg)' }}
-                  />
+      <main className="bg-[#FFC107] text-black">
+        <section className="py-10 md:py-14">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div>
+                <h1 className="text-4xl sm:text-5xl font-bold mb-5">Hi, I'm Dylan.</h1>
+                <p className="text-lg leading-relaxed mb-5">I own and operate Hercules Junk Removal in Kenmore. When you call, you speak with me.</p>
+                <p className="text-lg leading-relaxed mb-5">I haul furniture, appliances, yard waste, and cleanouts across Kenmore, Bothell, and nearby. You get the total before I start loading.</p>
+                <p className="text-base mb-6">Licensed and insured. Cash, card, Venmo, or Zelle.</p>
+                <div className="flex flex-wrap items-center gap-5">
+                  <Button asChild className="bg-black text-white hover:bg-gray-800 font-bold h-12 px-6">
+                    <Link to="/quote">Get a quote <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                  </Button>
+                  <a href={`tel:${businessPhoneNumber}`} className="inline-flex items-center gap-2 py-3 text-base font-bold hover:underline">
+                    <Phone className="h-5 w-5" /> {businessPhoneNumberFormatted}
+                  </a>
                 </div>
               </div>
+              <img
+                className="w-full max-h-[440px] object-cover"
+                alt="Dylan, owner of Hercules Junk Removal, in his truck"
+                src="/images/dylan-in-truck.jpg"
+                width="440"
+                height="440"
+              />
             </div>
-          </section>
-        </main>
-        <Toaster />
-      </div>
+          </div>
+        </section>
+      </main>
     </>
   );
 };
