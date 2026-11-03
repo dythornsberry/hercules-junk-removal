@@ -5,7 +5,6 @@ import Footer from '@/components/sections/Footer.jsx';
 import StickyContactBar from '@/components/sections/StickyContactBar.jsx';
 import ScrollToTop from '@/components/ScrollToTop.jsx';
 import Header from '@/components/sections/Header.jsx';
-import HercJunkPricingSection from '@/components/sections/HercJunkPricingSection.jsx';
 
 // Lazy load pages to optimize performance and prevent circular dependencies
 const HomePage = lazy(() => import('@/pages/HomePage.jsx'));
@@ -37,6 +36,7 @@ const JunkRemovalBellevuePage = lazy(() => import('@/pages/locations/JunkRemoval
 const JunkRemovalRedmondPage = lazy(() => import('@/pages/locations/JunkRemovalRedmondPage.jsx'));
 const JunkRemovalSammamishPage = lazy(() => import('@/pages/locations/JunkRemovalSammamishPage.jsx'));
 const JunkRemovalEdmondsPage = lazy(() => import('@/pages/locations/JunkRemovalEdmondsPage.jsx'));
+const PricingPage = lazy(() => import('@/pages/PricingPage.jsx'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage.jsx'));
 
 const ProtectedRoute = ({ children }) => {
@@ -50,7 +50,8 @@ function App() {
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Header />
-        <div className="flex-grow flex flex-col">
+        {/* scripts/prerender.js marks this as the Suspense boundary so prerendered pages hydrate */}
+        <div className="flex-grow flex flex-col" data-route-outlet>
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -59,7 +60,7 @@ function App() {
               <Route path="/faq" element={<FaqPage />} />
               <Route path="/quote" element={<QuotePage />} />
               <Route path="/booking" element={<Navigate to="/quote" replace />} />
-              <Route path="/pricing" element={<div className="pt-20"><HercJunkPricingSection /></div>} />
+              <Route path="/pricing" element={<PricingPage />} />
               <Route path="/service-areas" element={<ServiceAreasPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
               <Route path="/login" element={<LoginPage />} />
