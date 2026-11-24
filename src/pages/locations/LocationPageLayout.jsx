@@ -24,7 +24,10 @@ const LocationPageLayout = ({
   const canonicalUrl = `https://hercjunk.com/${slug}`;
 
   const ogImageUrl = 'https://hercjunk.com/images/hercules-truck.jpg';
-  const pageTitle = `${h1} | Same-Day Pickup | Hercules Junk Removal`;
+  // Keep titles short enough for Google: the headline already carries the price on most city pages
+  const pageTitle = h1.includes('$99')
+    ? `${h1} | Hercules Junk Removal`
+    : `${h1} | Same-Day Pickup | Hercules Junk Removal`;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",

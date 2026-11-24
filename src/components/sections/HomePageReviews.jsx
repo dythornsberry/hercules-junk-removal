@@ -40,7 +40,7 @@ const HomePageReviews = () => {
               className="bg-[#f5c400] p-6 rounded-[10px] shadow-md flex flex-col"
             >
               <p className="text-black text-lg italic mb-4 flex-grow">"{review.text}"</p>
-              <p className="text-black font-bold text-right">— {review.author}</p>
+              <p className="text-black font-bold text-right">{review.author}</p>
             </motion.div>
           ))}
         </div>

@@ -6,7 +6,7 @@ const JunkRemovalMountlakeTerracePage = () => {
     <LocationPageLayout
       city="Mountlake Terrace"
       slug="junk-removal-mountlake-terrace"
-      h1="Junk Removal in Mountlake Terrace, WA from $99 – Same-Day"
+      h1="Junk Removal in Mountlake Terrace, WA from $99"
       blurb="Affordable, reliable junk removal in Mountlake Terrace. We haul away furniture, appliances, and more with same-day service."
       metaDescription="Same-day junk removal in Mountlake Terrace, WA from $99. Furniture, appliances, yard waste & more. Licensed & insured. Request a free quote fast."
       zipCodes={['98043']}

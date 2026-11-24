@@ -6,7 +6,7 @@ const JunkRemovalWoodinvillePage = () => {
     <LocationPageLayout
       city="Woodinville"
       slug="junk-removal-woodinville"
-      h1="Junk Removal in Woodinville, WA from $99 – Same-Day"
+      h1="Junk Removal in Woodinville, WA from $99"
       blurb="Serving Woodinville's wine country and surrounding neighborhoods. Fast, eco-friendly junk hauling with same-day availability."
       metaDescription="Same-day junk removal in Woodinville, WA from $99. Furniture, yard waste, appliances & more. Licensed & insured local team. Request a free quote fast."
       zipCodes={['98072', '98077']}
@@ -19,7 +19,7 @@ const JunkRemovalWoodinvillePage = () => {
         {
           title: "Junk Removal for Woodinville Homes & Properties",
           paragraphs: [
-            "Woodinville's rural feel, larger lots, and mature landscaping mean there's always junk to deal with — from old fencing and sheds to yard waste piling up after a weekend of property maintenance. Hercules Junk Removal serves all of Woodinville, from Hollywood Hill to Cottage Lake and everywhere in between.",
+            "Woodinville's rural feel, larger lots, and mature landscaping mean there's always junk to deal with, from old fencing and sheds to yard waste piling up after a weekend of property maintenance. Hercules Junk Removal serves all of Woodinville, from Hollywood Hill to Cottage Lake and everywhere in between.",
             "We're equipped to handle the unique challenges of Woodinville properties: long driveways, acreage cleanups, barn and shed cleanouts, and large-scale yard debris removal. Our truck holds up to 504 cubic feet, which is equivalent to about 7-8 pickup truck loads.",
             "Pricing starts at $99 for a single item and goes up based on volume. We give you the price before we start loading."
           ]

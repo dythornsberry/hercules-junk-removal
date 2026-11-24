@@ -11,7 +11,7 @@ const PricingPage = () => {
         <link rel="canonical" href="https://hercjunk.com/pricing" />
       </Helmet>
       <div className="pt-20">
-        <HercJunkPricingSection />
+        <HercJunkPricingSection headingAs="h1" />
       </div>
     </>
   );

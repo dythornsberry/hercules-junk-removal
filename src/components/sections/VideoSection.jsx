@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 const videoSchema = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": "Garage Cleanout in Kenmore WA — Hercules Junk Removal",
-  "description": "Watch a garage cleanout from start to finish — done in under 2 hours by Hercules Junk Removal in Kenmore, WA.",
+  "name": "Garage Cleanout in Kenmore, WA | Hercules Junk Removal",
+  "description": "Watch a garage cleanout from start to finish, done in under 2 hours by Hercules Junk Removal in Kenmore, WA.",
   "thumbnailUrl": "https://img.youtube.com/vi/_XXk67bDZOU/maxresdefault.jpg",
   "uploadDate": "2025-03-01",
   "embedUrl": "https://www.youtube.com/embed/_XXk67bDZOU",
@@ -48,7 +48,7 @@ const VideoSection = () => {
               <iframe
                 className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/_XXk67bDZOU"
-                title="Garage Cleanout in Kenmore WA — Hercules Junk Removal"
+                title="Garage Cleanout in Kenmore, WA | Hercules Junk Removal"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

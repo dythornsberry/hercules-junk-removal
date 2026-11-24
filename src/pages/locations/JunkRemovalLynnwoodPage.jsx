@@ -6,8 +6,8 @@ const JunkRemovalLynnwoodPage = () => {
     <LocationPageLayout
       city="Lynnwood"
       slug="junk-removal-lynnwood"
-      h1="Junk Removal in Lynnwood, WA from $99 – Same-Day"
-      blurb="Fast, affordable junk hauling across Lynnwood. From Alderwood to Highway 99 — we pick up and haul away your unwanted items."
+      h1="Junk Removal in Lynnwood, WA from $99"
+      blurb="Fast, affordable junk hauling across Lynnwood. From Alderwood to Highway 99, we pick up and haul away your unwanted items."
       metaDescription="Same-day junk removal in Lynnwood, WA from $99. Furniture, appliances, yard waste & more. Licensed & insured local crew. Request a free quote fast."
       zipCodes={['98036', '98037', '98087']}
       neighborhoods={[
@@ -28,7 +28,7 @@ const JunkRemovalLynnwoodPage = () => {
           title: "Apartment & Condo Cleanouts in Lynnwood",
           paragraphs: [
             "With the light rail expansion and new development throughout Lynnwood, we're seeing more and more apartment and condo cleanouts. Moving out of a unit near the Lynnwood City Center? Clearing out a rental property? We specialize in quick, efficient cleanouts that leave the space broom-clean.",
-            "We're experienced with apartment complexes — navigating elevators, tight hallways, and parking restrictions. We'll work with your building's rules and timeline to get the job done without disruption."
+            "We're experienced with apartment complexes, including elevators, tight hallways, and parking restrictions. We'll work with your building's rules and timeline to get the job done without disruption."
           ]
         }
       ]}

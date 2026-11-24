@@ -50,7 +50,7 @@ const ConstructionDebrisRemovalPage = () => {
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "Do you pick up from active job sites?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we work with contractors and homeowners on active renovation and construction sites. We offer flexible scheduling to keep your project on track." }},
+            { "@type": "Question", "name": "Do you pick up from active job sites?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we work with contractors and homeowners on active renovation and construction sites. We offer flexible scheduling to keep your project on track." }},
             { "@type": "Question", "name": "What construction materials do you take?", "acceptedAnswer": { "@type": "Answer", "text": "We haul drywall, lumber, scrap wood, flooring, carpet, tiles, concrete, brick, old cabinets, windows, doors, roofing materials, and more." }},
             { "@type": "Question", "name": "Can you do same-day debris pickup?", "acceptedAnswer": { "@type": "Answer", "text": "In most cases, yes. We often have same-day availability for construction debris removal in the Kenmore and Bothell area." }}
           ]

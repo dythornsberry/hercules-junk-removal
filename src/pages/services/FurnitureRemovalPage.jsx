@@ -50,8 +50,8 @@ const FurnitureRemovalPage = () => {
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "How much does it cost to remove a couch?", "acceptedAnswer": { "@type": "Answer", "text": "A single item like a couch or mattress starts at our $99 minimum. Price depends on size — we confirm the price before we start." }},
-            { "@type": "Question", "name": "Do you pick up furniture from upstairs?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We handle all the heavy lifting — upstairs, basement, tight corners. We're careful not to damage your walls or floors." }},
+            { "@type": "Question", "name": "How much does it cost to remove a couch?", "acceptedAnswer": { "@type": "Answer", "text": "A single item like a couch or mattress starts at our $99 minimum. Price depends on size, and we confirm the price before we start." }},
+            { "@type": "Question", "name": "Do you pick up furniture from upstairs?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We handle all the heavy lifting: upstairs, basement, tight corners. We're careful not to damage your walls or floors." }},
             { "@type": "Question", "name": "Do you donate old furniture?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! If your furniture is in usable condition, we try to donate it to local charities in the Kenmore and Seattle area before taking it to disposal." }}
           ]
         })}</script>
@@ -59,7 +59,7 @@ const FurnitureRemovalPage = () => {
 
       <ServiceHero 
         title="Furniture Removal Made Easy"
-        subtitle="Don't break your back lifting that old couch. We haul away sofas, mattresses, and heavy furniture from anywhere in your home—fast."
+        subtitle="Don't break your back lifting that old couch. We haul away sofas, mattresses, and heavy furniture from anywhere in your home, fast."
         imageAlt="Team member carrying a sofa out of a house"
         imageSrc="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
       />
@@ -97,7 +97,7 @@ const FurnitureRemovalPage = () => {
                 <Truck className="h-8 w-8 text-black" />
               </div>
               <h3 className="text-xl font-bold mb-3">We Do The Heavy Lifting</h3>
-              <p className="text-gray-400">Upstairs, in the basement, or round a tight corner—our strong team handles the maneuvering so you don't damage your walls or your back.</p>
+              <p className="text-gray-400">Upstairs, in the basement, or round a tight corner, our strong team handles the maneuvering so you don't damage your walls or your back.</p>
             </div>
             <div className="text-center">
               <div className="bg-yellow-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
